@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cmmxsplk8jhp6"]
+
+[ext_resource type="Shader" uid="uid://bxjuyddt5wmul" path="res://shaders/2D-perspective.gdshader" id="1_rjlel"]
+[ext_resource type="Texture2D" uid="uid://deobaci2cicvx" path="res://assets/cards/lots-of-money.png" id="2_q5obu"]
+[ext_resource type="Script" uid="uid://c0qsq4y3fhco5" path="res://scripts/card.gd" id="3_q5obu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e484p"]
+shader = ExtResource("1_rjlel")
+shader_parameter/fov = 90.0000042275
+shader_parameter/cull_back = true
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpac0"]
+size = Vector2(180, 180)
+
+[node name="Card" type="Area2D" unique_id=1753901022]
+script = ExtResource("3_q5obu")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=108540353]
+modulate = Color(0, 0, 0, 0.3137255)
+position = Vector2(0, 20)
+texture = ExtResource("2_q5obu")
+
+[node name="CardSprite" type="Sprite2D" parent="." unique_id=1629320849]
+material = SubResource("ShaderMaterial_e484p")
+texture = ExtResource("2_q5obu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1458012797]
+shape = SubResource("RectangleShape2D_fpac0")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
