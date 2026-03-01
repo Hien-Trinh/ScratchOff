@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://pt43fdks8vno"]
+
+[ext_resource type="PackedScene" uid="uid://d3fh7koe6c1bg" path="res://inventory.tscn" id="1_68nve"]
+[ext_resource type="Texture2D" uid="uid://0jx845p4rr1q" path="res://icon.svg" id="1_u8hot"]
+[ext_resource type="LabelSettings" uid="uid://buxtvmxr8t4no" path="res://themes/shop_header.tres" id="2_rh1mo"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rh1mo"]
+diffuse_texture = ExtResource("1_u8hot")
+
+[node name="ShopMenu" type="Control" unique_id=151485780]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1432075937]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0017362
+anchor_bottom = 1.0077161
+color = Color(0.19123745, 0.22737336, 0.3399259, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Inventory" parent="." unique_id=1142824984 instance=ExtResource("1_68nve")]
+layout_mode = 1
+offset_left = -3.0
+offset_top = 1.0
+offset_right = -3.0
+offset_bottom = 1.0
+
+[node name="Icon1" type="TextureRect" parent="." unique_id=363851144]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.042534724
+anchor_top = 0.16512346
+anchor_right = 0.15364583
+anchor_bottom = 0.36265436
+offset_bottom = -1.5258789e-05
+pivot_offset = Vector2(83, 91)
+texture = SubResource("CanvasTexture_rh1mo")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Icon1" unique_id=1571991670]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0703125
+anchor_top = 1.0546875
+anchor_right = 1.0625
+anchor_bottom = 1.5625
+theme_override_font_sizes/font_size = 35
+text = "$100"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=832677860]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025173612
+anchor_top = 0.024691358
+anchor_right = 0.17881945
+anchor_bottom = 0.1558642
+text = "ITEMS"
+label_settings = ExtResource("2_rh1mo")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="." unique_id=331839891]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025157033
+anchor_top = 0.508871
+anchor_right = 0.3107473
+anchor_bottom = 0.64004385
+text = "UPGRADES"
+label_settings = ExtResource("2_rh1mo")
+metadata/_edit_use_anchors_ = true

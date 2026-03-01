@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://d3fh7koe6c1bg"]
+
+[ext_resource type="FontFile" uid="uid://bqxdvnqmuulum" path="res://assets/Fonts/Coolvetica Rg.otf" id="1_pohso"]
+[ext_resource type="Script" uid="uid://b0ir4y21fkyuy" path="res://scripts/inventory.gd" id="1_psafj"]
+[ext_resource type="LabelSettings" uid="uid://buxtvmxr8t4no" path="res://themes/shop_header.tres" id="3_5tt2m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_psafj"]
+font = ExtResource("1_pohso")
+font_size = 40
+
+[node name="Inventory" type="Control" unique_id=1142824984]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_psafj")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1577952150]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7057292
+anchor_top = -0.0015432099
+anchor_right = 1.0043403
+anchor_bottom = 1.0030864
+color = Color(0.03137255, 0.12156863, 0.06666667, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TicketHeader" type="Label" parent="." unique_id=1459332545]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7203833
+anchor_top = 0.19907407
+anchor_right = 1.0008711
+anchor_bottom = 0.27469134
+text = "Tickets"
+label_settings = SubResource("LabelSettings_psafj")
+metadata/_edit_use_anchors_ = true
+
+[node name="TicketBody" type="RichTextLabel" parent="." unique_id=1603528588]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.72473866
+anchor_top = 0.27469134
+anchor_right = 0.9965157
+anchor_bottom = 0.5231481
+bbcode_enabled = true
+text = "Lorem Ipsum x1
+Dolor x2
+[i]Item in cart x2[/i]"
+metadata/_edit_use_anchors_ = true
+
+[node name="UpgradeHeader" type="Label" parent="." unique_id=823844346]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7203833
+anchor_top = 0.52623504
+anchor_right = 0.99390244
+anchor_bottom = 0.60185266
+text = "Upgrades"
+label_settings = SubResource("LabelSettings_psafj")
+metadata/_edit_use_anchors_ = true
+
+[node name="TicketBody2" type="RichTextLabel" parent="." unique_id=609535115]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7247387
+anchor_top = 0.61265427
+anchor_right = 0.9947735
+anchor_bottom = 0.8518519
+offset_top = -3.0517578e-05
+bbcode_enabled = true
+text = "Lorem Ipsum
+Dolor
+[i]Item in cart[/i]"
+metadata/_edit_use_anchors_ = true
+
+[node name="MoneyLabel" type="ColorRect" parent="." unique_id=1709975994]
+layout_mode = 0
+offset_left = 846.0
+offset_top = 15.0
+offset_right = 1114.0
+offset_bottom = 91.0
+
+[node name="CheckoutContinue" type="ColorRect" parent="." unique_id=329520420]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.73867595
+anchor_top = 0.8765432
+anchor_right = 0.9721254
+anchor_bottom = 0.9583333
+color = Color(0.15294118, 1, 0.4745098, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1343385852]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.74738675
+anchor_top = 0.024691354
+anchor_right = 0.9599303
+anchor_bottom = 0.13734569
+pivot_offset = Vector2(130, 39)
+text = "BALANCE"
+label_settings = ExtResource("3_5tt2m")
+metadata/_edit_use_anchors_ = true
