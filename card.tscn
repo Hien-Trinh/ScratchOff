@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cmmxsplk8jhp6"]
+[gd_scene format=3 uid="uid://dts74te66asgn"]
 
 [ext_resource type="Shader" uid="uid://bxjuyddt5wmul" path="res://shaders/2D-perspective.gdshader" id="1_rjlel"]
 [ext_resource type="Texture2D" uid="uid://deobaci2cicvx" path="res://assets/cards/lots-of-money.png" id="2_q5obu"]
