@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c26px2fv7fuvo"]
+
+[ext_resource type="Texture2D" uid="uid://ck2kjcjbj5mwa" path="res://assets/cards/ScratcherImage.jpg" id="1_2bib2"]
+[ext_resource type="Script" uid="uid://bl2gv8gwifwwc" path="res://HScratcherScript.gd" id="1_kod2i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kod2i"]
+size = Vector2(426, 612)
+
+[node name="Node2D" type="Node2D" unique_id=1920665203]
+script = ExtResource("1_kod2i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1663511193]
+texture = ExtResource("1_2bib2")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=13850032]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=420985430]
+shape = SubResource("RectangleShape2D_kod2i")
+
+[connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_exited"]
