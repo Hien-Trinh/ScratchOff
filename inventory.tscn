@@ -2,7 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://bqxdvnqmuulum" path="res://assets/Fonts/Coolvetica Rg.otf" id="1_pohso"]
 [ext_resource type="Script" uid="uid://b0ir4y21fkyuy" path="res://scripts/inventory.gd" id="1_psafj"]
-[ext_resource type="LabelSettings" uid="uid://buxtvmxr8t4no" path="res://themes/shop_header.tres" id="3_5tt2m"]
+[ext_resource type="LabelSettings" uid="uid://ke1rn4aiuul1" path="res://themes/balance_header.tres" id="3_5tt2m"]
+[ext_resource type="Theme" uid="uid://br26gwrgbmvar" path="res://themes/inventory_body.tres" id="3_mrqgh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_psafj"]
 font = ExtResource("1_pohso")
@@ -46,6 +47,7 @@ anchor_left = 0.72473866
 anchor_top = 0.27469134
 anchor_right = 0.9965157
 anchor_bottom = 0.5231481
+theme = ExtResource("3_mrqgh")
 bbcode_enabled = true
 text = "Lorem Ipsum x1
 Dolor x2
@@ -67,10 +69,11 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.7247387
-anchor_top = 0.61265427
+anchor_top = 0.6098765
 anchor_right = 0.9947735
-anchor_bottom = 0.8518519
+anchor_bottom = 0.8490741
 offset_top = -3.0517578e-05
+theme = ExtResource("3_mrqgh")
 bbcode_enabled = true
 text = "Lorem Ipsum
 Dolor
@@ -79,29 +82,34 @@ metadata/_edit_use_anchors_ = true
 
 [node name="MoneyLabel" type="ColorRect" parent="." unique_id=1709975994]
 layout_mode = 0
-offset_left = 846.0
-offset_top = 15.0
-offset_right = 1114.0
-offset_bottom = 91.0
+offset_left = 1369.0
+offset_top = 30.0
+offset_right = 1905.0
+offset_bottom = 106.0
+
+[node name="Label" type="Label" parent="MoneyLabel" unique_id=1343385852]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014999845
+anchor_top = 0.12118264
+anchor_right = 0.9781123
+anchor_bottom = 0.96005267
+offset_left = -0.039978027
+offset_top = -5.209881
+offset_right = -1.26828
+offset_bottom = 0.035995483
+pivot_offset = Vector2(130, 39)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "BALANCE"
+label_settings = ExtResource("3_5tt2m")
+metadata/_edit_use_anchors_ = true
 
 [node name="CheckoutContinue" type="ColorRect" parent="." unique_id=329520420]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.73867595
-anchor_top = 0.8765432
+anchor_top = 0.8311729
 anchor_right = 0.9721254
-anchor_bottom = 0.9583333
+anchor_bottom = 0.912963
 color = Color(0.15294118, 1, 0.4745098, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="." unique_id=1343385852]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.74738675
-anchor_top = 0.024691354
-anchor_right = 0.9599303
-anchor_bottom = 0.13734569
-pivot_offset = Vector2(130, 39)
-text = "BALANCE"
-label_settings = ExtResource("3_5tt2m")
 metadata/_edit_use_anchors_ = true

@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://pt43fdks8vno"]
 
 [ext_resource type="PackedScene" uid="uid://d3fh7koe6c1bg" path="res://inventory.tscn" id="1_68nve"]
-[ext_resource type="Texture2D" uid="uid://0jx845p4rr1q" path="res://icon.svg" id="1_u8hot"]
+[ext_resource type="Texture2D" uid="uid://de7emop815p5h" path="res://assets/upgrades/temp_up.svg" id="2_68nve"]
+[ext_resource type="Texture2D" uid="uid://deobaci2cicvx" path="res://assets/cards/lots-of-money.png" id="2_f8gav"]
 [ext_resource type="LabelSettings" uid="uid://buxtvmxr8t4no" path="res://themes/shop_header.tres" id="2_rh1mo"]
+[ext_resource type="Script" uid="uid://7tcsu8ee704u" path="res://scripts/buy_item.gd" id="5_f8gav"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_rh1mo"]
-diffuse_texture = ExtResource("1_u8hot")
+diffuse_texture = ExtResource("2_f8gav")
 
 [node name="ShopMenu" type="Control" unique_id=151485780]
 layout_mode = 3
@@ -30,19 +32,23 @@ offset_top = 1.0
 offset_right = -3.0
 offset_bottom = 1.0
 
-[node name="Icon1" type="TextureRect" parent="." unique_id=363851144]
+[node name="Tickets" type="Control" parent="." unique_id=110479356]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Ticket1" type="TextureRect" parent="Tickets" unique_id=363851144]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.042534724
-anchor_top = 0.16512346
-anchor_right = 0.15364583
-anchor_bottom = 0.36265436
-offset_bottom = -1.5258789e-05
+anchor_left = 2.0416667
+anchor_top = 3.883334
+anchor_right = 6.525
+anchor_bottom = 8.366667
 pivot_offset = Vector2(83, 91)
 texture = SubResource("CanvasTexture_rh1mo")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Icon1" unique_id=1571991670]
+[node name="Button" type="Button" parent="Tickets/Ticket1" unique_id=1571991670]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.0703125
@@ -50,27 +56,98 @@ anchor_top = 1.0546875
 anchor_right = 1.0625
 anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
-text = "$100"
+text = "TEMP"
+script = ExtResource("5_f8gav")
+item_name = "Lots of Money"
+item_texture = ExtResource("2_f8gav")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="." unique_id=832677860]
+[node name="TicketHeader" type="Label" parent="Tickets" unique_id=832677860]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.025173612
 anchor_top = 0.024691358
 anchor_right = 0.17881945
 anchor_bottom = 0.1558642
-text = "ITEMS"
+offset_left = 47.326393
+offset_top = 25.679012
+offset_right = 256.18057
+offset_bottom = 93.4321
+text = "TICKETS"
 label_settings = ExtResource("2_rh1mo")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="." unique_id=331839891]
+[node name="Upgrades" type="Control" parent="." unique_id=681107643]
+anchors_preset = 0
+offset_left = 81.66667
+offset_top = 155.33336
+offset_right = 121.66667
+offset_bottom = 195.33336
+
+[node name="Upgrade2" type="TextureRect" parent="Upgrades" unique_id=139241062]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.20572917
+anchor_top = 0.61388886
+anchor_right = 0.316667
+anchor_bottom = 0.81111115
+offset_left = 305.10416
+offset_top = 483.11102
+offset_right = 477.66663
+offset_bottom = 656.2221
+pivot_offset = Vector2(117, 117)
+texture = ExtResource("2_68nve")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Upgrades/Upgrade2" unique_id=1757481241]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0703125
+anchor_top = 1.0546875
+anchor_right = 1.0625
+anchor_bottom = 1.5625
+theme_override_font_sizes/font_size = 35
+text = "TEMP"
+metadata/_edit_use_anchors_ = true
+
+[node name="Upgrade1" type="TextureRect" parent="Upgrades" unique_id=1752591362]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.042187486
+anchor_top = 0.61388886
+anchor_right = 0.15312529
+anchor_bottom = 0.8111111
+offset_left = -2.3542018
+offset_top = 483.11102
+offset_right = 170.20828
+offset_bottom = 656.2221
+pivot_offset = Vector2(117, 117)
+texture = ExtResource("2_68nve")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Upgrades/Upgrade1" unique_id=568708131]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0703125
+anchor_top = 1.0657372
+anchor_right = 1.0625
+anchor_bottom = 1.5735497
+theme_override_font_sizes/font_size = 35
+text = "TEMP"
+script = ExtResource("5_f8gav")
+metadata/_edit_use_anchors_ = true
+
+[node name="UpgradeHeader" type="Label" parent="Upgrades" unique_id=331839891]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.025157033
-anchor_top = 0.508871
+anchor_top = 0.4866488
 anchor_right = 0.3107473
-anchor_bottom = 0.64004385
+anchor_bottom = 0.61782163
+offset_left = -34.371452
+offset_top = 350.78137
+offset_right = 236.20494
+offset_bottom = 418.53445
 text = "UPGRADES"
 label_settings = ExtResource("2_rh1mo")
 metadata/_edit_use_anchors_ = true
