@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://uf74s7sjt18d"]
 
 [ext_resource type="Texture2D" uid="uid://diemgvndv7rx" path="res://assets/other/wood.jpg" id="1_ap3h1"]
+[ext_resource type="Script" uid="uid://dluxigksmmo3w" path="res://instantiateScratcher.gd" id="2_h513p"]
 [ext_resource type="PackedScene" uid="uid://c26px2fv7fuvo" path="res://HenryScratcher.tscn" id="2_stmda"]
 
 [node name="HenryTable" type="Node2D" unique_id=491987091]
@@ -15,6 +16,10 @@ offset_right = 470.0
 offset_bottom = 232.0
 theme_override_font_sizes/font_size = 55
 text = "Add Scratcher"
+script = ExtResource("2_h513p")
+scratcherScene = ExtResource("2_stmda")
 
 [node name="Node2D" parent="." unique_id=1920665203 instance=ExtResource("2_stmda")]
-position = Vector2(986, 463)
+position = Vector2(1137, 496)
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
