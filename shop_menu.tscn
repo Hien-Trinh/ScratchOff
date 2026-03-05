@@ -58,8 +58,8 @@ anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
-item_name = "Lots of Money"
-item_texture = ExtResource("2_f8gav")
+buy_name = "LotsofMoney"
+buy_texture = ExtResource("2_f8gav")
 metadata/_edit_use_anchors_ = true
 
 [node name="TicketHeader" type="Label" parent="Tickets" unique_id=832677860]
@@ -108,6 +108,10 @@ anchor_right = 1.0625
 anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
 text = "TEMP"
+script = ExtResource("5_f8gav")
+buy_name = "Upgrade2"
+buy_texture = ExtResource("2_68nve")
+is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Upgrade1" type="TextureRect" parent="Upgrades" unique_id=1752591362]
@@ -135,6 +139,9 @@ anchor_bottom = 1.5735497
 theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
+buy_name = "Upgrade1"
+buy_texture = ExtResource("2_68nve")
+is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
 [node name="UpgradeHeader" type="Label" parent="Upgrades" unique_id=331839891]

@@ -1,9 +1,11 @@
 extends Node
 
 @onready var ticketList = Array() 
+@onready var upgrade_dict = {}
 
 var rng = RandomNumberGenerator.new()
-var balance : float : set = set_balance, get = get_balance
+var balance : float : 
+	set = set_balance, get = get_balance
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,4 +31,4 @@ func set_balance(new_value):
 	# If balance is less than zero, trigger fail state
 
 func generate_ticket(ticket_name : String, max_value : float, texture : Texture2D):
-	return Item.new(ticket_name, rng.randi_range(0, max_value), texture)
+	return Item.new(ticket_name, snappedf(rng.randf_range(0.0, max_value), 0.01), texture)

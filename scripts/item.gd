@@ -2,7 +2,7 @@ extends Node
 class_name Item
 # Class for lottery tickets
 
-var item_value : int:
+var item_value : float:
 	set = set_value, get = get_value
 	
 var item_name : String:
@@ -10,7 +10,7 @@ var item_name : String:
 	
 var item_texture : Texture
 
-func _init(new_name :  String, new_value : int, new_texture : Texture2D):
+func _init(new_name :  String, new_value : float, new_texture : Texture2D):
 	item_name = new_name
 	item_value = new_value
 	item_texture = new_texture
