@@ -4,5 +4,8 @@
 
 [node name="Table" type="Node2D" unique_id=1736072314]
 
-[node name="Card" parent="." unique_id=1753901022 instance=ExtResource("1_jd0nb")]
+[node name="Card2" parent="." unique_id=1753901022 instance=ExtResource("1_jd0nb")]
+position = Vector2(954, 404)
+
+[node name="Card" parent="." unique_id=935743332 instance=ExtResource("1_jd0nb")]
 position = Vector2(572, 300)

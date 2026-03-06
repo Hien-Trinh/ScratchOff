@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://ck2kjcjbj5mwa" path="res://assets/cards/ScratcherImage.jpg" id="1_2bib2"]
 [ext_resource type="Script" uid="uid://bl2gv8gwifwwc" path="res://HScratcherScript.gd" id="1_kod2i"]
+[ext_resource type="Script" uid="uid://bwjl3xbbyygxx" path="res://pushScript.gd" id="2_1g36t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1g36t"]
+size = Vector2(278.00012, 398.0002)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kod2i"]
 size = Vector2(426, 612)
@@ -9,13 +13,24 @@ size = Vector2(426, 612)
 [node name="Node2D" type="Node2D" unique_id=1920665203]
 script = ExtResource("1_kod2i")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1663511193]
-texture = ExtResource("1_2bib2")
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=252579777]
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("2_1g36t")
 
-[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=13850032]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=633846395]
+position = Vector2(1.5169367e-05, -1.7315138e-05)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_1g36t")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=420985430]
+[node name="Area2D" type="Area2D" parent="RigidBody2D" unique_id=13850032]
+scale = Vector2(0.6525821, 0.6525821)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D" unique_id=420985430]
 shape = SubResource("RectangleShape2D_kod2i")
 
-[connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/Area2D" unique_id=1663511193]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("1_2bib2")
+
+[connection signal="mouse_entered" from="RigidBody2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="RigidBody2D/Area2D" to="." method="_on_area_2d_mouse_exited"]
