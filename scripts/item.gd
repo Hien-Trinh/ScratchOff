@@ -26,3 +26,6 @@ func set_value(new_value):
 
 func set_item_name(new_name):
 	item_name = new_name
+
+func _to_string():
+	return item_name + ", Value: " + str(item_value)

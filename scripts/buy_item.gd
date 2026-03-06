@@ -27,7 +27,7 @@ func buy_ticket():
 	var diff : float = GameManager.get_balance() - buy_cost
 	
 	if(diff >= 0):
-		GameManager.add_ticket(GameManager.generate_ticket(buy_name, item_max_payout, buy_texture))
+		GameManager.add_ticket(GameManager.generate_ticket("LotsOfMoney"))
 		GameManager.set_balance(diff)
 		# Inventory should update automatically b/c EventBus
 		# This doesn't actually add something to the game in the table scene

@@ -60,6 +60,7 @@ text = "TEMP"
 script = ExtResource("5_f8gav")
 buy_name = "LotsofMoney"
 buy_texture = ExtResource("2_f8gav")
+item_max_payout = 20.0
 metadata/_edit_use_anchors_ = true
 
 [node name="TicketHeader" type="Label" parent="Tickets" unique_id=832677860]
