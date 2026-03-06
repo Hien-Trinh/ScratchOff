@@ -9,6 +9,9 @@ extends Area2D
 @export var damp: float = 20.0
 @export var velocity_multiplier: float = 2.0
 
+# Only one active card at a time
+static var active_card: Area2D = null
+
 var displacement: float = 0.0
 var oscillator_velocity: float = 0.0
 
@@ -27,7 +30,7 @@ var drag_offset: Vector2 = Vector2.ZERO
 @onready var shadow: Sprite2D = $Shadow
 @onready var card_display: Sprite2D = $CardDisplay
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
-@onready var eraser_mask: Node2D = $MaskViewport/EraserMask
+@onready var eraser_mask: Node2D = $MaskViewport/ScratchBounds/EraserMask
 @onready var card_size: Vector2 = Vector2($MainViewport.size) * card_display.scale
 
 func _ready() -> void:
@@ -66,6 +69,10 @@ func handle_shadow(_delta: float) -> void:
 
 # This built-in function fires when the mouse interacts with the Area2D's CollisionShape
 func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	# If another card is currently active, ignore this event.
+	if active_card != null and active_card != self: return 
+	active_card = self
+
 	# Handle Mouse Click (Start Dragging)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed():
@@ -97,7 +104,6 @@ func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	var rot_x: float = rad_to_deg(lerp_angle(-angle_x_max, angle_x_max, lerp_val_x))
 	var rot_y: float = rad_to_deg(lerp_angle(angle_y_max, -angle_y_max, lerp_val_y))
 
-
 	card_display.material.set_shader_parameter("x_rot", rot_y)
 	card_display.material.set_shader_parameter("y_rot", rot_x)
 
@@ -105,6 +111,9 @@ func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 # We use global input to detect the drop. If the user moves the mouse wildly, 
 # it might leave the collision shape before they release the click.
 func _input(event: InputEvent) -> void:
+	# If a card is being dragged/scratched, and it's not this one, ignore the mouse completely
+	if active_card != null and active_card != self: return
+
 	# Using drag_offset prevents snapping the card's exact center to the cursor
 	if event is InputEventMouseMotion and following_mouse:
 		global_position = get_global_mouse_position() + drag_offset
@@ -127,9 +136,13 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
 		if not event.is_pressed():
 			is_scratching = false
+			eraser_mask.break_line()
 
 # Connect this via the Godot Node Editor signals -> Area2D.mouse_entered
 func _on_mouse_entered() -> void:
+	# Don't hover if the player is currently dragging/scratching a card
+	if active_card != null: return
+
 	if tween_hover and tween_hover.is_running():
 		tween_hover.kill()
 	tween_hover = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
@@ -137,6 +150,10 @@ func _on_mouse_entered() -> void:
 
 # Connect this via the Godot Node Editor signals -> Area2D.mouse_exited
 func _on_mouse_exited() -> void:
+	# Only give up the lock if this card is the one holding it
+	if active_card == self:
+		active_card = null
+
 	# Reset rotation
 	if tween_rot and tween_rot.is_running():
 		tween_rot.kill()

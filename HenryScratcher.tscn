@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://bl2gv8gwifwwc" path="res://HScratcherScript.gd" id="1_kod2i"]
 [ext_resource type="Script" uid="uid://bwjl3xbbyygxx" path="res://pushScript.gd" id="2_1g36t"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1g36t"]
+rough = true
+bounce = 4.6
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1g36t"]
 size = Vector2(278.00012, 398.0002)
 
@@ -15,6 +19,7 @@ script = ExtResource("1_kod2i")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=252579777]
 scale = Vector2(0.99999994, 0.99999994)
+physics_material_override = SubResource("PhysicsMaterial_1g36t")
 script = ExtResource("2_1g36t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=633846395]
