@@ -27,17 +27,32 @@ var velocity: Vector2
 var drag_offset: Vector2 = Vector2.ZERO
 
 # Make sure these paths match your new 2D node structure
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var shadow: Sprite2D = $Shadow
 @onready var card_display: Sprite2D = $CardDisplay
-@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var eraser_mask: Node2D = $MaskViewport/ScratchBounds/EraserMask
+@onready var foil_dust: CPUParticles2D = $FoilDust
 @onready var card_size: Vector2 = Vector2($MainViewport.size) * card_display.scale
+
+# Scratch math
+var grid_cell_size: int = 8
+var grid_cols: int = 16 # 128 width / 8
+var grid_rows: int = 8  # 64 height / 8
+var total_cells: int = grid_cols * grid_rows # 128 total squares
+var scratched_grid: Array[bool] = []
+var scratched_cells: int = 0
+var card_revealed: bool = false
+const scratchable_area_offset:= Vector2(26.0, 82.0)
+const scratch_success_threshold: float = 0.80
 
 func _ready() -> void:
 	# Convert to radians because lerp_angle is using that
 	angle_x_max = deg_to_rad(angle_x_max)
 	angle_y_max = deg_to_rad(angle_y_max)
-	#collision_shape.set_deferred("disabled", true)
+	
+	# Create our 128-cell grid and set them all to 'false' (unscratched)
+	scratched_grid.resize(total_cells)
+	scratched_grid.fill(false)
 
 func _process(delta: float) -> void:
 	rotate_velocity(delta)
@@ -85,6 +100,8 @@ func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 		if event.is_pressed():
 			is_scratching = true
 			_send_scratch_point()
+			foil_dust.global_position = get_global_mouse_position()
+			foil_dust.emitting = true
 
 	# Handle Shader Rotation on Hover
 	if following_mouse: return
@@ -131,12 +148,14 @@ func _input(event: InputEvent) -> void:
 	# Handle Scratch Dragging
 	if event is InputEventMouseMotion and is_scratching:
 		_send_scratch_point()
+		foil_dust.global_position = get_global_mouse_position()
 
 	# Release Right Click (Stop Scratching)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
 		if not event.is_pressed():
 			is_scratching = false
 			eraser_mask.break_line()
+			foil_dust.emitting = false
 
 # Connect this via the Godot Node Editor signals -> Area2D.mouse_entered
 func _on_mouse_entered() -> void:
@@ -151,8 +170,12 @@ func _on_mouse_entered() -> void:
 # Connect this via the Godot Node Editor signals -> Area2D.mouse_exited
 func _on_mouse_exited() -> void:
 	# Only give up the lock if this card is the one holding it
-	if active_card == self:
-		active_card = null
+	if active_card == self: active_card = null
+	
+	# Cancel scratch if mouse leaves the card
+	is_scratching = false
+	eraser_mask.break_line()
+	foil_dust.emitting = false
 
 	# Reset rotation
 	if tween_rot and tween_rot.is_running():
@@ -171,4 +194,37 @@ func _send_scratch_point() -> void:
 	# Maps the centered physics coordinates to the top-left Viewport coordinates
 	var local_pos = get_local_mouse_position()
 	var viewport_pos = local_pos + (card_size / 2.0)
-	eraser_mask.add_scratch_point(viewport_pos)
+	var mask_local_pos = viewport_pos - scratchable_area_offset
+	eraser_mask.add_scratch_point(mask_local_pos)
+	_update_scratch_grid(mask_local_pos)
+
+func _update_scratch_grid(mask_local_pos: Vector2) -> void:
+	if card_revealed: return # Stop doing math if they already won!
+
+	var brush_radius: float = eraser_mask.brush_size / 2.0
+
+	# Find the min and max grid columns/rows the brush is currently touching
+	var min_col = max(0, int((mask_local_pos.x - brush_radius) / grid_cell_size))
+	var max_col = min(grid_cols - 1, int((mask_local_pos.x + brush_radius) / grid_cell_size))
+	var min_row = max(0, int((mask_local_pos.y - brush_radius) / grid_cell_size))
+	var max_row = min(grid_rows - 1, int((mask_local_pos.y + brush_radius) / grid_cell_size))
+
+	# Loop through only the squares currently under the brush
+	for col in range(min_col, max_col + 1):
+		for row in range(min_row, max_row + 1):
+			var index = row * grid_cols + col
+			if not scratched_grid[index]:
+				# Get the exact center point of this specific grid cell
+				var cell_center = Vector2(col * grid_cell_size + (grid_cell_size / 2.0), row * grid_cell_size + (grid_cell_size / 2.0))
+
+				# If the center of the cell is inside the brush circle, consider it scratched
+				if mask_local_pos.distance_to(cell_center) <= brush_radius:
+					scratched_grid[index] = true
+					scratched_cells += 1
+
+	# Calculate percentage
+	var percentage = float(scratched_cells) / float(total_cells)
+	if percentage >= scratch_success_threshold:
+		card_revealed = true
+		print("Card fully revealed!")
+		# TODO: send signal that card is revealed

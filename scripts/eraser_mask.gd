@@ -2,12 +2,11 @@ extends Node2D
 
 var scratch_points := PackedVector2Array()
 var brush_size: float = 30.0 # Adjust thickness of the coin/eraser
-var scratchable_area_offset:= Vector2(26.0, 82.0)
 
 const pen_up := Vector2(-9999, -9999)
 
 func add_scratch_point(pos: Vector2) -> void:
-	scratch_points.append(pos - scratchable_area_offset)
+	scratch_points.append(pos)
 	queue_redraw()
 
 func break_line() -> void:
