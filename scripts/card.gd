@@ -1,19 +1,18 @@
-extends Area2D
+extends RigidBody2D
 
 @export var angle_x_max: float = 7.5
 @export var angle_y_max: float = 7.5
 @export var max_offset_shadow: float = 40.0
 
-@export_category("Oscillator")
-@export var spring: float = 150.0
-@export var damp: float = 20.0
+
+@export var spring: float = 25.0 # How fast the card 'spring' to the mouse drag
+@export var tilt_strength: float = 0.001
+@export var tilt_angle_range_radians: float = 0.7
+@export var angular_velocity_multiplier: float = 15.0
 @export var velocity_multiplier: float = 2.0
 
 # Only one active card at a time
-static var active_card: Area2D = null
-
-var displacement: float = 0.0
-var oscillator_velocity: float = 0.0
+static var active_card: RigidBody2D = null
 
 var tween_rot: Tween
 var tween_hover: Tween
@@ -22,8 +21,6 @@ var tween_handle: Tween
 
 var following_mouse: bool = false
 var is_scratching: bool = false
-var last_pos: Vector2
-var velocity: Vector2
 var drag_offset: Vector2 = Vector2.ZERO
 
 # Make sure these paths match your new 2D node structure
@@ -54,25 +51,38 @@ func _ready() -> void:
 	scratched_grid.resize(total_cells)
 	scratched_grid.fill(false)
 
-func _process(delta: float) -> void:
-	rotate_velocity(delta)
-	handle_shadow(delta)
+	# Viewport setup in case the editor crashes out
+	# Give the main card display the feed from the MainViewport
+	card_display.texture = $MainViewport.get_texture()
+	
+	# Duplicate the material after assigning the texture so it doesn't break
+	card_display.material = card_display.material.duplicate()
+	
+	# Tell the FoilSprite's shader to use the MaskViewport as its eraser mask
+	var foil_sprite: Sprite2D = $MainViewport/FoilSprite
+	
+	# Ensure the Foil has its own unique material instance
+	foil_sprite.material = foil_sprite.material.duplicate() 
+	foil_sprite.material.set_shader_parameter("mask_texture", $MaskViewport.get_texture())
+	
 
-func rotate_velocity(delta: float) -> void:
-	if not following_mouse: return
-
-	# Compute the velocity
-	velocity = (position - last_pos) / delta
-	last_pos = position
-
-	oscillator_velocity += velocity.normalized().x * velocity_multiplier
-
-	# Oscillator stuff
-	var force = - spring * displacement - damp * oscillator_velocity
-	oscillator_velocity += force * delta
-	displacement += oscillator_velocity * delta
-
-	rotation = displacement
+func _physics_process(_delta: float) -> void:
+	if following_mouse:
+		# Pull toward mouse
+		var target_pos = get_global_mouse_position() + drag_offset
+		var direction = target_pos - global_position
+		
+		# Set velocity to move towards the target.
+		linear_velocity = direction * spring
+		
+		# Tilt based on movement speed
+		var target_tilt = clamp(linear_velocity.x * tilt_strength, -tilt_angle_range_radians, tilt_angle_range_radians)
+		angular_velocity = (target_tilt - rotation) * angular_velocity_multiplier
+	else:
+		# Return to upright when dropped
+		angular_velocity = (0.0 - rotation) * angular_velocity_multiplier
+		
+	handle_shadow(_delta)
 
 func handle_shadow(_delta: float) -> void:
 	# Y position is never changed.
@@ -84,20 +94,22 @@ func handle_shadow(_delta: float) -> void:
 
 # This built-in function fires when the mouse interacts with the Area2D's CollisionShape
 func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	# If another card is currently active, ignore this event.
-	if active_card != null and active_card != self: return 
-	active_card = self
-
 	# Handle Mouse Click (Start Dragging)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed():
+			# If another card is currently active, ignore this event.
+			if active_card != null and active_card != self: return 
+			active_card = self
+
 			following_mouse = true
-			# Grab the offset so we drag from where we clicked, not the center
 			drag_offset = global_position - get_global_mouse_position()
 
 	# Right Click: Start Scratching
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
 		if event.is_pressed():
+			if active_card != null and active_card != self: return 
+			active_card = self
+
 			is_scratching = true
 			_send_scratch_point()
 			foil_dust.global_position = get_global_mouse_position()
@@ -131,19 +143,11 @@ func _input(event: InputEvent) -> void:
 	# If a card is being dragged/scratched, and it's not this one, ignore the mouse completely
 	if active_card != null and active_card != self: return
 
-	# Using drag_offset prevents snapping the card's exact center to the cursor
-	if event is InputEventMouseMotion and following_mouse:
-		global_position = get_global_mouse_position() + drag_offset
-
 	# Release Left Click (Drop)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.is_pressed() and following_mouse:
-			# Drop card
 			following_mouse = false
-			if tween_handle and tween_handle.is_running():
-				tween_handle.kill()
-			tween_handle = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
-			tween_handle.tween_property(self , "rotation", 0.0, 0.3)
+			active_card = null
 
 	# Handle Scratch Dragging
 	if event is InputEventMouseMotion and is_scratching:
@@ -156,6 +160,7 @@ func _input(event: InputEvent) -> void:
 			is_scratching = false
 			eraser_mask.break_line()
 			foil_dust.emitting = false
+			active_card = null
 
 # Connect this via the Godot Node Editor signals -> Area2D.mouse_entered
 func _on_mouse_entered() -> void:
@@ -164,19 +169,12 @@ func _on_mouse_entered() -> void:
 
 	if tween_hover and tween_hover.is_running():
 		tween_hover.kill()
-	tween_hover = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
-	tween_hover.tween_property(self , "scale", Vector2(1.2, 1.2), 0.5)
+	tween_hover = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC).set_parallel(true)
+	tween_hover.tween_property(card_display, "scale", Vector2(1.2, 1.2), 0.5)
+	tween_hover.tween_property(shadow, "scale", Vector2(1.2, 1.2), 0.5)
 
 # Connect this via the Godot Node Editor signals -> Area2D.mouse_exited
 func _on_mouse_exited() -> void:
-	# Only give up the lock if this card is the one holding it
-	if active_card == self: active_card = null
-	
-	# Cancel scratch if mouse leaves the card
-	is_scratching = false
-	eraser_mask.break_line()
-	foil_dust.emitting = false
-
 	# Reset rotation
 	if tween_rot and tween_rot.is_running():
 		tween_rot.kill()
@@ -187,8 +185,9 @@ func _on_mouse_exited() -> void:
 	# Reset scale
 	if tween_hover and tween_hover.is_running():
 		tween_hover.kill()
-	tween_hover = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
-	tween_hover.tween_property(self , "scale", Vector2.ONE, 0.55)
+	tween_hover = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC).set_parallel(true)
+	tween_hover.tween_property(card_display, "scale", Vector2.ONE, 0.55)
+	tween_hover.tween_property(shadow, "scale", Vector2.ONE, 0.55)
 
 func _send_scratch_point() -> void:
 	# Maps the centered physics coordinates to the top-left Viewport coordinates

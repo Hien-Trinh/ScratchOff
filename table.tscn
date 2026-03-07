@@ -9,3 +9,9 @@ position = Vector2(954, 404)
 
 [node name="Card" parent="." unique_id=935743332 instance=ExtResource("1_jd0nb")]
 position = Vector2(572, 300)
+
+[node name="Card3" parent="." unique_id=1111863974 instance=ExtResource("1_jd0nb")]
+position = Vector2(686, 548)
+
+[node name="Card4" parent="." unique_id=672377082 instance=ExtResource("1_jd0nb")]
+position = Vector2(405, 502)

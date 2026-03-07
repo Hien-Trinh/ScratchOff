@@ -19,18 +19,22 @@ shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_q5obu"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_pjytt"]
 viewport_path = NodePath("MainViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_1i5pp"]
 viewport_path = NodePath("MaskViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pjytt"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1i5pp"]
 resource_local_to_scene = true
 shader = ExtResource("5_1i5pp")
 shader_parameter/mask_texture = SubResource("ViewportTexture_1i5pp")
 
-[node name="Card" type="Area2D" unique_id=1753901022]
+[node name="Card" type="RigidBody2D" unique_id=1111863974]
+input_pickable = true
+gravity_scale = 0.0
+linear_damp = 10.0
+angular_damp = 10.0
 script = ExtResource("3_q5obu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1458012797]
@@ -43,7 +47,7 @@ texture = ExtResource("2_q5obu")
 
 [node name="CardDisplay" type="Sprite2D" parent="." unique_id=1280998130]
 material = SubResource("ShaderMaterial_q5obu")
-texture = SubResource("ViewportTexture_q5obu")
+texture = SubResource("ViewportTexture_pjytt")
 
 [node name="MainViewport" type="SubViewport" parent="." unique_id=495941452]
 disable_3d = true
@@ -57,7 +61,7 @@ offset = Vector2(26, 82)
 
 [node name="FoilSprite" type="Sprite2D" parent="MainViewport" unique_id=1629320849]
 clip_children = 2
-material = SubResource("ShaderMaterial_pjytt")
+material = SubResource("ShaderMaterial_1i5pp")
 texture = ExtResource("2_q5obu")
 centered = false
 
