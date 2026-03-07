@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d3fh7koe6c1bg" path="res://inventory.tscn" id="1_68nve"]
 [ext_resource type="Texture2D" uid="uid://de7emop815p5h" path="res://assets/upgrades/temp_up.svg" id="2_68nve"]
 [ext_resource type="Texture2D" uid="uid://deobaci2cicvx" path="res://assets/cards/lots-of-money.png" id="2_f8gav"]
+[ext_resource type="Texture2D" uid="uid://dt8ojhx3dmwmg" path="res://assets/cards/NuclearCapital180.png" id="2_qejid"]
 [ext_resource type="LabelSettings" uid="uid://buxtvmxr8t4no" path="res://themes/shop_header.tres" id="2_rh1mo"]
 [ext_resource type="Script" uid="uid://7tcsu8ee704u" path="res://scripts/buy_item.gd" id="5_f8gav"]
 
@@ -58,7 +59,8 @@ anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
-buy_name = "LotsofMoney"
+buy_cost = 5.0
+buy_name = "LotsOfMoney"
 buy_texture = ExtResource("2_f8gav")
 item_max_payout = 20.0
 metadata/_edit_use_anchors_ = true
@@ -88,14 +90,11 @@ offset_bottom = 195.33336
 [node name="Upgrade2" type="TextureRect" parent="Upgrades" unique_id=139241062]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.20572917
-anchor_top = 0.61388886
-anchor_right = 0.316667
-anchor_bottom = 0.81111115
-offset_left = 305.10416
-offset_top = 483.11102
-offset_right = 477.66663
-offset_bottom = 656.2221
+anchor_left = 7.158333
+anchor_top = 12.691664
+anchor_right = 11.583333
+anchor_bottom = 17.216663
+offset_bottom = 6.1035156e-05
 pivot_offset = Vector2(117, 117)
 texture = ExtResource("2_68nve")
 metadata/_edit_use_anchors_ = true
@@ -110,6 +109,7 @@ anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
+buy_cost = 20.0
 buy_name = "Upgrade2"
 buy_texture = ExtResource("2_68nve")
 is_upgrade = true
@@ -140,7 +140,8 @@ anchor_bottom = 1.5735497
 theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
-buy_name = "Upgrade1"
+buy_cost = 10.0
+buy_name = "Mult1"
 buy_texture = ExtResource("2_68nve")
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
@@ -159,3 +160,35 @@ offset_bottom = 418.53445
 text = "UPGRADES"
 label_settings = ExtResource("2_rh1mo")
 metadata/_edit_use_anchors_ = true
+
+[node name="Ticket2" type="TextureRect" parent="." unique_id=1133795772]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1796875
+anchor_top = 0.14351852
+anchor_right = 0.2734375
+anchor_bottom = 0.3101852
+pivot_offset = Vector2(83, 91)
+texture = ExtResource("2_qejid")
+metadata/_edit_use_anchors_ = true
+
+[node name="Buy_NC" type="Button" parent="Ticket2" unique_id=976072297]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0703125
+anchor_top = 1.0546875
+anchor_right = 1.0625
+anchor_bottom = 1.5625
+theme_override_font_sizes/font_size = 35
+text = "TEMP"
+script = ExtResource("5_f8gav")
+buy_cost = 10.0
+buy_name = "NuclearCapital"
+buy_texture = ExtResource("2_qejid")
+item_max_payout = 20.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Tickets/Ticket1/Button" to="Tickets/Ticket1/Button" method="_on_pressed"]
+[connection signal="pressed" from="Upgrades/Upgrade2/Button" to="Upgrades/Upgrade2/Button" method="_on_pressed"]
+[connection signal="pressed" from="Upgrades/Upgrade1/Button" to="Upgrades/Upgrade1/Button" method="_on_pressed"]
+[connection signal="pressed" from="Ticket2/Buy_NC" to="Ticket2/Buy_NC" method="_on_pressed"]

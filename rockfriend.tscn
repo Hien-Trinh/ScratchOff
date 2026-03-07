@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://db2p8rikigsgy"]
+
+[ext_resource type="Texture2D" uid="uid://dd20k2w7ar65q" path="res://assets/other/pdstone.png" id="1_lbvxq"]
+
+[node name="RockFriend" type="Node2D" unique_id=1018660827]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1896128275]
+position = Vector2(935.98486, 462.50003)
+scale = Vector2(0.70106983, 0.7054382)
+texture = ExtResource("1_lbvxq")
