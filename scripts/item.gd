@@ -27,5 +27,7 @@ func set_value(new_value):
 func set_item_name(new_name):
 	item_name = new_name
 
-func _to_string():
-	return item_name + ", Value: " + str(item_value)
+func _to_string(): # Overriding the default _to_string() method
+	return "[br]" + item_name + ", Value: " + str(item_value)
+	# Hide value from player in test build
+	# [br] is BBCode, signifies a text line break

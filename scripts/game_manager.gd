@@ -13,11 +13,11 @@ var mult : float :
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mult = 1.0
-	balance = 0
+	set_balance(100)
 	init_ticket_dict()
+	init_upgrade_dict()
 	add_ticket(generate_ticket("LotsOfMoney"))
 	print(ticketList)
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -49,6 +49,17 @@ func set_mult(new_value):
 	mult = new_value
 	EventBus.mult_updated.emit(mult)
 
+func get_upgrade_dict():
+	return upgrade_dict
+	
+func get_ticket_list():
+	return ticketList
+	
+func activate_upgrade(upgrade_name):
+	if(upgrade_dict.has(upgrade_name)):
+		upgrade_dict[upgrade_name].set_is_active(true)
+		print(upgrade_name + " is active: " + str(upgrade_dict[upgrade_name].get_is_active()))
+		EventBus.upgrade_inventory_updated.emit()
 # Runs at startup.
 # Adds one of every Item to the ticket_template_dict{} dictionary.
 func init_ticket_dict():
@@ -56,6 +67,11 @@ func init_ticket_dict():
 	ticket_template_dict["LotsOfMoney"] = ["Lots of Money", 20, lom_texture]
 	var nc_texture = preload("res://assets/cards/NuclearCapital180.png")
 	ticket_template_dict["NuclearCapital"] = ["Nuclear Capital", 50, nc_texture]
+
+func init_upgrade_dict():
+	var mult1_texture = preload("res://assets/upgrades/temp_up.svg")
+	upgrade_dict["Mult1"] = MultiplierUpgrade.new("1.5x Multiplier", mult1_texture, 1.5)
+	print(upgrade_dict)
 
 func generate_ticket(ticket_key : String):
 	if(ticket_template_dict.has(ticket_key)):
