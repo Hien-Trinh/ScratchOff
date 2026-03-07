@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ck2kjcjbj5mwa" path="res://assets/cards/ScratcherImage.jpg" id="1_2bib2"]
 [ext_resource type="Script" uid="uid://bl2gv8gwifwwc" path="res://HScratcherScript.gd" id="1_kod2i"]
-[ext_resource type="Script" uid="uid://bwjl3xbbyygxx" path="res://pushScript.gd" id="2_1g36t"]
+[ext_resource type="Script" uid="uid://bwjl3xbbyygxx" path="res://scripts/pushScript.gd" id="2_1g36t"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1g36t"]
 rough = true
