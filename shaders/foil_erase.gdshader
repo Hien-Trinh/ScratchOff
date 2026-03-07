@@ -8,6 +8,6 @@ void fragment() {
 	vec4 mask = texture(mask_texture, UV);
 	
 	COLOR = foil;
-	// Subtract the mask's alpha from the foil's alpha
-	COLOR.a = clamp(foil.a - mask.a, 0.0, 1.0);
+	// Subtract the mask's red from the foil's alpha
+	COLOR.a = clamp(foil.a - mask.r, 0.0, 1.0);
 }

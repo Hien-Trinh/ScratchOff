@@ -1,6 +1,6 @@
 [gd_resource type="LabelSettings" format=3 uid="uid://buxtvmxr8t4no"]
 
-[ext_resource type="FontFile" uid="uid://bqxdvnqmuulum" path="res://assets/Fonts/Coolvetica Rg.otf" id="1_oa5vg"]
+[ext_resource type="FontFile" uid="uid://bqxdvnqmuulum" path="res://assets/fonts/Coolvetica Rg.otf" id="1_oa5vg"]
 
 [resource]
 font = ExtResource("1_oa5vg")

@@ -3,8 +3,8 @@
 [ext_resource type="Shader" uid="uid://bxjuyddt5wmul" path="res://shaders/2D-perspective.gdshader" id="1_rjlel"]
 [ext_resource type="Texture2D" uid="uid://deobaci2cicvx" path="res://assets/cards/lots-of-money.png" id="2_q5obu"]
 [ext_resource type="Script" uid="uid://c0qsq4y3fhco5" path="res://scripts/card.gd" id="3_q5obu"]
+[ext_resource type="Texture2D" uid="uid://yd4w2k3gg630" path="res://assets/scratch_reward/temp_scratch_100.png" id="4_1i5pp"]
 [ext_resource type="Script" uid="uid://b0sqm7r15n5eo" path="res://scripts/eraser_mask.gd" id="4_e484p"]
-[ext_resource type="Texture2D" uid="uid://0jx845p4rr1q" path="res://icon.svg" id="4_fpac0"]
 [ext_resource type="Shader" uid="uid://b8qqrs8wkxbqq" path="res://shaders/foil_erase.gdshader" id="5_1i5pp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpac0"]
@@ -19,18 +19,22 @@ shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_q5obu"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_pjytt"]
 viewport_path = NodePath("MainViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_1i5pp"]
 viewport_path = NodePath("MaskViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pjytt"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1i5pp"]
 resource_local_to_scene = true
 shader = ExtResource("5_1i5pp")
 shader_parameter/mask_texture = SubResource("ViewportTexture_1i5pp")
 
-[node name="Card" type="Area2D" unique_id=1753901022]
+[node name="Card" type="RigidBody2D" unique_id=1111863974]
+input_pickable = true
+gravity_scale = 0.0
+linear_damp = 10.0
+angular_damp = 10.0
 script = ExtResource("3_q5obu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1458012797]
@@ -43,7 +47,7 @@ texture = ExtResource("2_q5obu")
 
 [node name="CardDisplay" type="Sprite2D" parent="." unique_id=1280998130]
 material = SubResource("ShaderMaterial_q5obu")
-texture = SubResource("ViewportTexture_q5obu")
+texture = SubResource("ViewportTexture_pjytt")
 
 [node name="MainViewport" type="SubViewport" parent="." unique_id=495941452]
 disable_3d = true
@@ -51,12 +55,13 @@ transparent_bg = true
 size = Vector2i(180, 180)
 
 [node name="RewardSprite" type="Sprite2D" parent="MainViewport" unique_id=374424711]
-texture = ExtResource("4_fpac0")
+texture = ExtResource("4_1i5pp")
 centered = false
+offset = Vector2(26, 82)
 
 [node name="FoilSprite" type="Sprite2D" parent="MainViewport" unique_id=1629320849]
 clip_children = 2
-material = SubResource("ShaderMaterial_pjytt")
+material = SubResource("ShaderMaterial_1i5pp")
 texture = ExtResource("2_q5obu")
 centered = false
 
@@ -65,8 +70,29 @@ disable_3d = true
 transparent_bg = true
 size = Vector2i(180, 180)
 
-[node name="EraserMask" type="Node2D" parent="MaskViewport" unique_id=80648510]
+[node name="ScratchBounds" type="ColorRect" parent="MaskViewport" unique_id=2002547601]
+clip_children = 1
+offset_left = 26.0
+offset_top = 82.0
+offset_right = 154.0
+offset_bottom = 146.0
+color = Color(0, 0, 0, 1)
+
+[node name="EraserMask" type="Node2D" parent="MaskViewport/ScratchBounds" unique_id=80648510]
 script = ExtResource("4_e484p")
+
+[node name="FoilDust" type="CPUParticles2D" parent="." unique_id=1554178819]
+emitting = false
+amount = 60
+lifetime = 0.5
+explosiveness = 0.1
+direction = Vector2(0, -1)
+spread = 90.0
+gravity = Vector2(0, 800)
+initial_velocity_max = 150.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(0.7529412, 0.7529412, 0.7529412, 1)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
