@@ -72,9 +72,6 @@ anchor_bottom = 0.8490741
 offset_top = -3.0517578e-05
 theme = ExtResource("3_mrqgh")
 bbcode_enabled = true
-text = "Lorem Ipsum
-Dolor
-[i]Item in cart[/i]"
 metadata/_edit_use_anchors_ = true
 
 [node name="MoneyLabel" type="ColorRect" parent="." unique_id=1709975994]

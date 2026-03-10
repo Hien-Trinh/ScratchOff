@@ -188,6 +188,15 @@ buy_texture = ExtResource("2_qejid")
 item_max_payout = 20.0
 metadata/_edit_use_anchors_ = true
 
+[node name="Label" type="Label" parent="." unique_id=1783742071]
+layout_mode = 0
+offset_left = 1509.0
+offset_top = 906.0
+offset_right = 1768.0
+offset_bottom = 979.0
+text = "CONTINUE"
+label_settings = ExtResource("2_rh1mo")
+
 [connection signal="pressed" from="Tickets/Ticket1/Button" to="Tickets/Ticket1/Button" method="_on_pressed"]
 [connection signal="pressed" from="Upgrades/Upgrade2/Button" to="Upgrades/Upgrade2/Button" method="_on_pressed"]
 [connection signal="pressed" from="Upgrades/Upgrade1/Button" to="Upgrades/Upgrade1/Button" method="_on_pressed"]
