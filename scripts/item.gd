@@ -1,3 +1,4 @@
+# Rename ts Sam
 extends Node
 class_name Item
 # Class for lottery tickets
@@ -14,6 +15,7 @@ func _init(new_name :  String, new_value : float, new_texture : Texture2D):
 	item_name = new_name
 	item_value = new_value
 	item_texture = new_texture
+	# item_foil_texture & item_reward_texture
 	
 func get_value():
 	return item_value

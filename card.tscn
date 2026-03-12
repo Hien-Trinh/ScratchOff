@@ -33,8 +33,8 @@ shader_parameter/mask_texture = SubResource("ViewportTexture_1i5pp")
 [node name="Card" type="RigidBody2D" unique_id=1111863974]
 input_pickable = true
 gravity_scale = 0.0
-linear_damp = 10.0
-angular_damp = 10.0
+linear_damp = 7.0
+angular_damp = 7.0
 script = ExtResource("3_q5obu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1458012797]

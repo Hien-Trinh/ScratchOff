@@ -77,6 +77,7 @@ func generate_ticket(ticket_key : String):
 	if(ticket_template_dict.has(ticket_key)):
 		var ticketInfo = ticket_template_dict.get(ticket_key)
 		var ticket_name = ticketInfo[0]
+		# min_value SAMMMMMM
 		var max_value = ticketInfo[1]
 		var texture = ticketInfo[2]
 		var act_val = snappedf(rng.randf_range(0.0, max_value) * mult, 0.01)
