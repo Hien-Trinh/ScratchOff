@@ -24,7 +24,7 @@ func on_ticket_inventory_updated(new_list):
 	localList = new_list
 	for item in localList:
 		ticketBody.text += item._to_string()
-		
+
 func on_upgrade_inventory_updated():
 	upgradeBody.text = ""
 	var localDict = GameManager.get_upgrade_dict().duplicate()
@@ -32,8 +32,7 @@ func on_upgrade_inventory_updated():
 		var upgrade = localDict[upgradeKey]
 		if (upgrade.get_is_active()):
 			upgradeBody.text += upgrade._to_string()
-		
+
 
 func on_balance_updated(new_value):
 	balanceLabel.text = "$" + str(new_value)
-	

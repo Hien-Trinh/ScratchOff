@@ -5,7 +5,6 @@ extends Button
 @export var buy_texture : Texture2D
 @export var is_upgrade : bool
 
-@export var item_max_payout : float # Sam refactor this
 # Only used for ticket items
 var upgrade_already_owned : bool
 # Only used for upgrades

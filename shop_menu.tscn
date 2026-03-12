@@ -62,7 +62,6 @@ script = ExtResource("5_f8gav")
 buy_cost = 5.0
 buy_name = "LotsOfMoney"
 buy_texture = ExtResource("2_f8gav")
-item_max_payout = 20.0
 metadata/_edit_use_anchors_ = true
 
 [node name="TicketHeader" type="Label" parent="Tickets" unique_id=832677860]
@@ -185,7 +184,6 @@ script = ExtResource("5_f8gav")
 buy_cost = 10.0
 buy_name = "NuclearCapital"
 buy_texture = ExtResource("2_qejid")
-item_max_payout = 20.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=1783742071]

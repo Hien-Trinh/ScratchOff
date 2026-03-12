@@ -4,6 +4,8 @@ extends Node
 @onready var upgrade_dict = {}
 @onready var ticket_template_dict = {}
 
+@onready var valueArray = [1, 5, 10, 25, 50, 100, 500, 1000]
+
 var rng = RandomNumberGenerator.new()
 var balance : float : 
 	set = set_balance, get = get_balance
@@ -23,9 +25,9 @@ func _ready():
 func _process(_delta):
 	pass
 
-func add_ticket(item : Item):
+func add_ticket(cardItem : CardItem):
 	# Add item to ticketList Array
-	ticketList.append(item)
+	ticketList.append(cardItem)
 	# Broadcast updated Array to EventBus with corresponding signal
 	EventBus.ticket_inventory_updated.emit(ticketList)
 
@@ -60,13 +62,15 @@ func activate_upgrade(upgrade_name):
 		upgrade_dict[upgrade_name].set_is_active(true)
 		print(upgrade_name + " is active: " + str(upgrade_dict[upgrade_name].get_is_active()))
 		EventBus.upgrade_inventory_updated.emit()
+
 # Runs at startup.
 # Adds one of every Item to the ticket_template_dict{} dictionary.
 func init_ticket_dict():
 	var lom_texture = preload("res://assets/cards/lots-of-money.png")
-	ticket_template_dict["LotsOfMoney"] = ["Lots of Money", 20, lom_texture]
+	ticket_template_dict["LotsOfMoney"] = ["Lots of Money", 0, 2, lom_texture]
+	# Integers correspond to indexes in valueArray[]
 	var nc_texture = preload("res://assets/cards/NuclearCapital180.png")
-	ticket_template_dict["NuclearCapital"] = ["Nuclear Capital", 50, nc_texture]
+	ticket_template_dict["NuclearCapital"] = ["Nuclear Capital", 2, 4, nc_texture]
 
 func init_upgrade_dict():
 	var mult1_texture = preload("res://assets/upgrades/temp_up.svg")
@@ -77,9 +81,9 @@ func generate_ticket(ticket_key : String):
 	if(ticket_template_dict.has(ticket_key)):
 		var ticketInfo = ticket_template_dict.get(ticket_key)
 		var ticket_name = ticketInfo[0]
-		# min_value SAMMMMMM
-		var max_value = ticketInfo[1]
-		var texture = ticketInfo[2]
-		var act_val = snappedf(rng.randf_range(0.0, max_value) * mult, 0.01)
-		return Item.new(ticket_name, act_val, texture)
+		var min_value = ticketInfo[1]
+		var max_value = ticketInfo[2]
+		var foil_texture = ticketInfo[3]
+		var act_val = valueArray[rng.randi_range(min_value, max_value)]
+		return CardItem.new(ticket_name, act_val, foil_texture)
 	else: return null
