@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://qp1046soodro"]
+
+[ext_resource type="PackedScene" uid="uid://dts74te66asgn" path="res://card.tscn" id="1_ejoyi"]
+[ext_resource type="Texture2D" uid="uid://borccr224y674" path="res://assets/hand/pixel_open.png" id="2_ihw40"]
+[ext_resource type="Script" uid="uid://sidyacdsos20" path="res://hand.gd" id="3_cmulc"]
+
+[node name="Table" type="Node2D" unique_id=1736072314]
+
+[node name="Card" parent="." unique_id=935743332 instance=ExtResource("1_ejoyi")]
+position = Vector2(572, 300)
+
+[node name="Card2" parent="." unique_id=1753901022 instance=ExtResource("1_ejoyi")]
+position = Vector2(954, 404)
+
+[node name="Card3" parent="." unique_id=1111863974 instance=ExtResource("1_ejoyi")]
+position = Vector2(686, 548)
+
+[node name="Card4" parent="." unique_id=672377082 instance=ExtResource("1_ejoyi")]
+position = Vector2(405, 502)
+
+[node name="Hand" type="Control" parent="." unique_id=1779248324]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Hand" unique_id=111658998]
+position = Vector2(243, -220)
+scale = Vector2(1, 1.2231969)
+texture = ExtResource("2_ihw40")
+offset = Vector2(1248, 873.9396)
+script = ExtResource("3_cmulc")
