@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://beaqnvm3kfjuu"]
+
+[ext_resource type="Texture2D" uid="uid://diemgvndv7rx" path="res://assets/other/wood.jpg" id="1_sbv7l"]
+[ext_resource type="Texture2D" uid="uid://ksw5uoc78hn4" path="res://assets/other/solidpink.jpg" id="2_6i44i"]
+[ext_resource type="Script" uid="uid://cyjjyhbj6867x" path="res://cashArea.gd" id="2_767yt"]
+[ext_resource type="PackedScene" uid="uid://dts74te66asgn" path="res://card.tscn" id="2_ifrvd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifrvd"]
+size = Vector2(613.09753, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6i44i"]
+size = Vector2(613.6389, 19.722229)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbv7l"]
+size = Vector2(342.11728, 15.555552)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_767yt"]
+size = Vector2(344.99222, 15.231476)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m66t3"]
+size = Vector2(1920.0001, 1080)
+
+[node name="Node2D" type="Node2D" unique_id=267635230]
+
+[node name="Wood" type="Sprite2D" parent="." unique_id=366188579]
+z_index = -9
+position = Vector2(961.00006, 540)
+scale = Vector2(3.132137, 3.0857146)
+texture = ExtResource("1_sbv7l")
+
+[node name="borders" type="Node2D" parent="." unique_id=1042715626]
+
+[node name="border" type="StaticBody2D" parent="borders" unique_id=1732255492]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/border" unique_id=708277092]
+position = Vector2(959.34753, -31)
+scale = Vector2(3.1305056, 3.0857146)
+shape = SubResource("RectangleShape2D_ifrvd")
+
+[node name="border4" type="StaticBody2D" parent="borders" unique_id=484473096]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/border4" unique_id=269273598]
+position = Vector2(960.5, 1110.4286)
+scale = Vector2(3.1305056, 3.0857146)
+shape = SubResource("RectangleShape2D_6i44i")
+
+[node name="border2" type="StaticBody2D" parent="borders" unique_id=2023213975]
+position = Vector2(-65, 0)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/border2" unique_id=896030735]
+position = Vector2(543.5, -42.00003)
+scale = Vector2(3.1305056, 3.0857146)
+shape = SubResource("RectangleShape2D_sbv7l")
+
+[node name="border3" type="StaticBody2D" parent="borders" unique_id=1023593881]
+position = Vector2(1920, 0)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/border3" unique_id=69671213]
+position = Vector2(539, -23.5)
+scale = Vector2(3.1305056, 3.0857146)
+shape = SubResource("RectangleShape2D_767yt")
+
+[node name="Label" type="Label" parent="." unique_id=793921329]
+offset_left = 31.0
+offset_top = 609.0
+offset_right = 276.0
+offset_bottom = 722.0
+theme_override_font_sizes/font_size = 40
+text = "Cash In Here
+"
+
+[node name="cashArea" type="Sprite2D" parent="." unique_id=567148726 node_paths=PackedStringArray("moneyLabel")]
+z_index = -1
+position = Vector2(175.50002, 840)
+scale = Vector2(0.18177083, 0.44444445)
+texture = ExtResource("2_6i44i")
+script = ExtResource("2_767yt")
+moneyLabel = NodePath("../moneylabel")
+
+[node name="Area2D" type="Area2D" parent="cashArea" unique_id=1180738803]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cashArea/Area2D" unique_id=28618820]
+position = Vector2(-0.00012207031, 0)
+shape = SubResource("RectangleShape2D_m66t3")
+
+[node name="moneylabel" type="Label" parent="." unique_id=461623663]
+offset_right = 386.0
+offset_bottom = 138.0
+theme_override_font_sizes/font_size = 70
+text = "Money: "
+
+[node name="Card" parent="." unique_id=1111863974 instance=ExtResource("2_ifrvd")]
+position = Vector2(728, 473)
+
+[node name="Card2" parent="." unique_id=119981275 instance=ExtResource("2_ifrvd")]
+position = Vector2(1113, 817)
+
+[node name="Card3" parent="." unique_id=1261944774 instance=ExtResource("2_ifrvd")]
+position = Vector2(564, 677)
