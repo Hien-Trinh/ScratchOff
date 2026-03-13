@@ -1,33 +1,26 @@
-extends Node
-class_name CardItem
 # Class for lottery tickets
+extends RefCounted # 
+class_name CardItem
 
-var item_value : float:
-	set = set_item_value, get = get_item_value
-	
-var item_name : String:
-	set = set_item_name, get = get_item_name
-	
-var item_foil_texture : Texture
+var card_id: String
+var card_name: String
+var card_value: float
+var card_cost: float
 
-func _init(new_name :  String, new_value : float, new_texture : Texture2D):
-	item_name = new_name
-	item_value = new_value
-	item_foil_texture = new_texture
+var foil_texture: Texture2D
+var reward_texture: Texture2D
 
-func get_item_value():
-	return item_value
+var is_scratched: bool = false
 
-func get_item_name():
-	return item_name
-
-func set_item_value(new_value):
-	item_value = new_value
-
-func set_item_name(new_name):
-	item_name = new_name
+func _init(id: String, new_name: String, value: float, cost: float, foil: Texture2D, reward: Texture2D):
+	card_id = id
+	card_name = new_name
+	card_value = value
+	card_cost = cost
+	foil_texture = foil
+	reward_texture = reward
 
 func _to_string(): # Overriding the default _to_string() method
-	return "[br]" + item_name + ", Value: " + str(item_value)
+	return "[br]" + card_name + ", Value: " + str(card_value)
 	# Hide value from player in test build
 	# [br] is BBCode, signifies a text line break

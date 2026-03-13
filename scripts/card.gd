@@ -1,9 +1,10 @@
 extends RigidBody2D
 
+var card_data: CardItem
+
 @export var angle_x_max: float = 7.5
 @export var angle_y_max: float = 7.5
 @export var max_offset_shadow: float = 40.0
-
 
 @export var spring: float = 25.0 # How fast the card 'spring' to the mouse drag
 @export var tilt_strength: float = 0.001
@@ -23,13 +24,16 @@ var following_mouse: bool = false
 var is_scratching: bool = false
 var drag_offset: Vector2 = Vector2.ZERO
 
-# Make sure these paths match your new 2D node structure
+# Make sure these paths match your 2D node structure
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var shadow: Sprite2D = $Shadow
 @onready var card_display: Sprite2D = $CardDisplay
 @onready var eraser_mask: Node2D = $MaskViewport/ScratchBounds/EraserMask
 @onready var foil_dust: CPUParticles2D = $FoilDust
 @onready var card_size: Vector2 = Vector2($MainViewport.size) * card_display.scale
+
+@onready var foil_sprite: Sprite2D = $MainViewport/FoilSprite
+@onready var reward_sprite: Sprite2D = $MainViewport/RewardSprite
 
 # Scratch math
 var grid_cell_size: int = 8
@@ -54,13 +58,10 @@ func _ready() -> void:
 	# Viewport setup in case the editor crashes out
 	# Give the main card display the feed from the MainViewport
 	card_display.texture = $MainViewport.get_texture()
-	
+
 	# Duplicate the material after assigning the texture so it doesn't break
 	card_display.material = card_display.material.duplicate()
-	
-	# Tell the FoilSprite's shader to use the MaskViewport as its eraser mask
-	var foil_sprite: Sprite2D = $MainViewport/FoilSprite
-	
+
 	# Ensure the Foil has its own unique material instance
 	foil_sprite.material = foil_sprite.material.duplicate() 
 	foil_sprite.material.set_shader_parameter("mask_texture", $MaskViewport.get_texture())
@@ -227,3 +228,16 @@ func _update_scratch_grid(mask_local_pos: Vector2) -> void:
 		card_revealed = true
 		print("Card fully revealed!")
 		# TODO: send signal that card is revealed
+
+# Call this immediately after spawning the card!
+func setup_ticket(data: CardItem) -> void:
+	card_data = data
+
+	# Apply the textures from the data class to the physical Viewport sprites
+	if card_data.foil_texture:
+		foil_sprite.texture = card_data.foil_texture
+
+	if card_data.reward_texture:
+		reward_sprite.texture = card_data.reward_texture
+
+	# TODO: card_data.item_value logic here maybe...
