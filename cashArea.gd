@@ -2,12 +2,15 @@ extends Sprite2D
 
 @export var moneyLabel : Label
 @onready var cashSpace = $Area2D
-
 var money = 0
 
 func _process(delta: float) -> void:
-#	always has overlapping bodies atm, wood texture?
-	print(cashSpace.has_overlapping_bodies())
-	if Input.is_action_just_released("Click") && get_global_mouse_position().x < 350 && get_global_mouse_position().y > 600:
+	if Input.is_action_just_released("Click") && get_global_mouse_position().x < 350 && get_global_mouse_position().y > 600 && cashSpace.has_overlapping_bodies():
+		var labelArray = cashSpace.get_overlapping_bodies()
+		for card in labelArray:
+			card.free()
 		money = money + 1
 		moneyLabel.text = "Money: " + str(money)
+		
+#line of tabs to see end of long line above, godot issue
+																																										

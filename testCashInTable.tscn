@@ -9,10 +9,10 @@
 size = Vector2(613.09753, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6i44i"]
-size = Vector2(613.6389, 19.722229)
+size = Vector2(613.6389, 19.074097)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sbv7l"]
-size = Vector2(342.11728, 15.555552)
+size = Vector2(342.11728, 14.907402)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_767yt"]
 size = Vector2(344.99222, 15.231476)
@@ -23,9 +23,10 @@ size = Vector2(1920.0001, 1080)
 [node name="Node2D" type="Node2D" unique_id=267635230]
 
 [node name="Wood" type="Sprite2D" parent="." unique_id=366188579]
+modulate = Color(1, 0.7131886, 0.6318537, 1)
 z_index = -9
-position = Vector2(961.00006, 540)
-scale = Vector2(3.132137, 3.0857146)
+position = Vector2(959.99994, 539.99994)
+scale = Vector2(3.1321366, 3.085714)
 texture = ExtResource("1_sbv7l")
 
 [node name="borders" type="Node2D" parent="." unique_id=1042715626]
@@ -40,7 +41,7 @@ shape = SubResource("RectangleShape2D_ifrvd")
 [node name="border4" type="StaticBody2D" parent="borders" unique_id=484473096]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="borders/border4" unique_id=269273598]
-position = Vector2(960.5, 1110.4286)
+position = Vector2(960.5, 1111.4286)
 scale = Vector2(3.1305056, 3.0857146)
 shape = SubResource("RectangleShape2D_6i44i")
 
@@ -49,7 +50,7 @@ position = Vector2(-65, 0)
 rotation = 1.5707964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="borders/border2" unique_id=896030735]
-position = Vector2(543.5, -42.00003)
+position = Vector2(543.5, -41.00003)
 scale = Vector2(3.1305056, 3.0857146)
 shape = SubResource("RectangleShape2D_sbv7l")
 
@@ -72,6 +73,7 @@ text = "Cash In Here
 "
 
 [node name="cashArea" type="Sprite2D" parent="." unique_id=567148726 node_paths=PackedStringArray("moneyLabel")]
+modulate = Color(0, 0.8967519, 0.887035, 1)
 z_index = -1
 position = Vector2(175.50002, 840)
 scale = Vector2(0.18177083, 0.44444445)
@@ -99,3 +101,18 @@ position = Vector2(1113, 817)
 
 [node name="Card3" parent="." unique_id=1261944774 instance=ExtResource("2_ifrvd")]
 position = Vector2(564, 677)
+
+[node name="Card4" parent="." unique_id=762142099 instance=ExtResource("2_ifrvd")]
+position = Vector2(1347, 405)
+
+[node name="Card5" parent="." unique_id=1926305938 instance=ExtResource("2_ifrvd")]
+position = Vector2(219, 362)
+
+[node name="Card6" parent="." unique_id=205724887 instance=ExtResource("2_ifrvd")]
+position = Vector2(1500, 788)
+
+[node name="Card7" parent="." unique_id=960014633 instance=ExtResource("2_ifrvd")]
+position = Vector2(1025, 258)
+
+[node name="Card8" parent="." unique_id=1979564045 instance=ExtResource("2_ifrvd")]
+position = Vector2(528, 238)
