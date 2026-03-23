@@ -227,7 +227,8 @@ func _update_scratch_grid(mask_local_pos: Vector2) -> void:
 	if percentage >= scratch_success_threshold:
 		card_revealed = true
 		print("Card fully revealed!")
-		# TODO: send signal that card is revealed
+		# TODO (done?): send signal that card is revealed
+		card_data.is_scratched = true
 
 # Call this immediately after spawning the card!
 func setup_ticket(data: CardItem) -> void:
@@ -240,4 +241,4 @@ func setup_ticket(data: CardItem) -> void:
 	if card_data.reward_texture:
 		reward_sprite.texture = card_data.reward_texture
 
-	# TODO: card_data.item_value logic here maybe...
+	# TODO (not needed i think): card_data.item_value logic here maybe...

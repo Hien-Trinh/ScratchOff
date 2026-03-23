@@ -1,6 +1,48 @@
 [gd_scene format=3 uid="uid://d27kh1h8vaseo"]
 
 [ext_resource type="Script" uid="uid://dljsgxkx6eivj" path="res://scripts/table.gd" id="1_v5i0k"]
+[ext_resource type="Texture2D" uid="uid://ksw5uoc78hn4" path="res://assets/other/solidpink.jpg" id="2_kl0hw"]
+[ext_resource type="Texture2D" uid="uid://diemgvndv7rx" path="res://assets/other/wood.jpg" id="2_vjl2i"]
+[ext_resource type="Script" uid="uid://cyjjyhbj6867x" path="res://cashArea.gd" id="3_vjl2i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67vji"]
+size = Vector2(1920.0001, 1080)
 
 [node name="Table" type="Node2D" unique_id=1736072314]
 script = ExtResource("1_v5i0k")
+
+[node name="Wood" type="Sprite2D" parent="." unique_id=1984232786]
+modulate = Color(1, 0.7131886, 0.6318537, 1)
+z_index = -9
+position = Vector2(959.99994, 539.99994)
+scale = Vector2(3.1321366, 3.085714)
+texture = ExtResource("2_vjl2i")
+
+[node name="cashArea" type="Sprite2D" parent="." unique_id=2062980907]
+modulate = Color(0, 0.8967519, 0.887035, 1)
+z_index = -1
+position = Vector2(175.50002, 840)
+scale = Vector2(0.18177083, 0.44444445)
+texture = ExtResource("2_kl0hw")
+script = ExtResource("3_vjl2i")
+
+[node name="Area2D" type="Area2D" parent="cashArea" unique_id=319385205]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cashArea/Area2D" unique_id=372474276]
+position = Vector2(-0.00012207031, 0)
+shape = SubResource("RectangleShape2D_67vji")
+
+[node name="Label" type="Label" parent="." unique_id=1617370136]
+offset_left = 31.0
+offset_top = 609.0
+offset_right = 276.0
+offset_bottom = 722.0
+theme_override_font_sizes/font_size = 40
+text = "Cash In Here
+"
+
+[node name="moneylabel" type="Label" parent="." unique_id=964445277]
+offset_right = 386.0
+offset_bottom = 138.0
+theme_override_font_sizes/font_size = 70
+text = "Money: "

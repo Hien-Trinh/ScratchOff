@@ -1,5 +1,6 @@
 extends Sprite2D
 
+
 @export var moneyLabel : Label
 @onready var cashSpace = $Area2D
 var money = 0
