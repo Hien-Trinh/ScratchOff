@@ -24,10 +24,6 @@ func _ready():
 	add_ticket(generate_ticket("LotsOfMoney"))
 	print(ticketList)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
 func add_ticket(cardItem : CardItem):
 	# Add item to ticketList Array
 	ticketList.append(cardItem)
@@ -83,19 +79,21 @@ func init_ticket_dict():
 
 # Reward sprite preload
 func init_reward_dict():
-	#reward_dict[0] = preload("res://assets/scratch_reward/1.png")
-	#reward_dict[1] = preload("res://assets/scratch_reward/5.png")
-	#reward_dict[2] = preload("res://assets/scratch_reward/10.png")
-	#reward_dict[3] = preload("res://assets/scratch_reward/25.png")
-	#reward_dict[4] = preload("res://assets/scratch_reward/50.png")
-	#reward_dict[5] = preload("res://assets/scratch_reward/100.png")
-	reward_dict[5] = preload("res://assets/scratch_reward/temp_scratch_100.png")
-	#reward_dict[6] = preload("res://assets/scratch_reward/500.png")
-	#reward_dict[7] = preload("res://assets/scratch_reward/1000.png")
+	reward_dict[0] = preload("res://assets/scratch_reward/s1.png")
+	reward_dict[1] = preload("res://assets/scratch_reward/s5.png")
+	reward_dict[2] = preload("res://assets/scratch_reward/s10.png")
+	reward_dict[3] = preload("res://assets/scratch_reward/s25.png")
+	reward_dict[4] = preload("res://assets/scratch_reward/s50.png")
+	reward_dict[5] = preload("res://assets/scratch_reward/s100.png")
+	reward_dict[5] = preload("res://assets/scratch_reward/s100.png")
+	reward_dict[6] = preload("res://assets/scratch_reward/s500.png")
+	reward_dict[7] = preload("res://assets/scratch_reward/s1000.png")
 
 func init_upgrade_dict():
 	var mult1_texture = preload("res://assets/upgrades/temp_up.svg")
-	upgrade_dict["Mult1"] = MultiplierUpgrade.new("1.5x Multiplier", mult1_texture, 1.5)
+	upgrade_dict["Mult1"] = MultiplierUpgrade.new("1.25x Multiplier", mult1_texture, 1.25)
+	var mult2_texture = preload("res://assets/upgrades/mult_1.5.png")
+	upgrade_dict["Mult2"] = MultiplierUpgrade.new("1.5x Multiplier", mult2_texture, 1.5)
 	print(upgrade_dict)
 
 func generate_ticket(ticket_key : String):

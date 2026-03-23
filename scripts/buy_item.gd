@@ -2,7 +2,6 @@ extends Button
 
 @export var buy_cost : float
 @export var buy_name : String
-@export var buy_texture : Texture2D
 @export var is_upgrade : bool
 
 # Only used for ticket items
@@ -32,7 +31,7 @@ func buy_upgrade():
 			upgrade_already_owned = true
 			GameManager.set_balance(GameManager.get_balance() - buy_cost)
 			print("Upgrade bought!")
-	else: self.text = "OWNED"
+			self.text = "OWNED"
 
 func _on_pressed():
 	var diff : float = GameManager.get_balance() - buy_cost

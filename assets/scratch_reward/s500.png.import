@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ut5g44hmvllk"
-path="res://.godot/imported/s1000.png-91ba29110a22a7ae29bfee4c22b39c6d.ctex"
+uid="uid://cw4u878y4jio0"
+path="res://.godot/imported/s500.png-1961d07626a99c6198e4fc809f30ae65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/money_amts/s1000.png"
-dest_files=["res://.godot/imported/s1000.png-91ba29110a22a7ae29bfee4c22b39c6d.ctex"]
+source_file="res://assets/scratch_reward/s500.png"
+dest_files=["res://.godot/imported/s500.png-1961d07626a99c6198e4fc809f30ae65.ctex"]
 
 [params]
 

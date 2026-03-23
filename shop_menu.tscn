@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://pt43fdks8vno"]
 
 [ext_resource type="PackedScene" uid="uid://d3fh7koe6c1bg" path="res://inventory.tscn" id="1_68nve"]
-[ext_resource type="Texture2D" uid="uid://de7emop815p5h" path="res://assets/upgrades/temp_up.svg" id="2_68nve"]
 [ext_resource type="Texture2D" uid="uid://deobaci2cicvx" path="res://assets/cards/lots-of-money.png" id="2_f8gav"]
 [ext_resource type="Texture2D" uid="uid://dt8ojhx3dmwmg" path="res://assets/cards/NuclearCapital180.png" id="2_qejid"]
 [ext_resource type="LabelSettings" uid="uid://buxtvmxr8t4no" path="res://themes/shop_header.tres" id="2_rh1mo"]
+[ext_resource type="Texture2D" uid="uid://30kkqo3dkldn" path="res://assets/upgrades/mult_1.5.png" id="5_8fj20"]
 [ext_resource type="Script" uid="uid://7tcsu8ee704u" path="res://scripts/buy_item.gd" id="5_f8gav"]
+[ext_resource type="Texture2D" uid="uid://cotdew5qhai5t" path="res://assets/upgrades/mult__1.25.png" id="7_0atty"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_rh1mo"]
 diffuse_texture = ExtResource("2_f8gav")
@@ -61,7 +62,6 @@ text = "TEMP"
 script = ExtResource("5_f8gav")
 buy_cost = 5.0
 buy_name = "LotsOfMoney"
-buy_texture = ExtResource("2_f8gav")
 metadata/_edit_use_anchors_ = true
 
 [node name="TicketHeader" type="Label" parent="Tickets" unique_id=832677860]
@@ -95,7 +95,7 @@ anchor_right = 11.583333
 anchor_bottom = 17.216663
 offset_bottom = 6.1035156e-05
 pivot_offset = Vector2(117, 117)
-texture = ExtResource("2_68nve")
+texture = ExtResource("5_8fj20")
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Upgrades/Upgrade2" unique_id=1757481241]
@@ -109,8 +109,7 @@ theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
 buy_cost = 20.0
-buy_name = "Upgrade2"
-buy_texture = ExtResource("2_68nve")
+buy_name = "Mult2"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
@@ -126,7 +125,7 @@ offset_top = 483.11102
 offset_right = 170.20828
 offset_bottom = 656.2221
 pivot_offset = Vector2(117, 117)
-texture = ExtResource("2_68nve")
+texture = ExtResource("7_0atty")
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Upgrades/Upgrade1" unique_id=568708131]
@@ -141,7 +140,6 @@ text = "TEMP"
 script = ExtResource("5_f8gav")
 buy_cost = 10.0
 buy_name = "Mult1"
-buy_texture = ExtResource("2_68nve")
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
@@ -183,7 +181,6 @@ text = "TEMP"
 script = ExtResource("5_f8gav")
 buy_cost = 10.0
 buy_name = "NuclearCapital"
-buy_texture = ExtResource("2_qejid")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=1783742071]

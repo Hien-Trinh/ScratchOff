@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byknnyu6yrkvs"
-path="res://.godot/imported/s50.png-803b8e840cf358d1597949a96bba929a.ctex"
+uid="uid://blpgy5jg256y2"
+path="res://.godot/imported/s100.png-c3db14d06f79bea27c014a2217835315.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/money_amts/s50.png"
-dest_files=["res://.godot/imported/s50.png-803b8e840cf358d1597949a96bba929a.ctex"]
+source_file="res://assets/scratch_reward/s100.png"
+dest_files=["res://.godot/imported/s100.png-c3db14d06f79bea27c014a2217835315.ctex"]
 
 [params]
 

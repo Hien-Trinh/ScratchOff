@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw4u878y4jio0"
-path="res://.godot/imported/s500.png-d0847297ab46f548abad5e81ce363ea7.ctex"
+uid="uid://cotdew5qhai5t"
+path="res://.godot/imported/mult__1.25.png-c786557a8164c675c0f375d378c89239.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/money_amts/s500.png"
-dest_files=["res://.godot/imported/s500.png-d0847297ab46f548abad5e81ce363ea7.ctex"]
+source_file="res://assets/upgrades/mult__1.25.png"
+dest_files=["res://.godot/imported/mult__1.25.png-c786557a8164c675c0f375d378c89239.ctex"]
 
 [params]
 
