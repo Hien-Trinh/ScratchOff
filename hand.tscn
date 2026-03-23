@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://7a5ktbrv4hkk"]
+
+[ext_resource type="Texture2D" uid="uid://borccr224y674" path="res://assets/hand/pixel_open.png" id="1_bfasp"]
+[ext_resource type="Script" uid="uid://sidyacdsos20" path="res://hand.gd" id="2_e75s6"]
+
+[node name="Hand" type="Control" unique_id=710456527]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1892519431]
+position = Vector2(243, -220)
+scale = Vector2(1, 1.2231969)
+texture = ExtResource("1_bfasp")
+offset = Vector2(1248, 873.9396)
+script = ExtResource("2_e75s6")
