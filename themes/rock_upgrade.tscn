@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://d015wspnkus3x"]
+
+[ext_resource type="Script" uid="uid://bxp7t02o50qpm" path="res://rock.gd" id="1_oi58y"]
+[ext_resource type="Texture2D" uid="uid://dd20k2w7ar65q" path="res://assets/other/pdstone.png" id="2_mdoh5"]
+[ext_resource type="Texture2D" uid="uid://chjj2aj237v7h" path="res://assets/other/bubble.svg" id="3_mdoh5"]
+[ext_resource type="Theme" uid="uid://bf17vhol243ti" path="res://themes/rock_speech.tres" id="4_ok6j5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ok6j5"]
+radius = 145.12408
+
+[node name="Node2D" type="Node2D" unique_id=910376230]
+script = ExtResource("1_oi58y")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=871278212]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=988754643]
+position = Vector2(350, 650)
+shape = SubResource("CircleShape2D_ok6j5")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=1268581674]
+position = Vector2(345.99997, 654)
+scale = Vector2(0.46223563, 0.46223566)
+texture = ExtResource("2_mdoh5")
+
+[node name="Bubble" type="Sprite2D" parent="." unique_id=98626812]
+position = Vector2(359, 530)
+scale = Vector2(0.28168872, 0.269213)
+texture = ExtResource("3_mdoh5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Bubble" unique_id=84392104]
+offset_left = -852.0043
+offset_top = -286.01886
+offset_right = 770.354
+offset_bottom = -204.29913
+theme = ExtResource("4_ok6j5")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Lorem ipsum dolor"
+fit_content = true
+scroll_active = false
+text_direction = 1
+metadata/_edit_use_anchors_ = true
