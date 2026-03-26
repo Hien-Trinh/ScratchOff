@@ -30,7 +30,7 @@ var drag_offset: Vector2 = Vector2.ZERO
 @onready var card_display: Sprite2D = $CardDisplay
 @onready var eraser_mask: Node2D = $MaskViewport/ScratchBounds/EraserMask
 @onready var foil_dust: CPUParticles2D = $FoilDust
-@onready var card_size: Vector2 = Vector2($MainViewport.size) * card_display.scale
+@onready var card_size := Vector2($MainViewport.size) * card_display.scale
 
 @onready var foil_sprite: Sprite2D = $MainViewport/FoilSprite
 @onready var reward_sprite: Sprite2D = $MainViewport/RewardSprite
@@ -43,7 +43,8 @@ var total_cells: int = grid_cols * grid_rows # 128 total squares
 var scratched_grid: Array[bool] = []
 var scratched_cells: int = 0
 var card_revealed: bool = false
-const scratchable_area_offset:= Vector2(26.0, 82.0)
+var last_scratch_pos := Vector2(-9999, -9999)
+const scratchable_area_offset := Vector2(26.0, 82.0)
 const scratch_success_threshold: float = 0.80
 
 func _ready() -> void:
@@ -112,6 +113,7 @@ func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 			active_card = self
 
 			is_scratching = true
+			last_scratch_pos = Vector2(-9999, -9999)
 			_send_scratch_point()
 			foil_dust.global_position = get_global_mouse_position()
 			foil_dust.emitting = true
@@ -159,6 +161,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
 		if not event.is_pressed():
 			is_scratching = false
+			last_scratch_pos = Vector2(-9999, -9999)
 			eraser_mask.break_line()
 			foil_dust.emitting = false
 			active_card = null
@@ -203,24 +206,33 @@ func _update_scratch_grid(mask_local_pos: Vector2) -> void:
 
 	var brush_radius: float = eraser_mask.brush_size / 2.0
 
-	# Find the min and max grid columns/rows the brush is currently touching
-	var min_col = max(0, int((mask_local_pos.x - brush_radius) / grid_cell_size))
-	var max_col = min(grid_cols - 1, int((mask_local_pos.x + brush_radius) / grid_cell_size))
-	var min_row = max(0, int((mask_local_pos.y - brush_radius) / grid_cell_size))
-	var max_row = min(grid_rows - 1, int((mask_local_pos.y + brush_radius) / grid_cell_size))
+	# Interpolation for teleporting mouse between frames
+	if last_scratch_pos == Vector2(-9999, -9999):
+		last_scratch_pos = mask_local_pos
 
-	# Loop through only the squares currently under the brush
-	for col in range(min_col, max_col + 1):
-		for row in range(min_row, max_row + 1):
-			var index = row * grid_cols + col
-			if not scratched_grid[index]:
-				# Get the exact center point of this specific grid cell
-				var cell_center = Vector2(col * grid_cell_size + (grid_cell_size / 2.0), row * grid_cell_size + (grid_cell_size / 2.0))
+	var teleportation_distance = last_scratch_pos.distance_to(mask_local_pos)
+	var step_number = teleportation_distance / brush_radius
 
-				# If the center of the cell is inside the brush circle, consider it scratched
-				if mask_local_pos.distance_to(cell_center) <= brush_radius:
-					scratched_grid[index] = true
-					scratched_cells += 1
+	for i in range(step_number + 1):
+		var t = float(i) / float(step_number)
+		var current_pos = last_scratch_pos.lerp(mask_local_pos, t)
+
+		# Find the grid columns/rows for THIS specific step along the line
+		var min_col = max(0, int((current_pos.x - brush_radius) / grid_cell_size))
+		var max_col = min(grid_cols - 1, int((current_pos.x + brush_radius) / grid_cell_size))
+		var min_row = max(0, int((current_pos.y - brush_radius) / grid_cell_size))
+		var max_row = min(grid_rows - 1, int((current_pos.y + brush_radius) / grid_cell_size))
+
+		for col in range(min_col, max_col + 1):
+			for row in range(min_row, max_row + 1):
+				var index = row * grid_cols + col
+				if not scratched_grid[index]:
+					var cell_center = Vector2(col * grid_cell_size + (grid_cell_size / 2.0), row * grid_cell_size + (grid_cell_size / 2.0))
+
+					# Check the distance from the interpolated step point
+					if current_pos.distance_to(cell_center) <= brush_radius:
+						scratched_grid[index] = true
+						scratched_cells += 1
 
 	# Calculate percentage
 	var percentage = float(scratched_cells) / float(total_cells)
