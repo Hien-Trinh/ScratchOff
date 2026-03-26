@@ -21,7 +21,8 @@ func _ready():
 	init_ticket_dict()
 	init_reward_dict()
 	init_upgrade_dict()
-	add_ticket(generate_ticket("LotsOfMoney"))
+	for i in range(5):
+		add_ticket(generate_ticket("LotsOfMoney"))
 	print(ticketList)
 
 func add_ticket(cardItem : CardItem):
@@ -110,7 +111,6 @@ func generate_ticket(ticket_key : String):
 
 		# Calculate the final value
 		var random_index = rng.randi_range(min_index, max_index)
-		random_index = 5 # Temp until other reward sprites are done
 		var base_val = valueArray[random_index]
 		var act_val = base_val * mult
 		
