@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://d1jq44qij8nlg"]
+
+[ext_resource type="FontFile" uid="uid://bqxdvnqmuulum" path="res://assets/Fonts/Coolvetica Rg.otf" id="1_kc8rw"]
+
+[resource]
+default_font = ExtResource("1_kc8rw")
+default_font_size = 50

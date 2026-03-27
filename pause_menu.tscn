@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cu2xcogwm8pu3"]
+
+[node name="PauseMenu" type="Control" unique_id=1288302848]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1852896926]
+layout_mode = 0
+offset_right = 1945.0
+offset_bottom = 1094.0
+color = Color(0.5686275, 0.5686275, 0.5686275, 0.5137255)

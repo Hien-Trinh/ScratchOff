@@ -12,6 +12,7 @@ var balance : float :
 	set = set_balance, get = get_balance
 var mult : float : 
 	set = set_mult, get = get_mult
+var round_counter : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -75,9 +76,16 @@ func init_ticket_dict():
 
 	# NUCLEAR CAPITAL
 	var nc_foil = preload("res://assets/cards/NuclearCapital180.png")
-
 	ticket_template_dict["NuclearCapital"] = ["nc_01", "Nuclear Capital", 10.00, nc_foil, 2, 4]
-
+	
+	# LUCKY WINNER
+	var lw_foil = preload("res://assets/cards/LuckyMoney180.png")
+	ticket_template_dict["LuckyWinner"] = ["lw_01", "Lucky Winner", 20.00, lw_foil, 3, 4]
+	
+	# MONEY 4 FREE
+	var m4f_foil = preload("res://assets/cards/money4fun180.png")
+	ticket_template_dict["Money4Free"] = ["m4f_foil", "Money 4 Free", 30.00, m4f_foil, 4, 5]
+	
 # Reward sprite preload
 func init_reward_dict():
 	reward_dict[0] = preload("res://assets/scratch_reward/s1.png")

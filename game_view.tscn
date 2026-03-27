@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bvgymjb0bv7ib"]
+
+[ext_resource type="PackedScene" uid="uid://d27kh1h8vaseo" path="res://table.tscn" id="1_0lsib"]
+[ext_resource type="PackedScene" uid="uid://pt43fdks8vno" path="res://shop_menu.tscn" id="1_6k14t"]
+[ext_resource type="Script" uid="uid://377mogwitvam" path="res://scripts/game_view.gd" id="1_lqkpn"]
+[ext_resource type="PackedScene" uid="uid://7a5ktbrv4hkk" path="res://hand.tscn" id="3_cr1hu"]
+[ext_resource type="Theme" uid="uid://d1jq44qij8nlg" path="res://themes/continue_text.tres" id="4_752fl"]
+[ext_resource type="PackedScene" uid="uid://cu2xcogwm8pu3" path="res://pause_menu.tscn" id="4_mu740"]
+
+[sub_resource type="Animation" id="Animation_lqkpn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1100)]
+}
+
+[sub_resource type="Animation" id="Animation_mu740"]
+resource_name = "shop_enter"
+length = 0.8333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(0.35355344, 2.6390157),
+"update": 0,
+"values": [Vector2(0, -1100), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_752fl"]
+resource_name = "shop_exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(2.6390157, 0.35355344),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cr1hu"]
+_data = {
+&"RESET": SubResource("Animation_lqkpn"),
+&"shop_enter": SubResource("Animation_mu740"),
+&"shop_exit": SubResource("Animation_752fl")
+}
+
+[node name="GameView" type="Node2D" unique_id=1842035021]
+script = ExtResource("1_lqkpn")
+
+[node name="Hand" parent="." unique_id=710456527 instance=ExtResource("3_cr1hu")]
+
+[node name="Table" parent="." unique_id=1736072314 instance=ExtResource("1_0lsib")]
+
+[node name="ShopMenu" parent="." unique_id=151485780 instance=ExtResource("1_6k14t")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = -1100.0
+offset_right = 1914.39
+offset_bottom = -22.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Button" type="Button" parent="ShopMenu" unique_id=1856277280]
+layout_mode = 0
+offset_left = 1411.0
+offset_top = 896.00006
+offset_right = 1858.6969
+offset_bottom = 986.00006
+theme = ExtResource("4_752fl")
+text = "CONTINUE"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1047255926]
+root_node = NodePath("../ShopMenu")
+libraries/ = SubResource("AnimationLibrary_cr1hu")
+
+[node name="PauseMenu" parent="." unique_id=1288302848 instance=ExtResource("4_mu740")]
+visible = false
+
+[connection signal="pressed" from="ShopMenu/Button" to="." method="_on_continue_button_pressed"]

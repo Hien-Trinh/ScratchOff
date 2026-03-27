@@ -21,6 +21,6 @@ func _init(id: String, new_name: String, value: float, cost: float, foil: Textur
 	reward_texture = reward
 
 func _to_string(): # Overriding the default _to_string() method
-	return "[br]" + card_name + ", Value: " + str(card_value)
+	return "[br]" + card_name
 	# Hide value from player in test build
 	# [br] is BBCode, signifies a text line break

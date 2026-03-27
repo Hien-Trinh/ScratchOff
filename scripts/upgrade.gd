@@ -32,4 +32,5 @@ func set_is_active(new_value : bool):
 	is_active = new_value
 
 func _to_string(): # Overriding the default _to_string() method
-	return upgrade_name
+	return "[br]" + upgrade_name
+	# [br] is BBCode, signifies a text line break
