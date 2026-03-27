@@ -40,7 +40,7 @@ func round_start():
 	add_child(hand)
 	var game_timer = Timer.new()
 	add_child(game_timer)
-	game_timer.set_wait_time(5.0) # Seconds
+	game_timer.set_wait_time(15.0) # Seconds
 	game_timer.connect("timeout", Callable(self,"_on_timer_timeout"))
 	# Create a countdown animation?
 	game_timer.start()
@@ -49,15 +49,15 @@ func _on_timer_timeout():
 	if table.visible == true:
 		shop_menu.visible = true
 		anim.play("shop_enter")
-		await anim.animation_finished
 		hand.visible = false
+		await anim.animation_finished
 		table.visible = false
 	
 func _on_continue_button_pressed():
 	if shop_menu.visible == true:
 			# Swap from shop to table
 			table.visible = true
-			hand.visible = true
 			anim.play("shop_exit")
 			await anim.animation_finished
+			hand.visible = true
 			shop_menu.visible = false
