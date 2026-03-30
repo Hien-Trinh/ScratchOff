@@ -67,6 +67,22 @@ script = ExtResource("1_lqkpn")
 
 [node name="Table" parent="." unique_id=1736072314 instance=ExtResource("1_0lsib")]
 
+[node name="TableUI" type="Control" parent="Table" unique_id=138578637]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RoundLabel" type="Label" parent="Table/TableUI" unique_id=354778059]
+layout_mode = 0
+offset_left = 1610.0
+offset_top = 15.0
+offset_right = 1894.0
+offset_bottom = 112.0
+theme = ExtResource("4_752fl")
+theme_override_font_sizes/font_size = 80
+text = "Round: #"
+
 [node name="ShopMenu" parent="." unique_id=151485780 instance=ExtResource("1_6k14t")]
 anchors_preset = 0
 anchor_right = 0.0

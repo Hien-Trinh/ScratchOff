@@ -6,6 +6,10 @@ extends Node2D
 @onready var pause_menu = $PauseMenu
 @onready var hand = $Hand
 
+@onready var round_label = $Table/TableUI/RoundLabel
+
+var round_counter : int = 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	remove_child(hand)
@@ -14,6 +18,7 @@ func _ready():
 	pause_menu.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	pause_menu.visible = false
 	shop_menu.visible = false
+	round_label.text = "Round: " + str(round_counter)
 	round_start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,10 +41,13 @@ func _process(_delta):
 			table.visible = false
 
 func round_start():
-	table._ready()
-	add_child(hand)
+	if round_counter > 1:
+		table._ready()
+	if round_counter == 1:
+		add_child(hand)
 	var game_timer = Timer.new()
 	add_child(game_timer)
+	game_timer.one_shot = true
 	game_timer.set_wait_time(5.0) # Seconds
 	game_timer.connect("timeout", Callable(self,"_on_timer_timeout"))
 	# Create a countdown animation?
@@ -61,4 +69,6 @@ func _on_continue_button_pressed():
 			await anim.animation_finished
 			hand.visible = true
 			shop_menu.visible = false
+			round_counter += 1
+			round_label.text = "Round: " + str(round_counter)
 			round_start()

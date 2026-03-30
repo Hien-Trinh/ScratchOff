@@ -12,7 +12,6 @@ var balance : float :
 	set = set_balance, get = get_balance
 var mult : float : 
 	set = set_mult, get = get_mult
-var round_counter : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -12,8 +12,10 @@ func _process(delta: float) -> void:
 		for card in labelArray:
 			winning = card.card_data.card_value
 			card.free()
+			GameManager.remove_ticket_at_index(GameManager.ticketList.find(card))
 		money = money + winning
 		moneyLabel.text = "Money: " + str(money)
+		print(GameManager.ticketList)
 		
 #line of tabs to see end of long line above, godot issue
 																																										
