@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ksw5uoc78hn4" path="res://assets/other/solidpink.jpg" id="2_6i44i"]
 [ext_resource type="Script" uid="uid://cyjjyhbj6867x" path="res://cashArea.gd" id="2_767yt"]
 [ext_resource type="PackedScene" uid="uid://dts74te66asgn" path="res://card.tscn" id="2_ifrvd"]
+[ext_resource type="PackedScene" uid="uid://7a5ktbrv4hkk" path="res://hand.tscn" id="5_8q7cl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifrvd"]
 size = Vector2(613.09753, 20)
@@ -116,3 +117,5 @@ position = Vector2(1025, 258)
 
 [node name="Card8" parent="." unique_id=1979564045 instance=ExtResource("2_ifrvd")]
 position = Vector2(528, 238)
+
+[node name="Hand" parent="." unique_id=710456527 instance=ExtResource("5_8q7cl")]
