@@ -30,6 +30,10 @@ resource_local_to_scene = true
 shader = ExtResource("5_1i5pp")
 shader_parameter/mask_texture = SubResource("ViewportTexture_1i5pp")
 
+[sub_resource type="Gradient" id="Gradient_1i5pp"]
+offsets = PackedFloat32Array(0, 0.15555556, 0.34444445, 0.5222222, 0.6814815, 0.84074074, 1)
+colors = PackedColorArray(0.14203489, 0.6428735, 0, 1, 0.17950013, 0.7669181, 0.99999994, 1, 0.32284516, 0.49297333, 1, 1, 1, 0.6674703, 0.5725569, 1, 0.8984755, 0.657251, 0, 1, 1, 0.37784293, 0.78767437, 1, 0.9999997, 0.09955213, 0.44447735, 1)
+
 [node name="Card" type="RigidBody2D" unique_id=1111863974]
 input_pickable = true
 gravity_scale = 0.0
@@ -93,6 +97,22 @@ initial_velocity_max = 150.0
 scale_amount_min = 2.0
 scale_amount_max = 4.0
 color = Color(0.7529412, 0.7529412, 0.7529412, 1)
+
+[node name="CelebrateDust" type="CPUParticles2D" parent="." unique_id=92090453]
+emitting = false
+amount = 500
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.3
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 800)
+initial_velocity_min = 100.0
+initial_velocity_max = 350.0
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color_initial_ramp = SubResource("Gradient_1i5pp")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

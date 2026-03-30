@@ -30,6 +30,7 @@ var drag_offset: Vector2 = Vector2.ZERO
 @onready var card_display: Sprite2D = $CardDisplay
 @onready var eraser_mask: Node2D = $MaskViewport/ScratchBounds/EraserMask
 @onready var foil_dust: CPUParticles2D = $FoilDust
+@onready var celebrate_dust: CPUParticles2D = $CelebrateDust
 @onready var card_size := Vector2($MainViewport.size) * card_display.scale
 
 @onready var foil_sprite: Sprite2D = $MainViewport/FoilSprite
@@ -241,6 +242,11 @@ func _update_scratch_grid(mask_local_pos: Vector2) -> void:
 		print("Card fully revealed!")
 		# TODO (done?): send signal that card is revealed
 		card_data.is_scratched = true
+		
+		# Scratch complete exlposion
+		celebrate_dust.global_position = self.global_position
+		celebrate_dust.emitting = true
+		celebrate_dust.restart()
 
 # Call this immediately after spawning the card!
 func setup_ticket(data: CardItem) -> void:
