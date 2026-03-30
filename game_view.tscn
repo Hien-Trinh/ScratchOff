@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://7a5ktbrv4hkk" path="res://hand.tscn" id="3_cr1hu"]
 [ext_resource type="Theme" uid="uid://d1jq44qij8nlg" path="res://themes/continue_text.tres" id="4_752fl"]
 [ext_resource type="PackedScene" uid="uid://cu2xcogwm8pu3" path="res://pause_menu.tscn" id="4_mu740"]
+[ext_resource type="FontFile" uid="uid://iral2cauilc8" path="res://assets/Fonts/chiller.TTF" id="5_ni2ws"]
 
 [sub_resource type="Animation" id="Animation_lqkpn"]
 length = 0.001
@@ -80,6 +81,7 @@ offset_top = 15.0
 offset_right = 1894.0
 offset_bottom = 112.0
 theme = ExtResource("4_752fl")
+theme_override_fonts/font = ExtResource("5_ni2ws")
 theme_override_font_sizes/font_size = 80
 text = "Round: #"
 

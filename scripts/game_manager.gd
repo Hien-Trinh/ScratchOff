@@ -5,7 +5,9 @@ extends Node
 @onready var ticket_template_dict = {}
 
 @onready var reward_dict = {}
-@onready var valueArray = [1, 5, 10, 25, 50, 100, 500, 1000]
+@onready var value_array = [1, 5, 10, 25, 50, 100, 500, 1000]
+
+var spawn_list = Array()
 
 var rng = RandomNumberGenerator.new()
 var balance : float : 
@@ -22,7 +24,9 @@ func _ready():
 	init_reward_dict()
 	init_upgrade_dict()
 	for i in range(5):
-		add_ticket(generate_ticket("LotsOfMoney"))
+		var ticket = generate_ticket("LotsOfMoney")
+		add_ticket(ticket)
+		spawn_list.append(ticket)
 	print(ticketList)
 
 func add_ticket(cardItem : CardItem):
@@ -118,7 +122,7 @@ func generate_ticket(ticket_key : String):
 
 		# Calculate the final value
 		var random_index = rng.randi_range(min_index, max_index)
-		var base_val = valueArray[random_index]
+		var base_val = value_array[random_index]
 		var act_val = base_val * mult
 		
 		# Reward sprite based on random_index

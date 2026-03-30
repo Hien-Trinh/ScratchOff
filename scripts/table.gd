@@ -6,7 +6,9 @@ const CARD_SCENE = preload("res://card.tscn")
 func _ready() -> void:
 	var inventory = GameManager.get_ticket_list()
 	for card in inventory:
-		spawn_card_on_table(card)
+		if GameManager.spawn_list.has(card):
+			spawn_card_on_table(card)
+	GameManager.spawn_list.clear()
 
 func spawn_card_on_table(ticket_item: CardItem) -> void:
 	# Create a physical instance of the card

@@ -20,7 +20,9 @@ func _process(_delta):
 	pass
 
 func buy_ticket(): 
-	GameManager.add_ticket(GameManager.generate_ticket(buy_name))
+	var ticket = GameManager.generate_ticket(buy_name)
+	GameManager.add_ticket(ticket)
+	GameManager.spawn_list.append(ticket)
 		# Inventory should update automatically b/c EventBus
 		# This doesn't actually add something to the game in the table scene
 

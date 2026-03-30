@@ -4,9 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://ksw5uoc78hn4" path="res://assets/other/solidpink.jpg" id="2_kl0hw"]
 [ext_resource type="Texture2D" uid="uid://diemgvndv7rx" path="res://assets/other/wood.jpg" id="2_vjl2i"]
 [ext_resource type="Script" uid="uid://cyjjyhbj6867x" path="res://cashArea.gd" id="3_vjl2i"]
+[ext_resource type="FontFile" uid="uid://c7xr4ltkfu4w0" path="res://assets/Fonts/BadComic-Regular.ttf" id="5_67vji"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67vji"]
 size = Vector2(1920.0001, 1080)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jry6c"]
+font = ExtResource("5_67vji")
+font_size = 50
 
 [node name="Table" type="Node2D" unique_id=1736072314]
 script = ExtResource("1_v5i0k")
@@ -43,7 +48,10 @@ position = Vector2(-0.00012207031, 0)
 shape = SubResource("RectangleShape2D_67vji")
 
 [node name="moneylabel" type="Label" parent="." unique_id=964445277]
-offset_right = 386.0
-offset_bottom = 138.0
+offset_left = 44.0
+offset_top = 22.0
+offset_right = 430.0
+offset_bottom = 160.0
 theme_override_font_sizes/font_size = 70
 text = "Money: "
+label_settings = SubResource("LabelSettings_jry6c")
