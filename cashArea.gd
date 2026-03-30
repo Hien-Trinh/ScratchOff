@@ -3,6 +3,7 @@ extends Sprite2D
 
 @export var moneyLabel : Label
 @onready var cashSpace = $Area2D
+@onready var explosion = $Sound/Explosion
 var money = 0
 var winning = 0
 
@@ -15,6 +16,9 @@ func _process(delta: float) -> void:
 				card.free()
 				GameManager.remove_ticket_at_index(GameManager.ticketList.find(card))
 				money = money + winning
+				GameManager.set_balance(money)
+				EventBus.player_money_updated.emit(money)
+				explosion.play()
 		moneyLabel.text = "Money: " + str(money)
 		
 #line of tabs to see end of long line above, godot issue
