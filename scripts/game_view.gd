@@ -48,7 +48,7 @@ func round_start():
 	var game_timer = Timer.new()
 	add_child(game_timer)
 	game_timer.one_shot = true
-	game_timer.set_wait_time(5.0) # Seconds
+	game_timer.set_wait_time(15.0) # Seconds
 	game_timer.connect("timeout", Callable(self,"_on_timer_timeout"))
 	# Create a countdown animation?
 	game_timer.start()
@@ -64,6 +64,8 @@ func _on_timer_timeout():
 func _on_continue_button_pressed():
 	if shop_menu.visible == true:
 			# Swap from shop to table
+			GameManager.calculate_mult()
+			print("Multiplier: " + str(GameManager.mult))
 			table.visible = true
 			anim.play("shop_exit")
 			await anim.animation_finished

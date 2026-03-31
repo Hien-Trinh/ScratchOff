@@ -13,6 +13,7 @@ size = Vector2(1920.0001, 1080)
 [sub_resource type="LabelSettings" id="LabelSettings_jry6c"]
 font = ExtResource("5_67vji")
 font_size = 50
+font_color = Color(1, 1, 0, 1)
 
 [node name="Table" type="Node2D" unique_id=1736072314]
 script = ExtResource("1_v5i0k")
@@ -54,7 +55,6 @@ position = Vector2(0, -1100)
 [node name="Explosion" type="AudioStreamPlayer2D" parent="cashArea/Sound" unique_id=2137848250]
 stream = ExtResource("6_jry6c")
 volume_db = 5.0
-bus = &"Distort"
 
 [node name="moneylabel" type="Label" parent="." unique_id=964445277]
 offset_left = 44.0

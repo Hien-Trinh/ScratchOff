@@ -10,7 +10,7 @@ extends Node
 var spawn_list = Array()
 
 var rng = RandomNumberGenerator.new()
-var balance : float : 
+var balance : float = 100 :
 	set = set_balance, get = get_balance
 var mult : float : 
 	set = set_mult, get = get_mult
@@ -19,7 +19,6 @@ var mult : float :
 func _ready():
 	rng.randomize()
 	mult = 1.0
-	set_balance(100)
 	init_ticket_dict()
 	init_reward_dict()
 	init_upgrade_dict()
@@ -106,7 +105,13 @@ func init_upgrade_dict():
 	upgrade_dict["Mult1"] = MultiplierUpgrade.new("1.25x Multiplier", mult1_texture, 1.25)
 	var mult2_texture = preload("res://assets/upgrades/mult_1.5.png")
 	upgrade_dict["Mult2"] = MultiplierUpgrade.new("1.5x Multiplier", mult2_texture, 1.5)
-	print(upgrade_dict)
+
+func calculate_mult():
+	for key in upgrade_dict:
+		var upgrade = upgrade_dict[key]
+		if upgrade is MultiplierUpgrade && upgrade.is_active == true:
+			if upgrade.multiplier > mult:
+				mult = upgrade.multiplier
 
 func generate_ticket(ticket_key : String):
 	if(ticket_template_dict.has(ticket_key)):

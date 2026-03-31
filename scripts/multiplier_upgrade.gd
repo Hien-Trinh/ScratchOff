@@ -8,6 +8,7 @@ var multiplier : float:
 func _init(new_name : String, new_texture : Texture2D, multiplier : float):
 	upgrade_name = new_name
 	upgrade_texture = new_texture
+	self.multiplier = multiplier
 
 func get_multiplier():
 	return multiplier

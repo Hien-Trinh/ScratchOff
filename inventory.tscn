@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://d3fh7koe6c1bg"]
 
-[ext_resource type="FontFile" uid="uid://bqxdvnqmuulum" path="res://assets/Fonts/Coolvetica Rg.otf" id="1_pohso"]
 [ext_resource type="Script" uid="uid://b0ir4y21fkyuy" path="res://scripts/inventory.gd" id="1_psafj"]
+[ext_resource type="FontFile" uid="uid://0j2i3e0by0gm" path="res://assets/Fonts/Super Wonder.ttf" id="2_mrqgh"]
 [ext_resource type="LabelSettings" uid="uid://ke1rn4aiuul1" path="res://themes/balance_header.tres" id="3_5tt2m"]
 [ext_resource type="Theme" uid="uid://br26gwrgbmvar" path="res://themes/inventory_body.tres" id="3_mrqgh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_psafj"]
-font = ExtResource("1_pohso")
+font = ExtResource("2_mrqgh")
 font_size = 40
 
 [node name="Inventory" type="Control" unique_id=1142824984]

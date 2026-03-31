@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://0j2i3e0by0gm"
-path="res://.godot/imported/Super Wonder.ttf-32af6964c4627972f24ffb75c1e24ac8.fontdata"
+uid="uid://dppipli8rf1t8"
+path="res://.godot/imported/Creepster-Regular.ttf-38f37cd92fe1b7421c832cc2e3906adc.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/Super Wonder.ttf"
-dest_files=["res://.godot/imported/Super Wonder.ttf-32af6964c4627972f24ffb75c1e24ac8.fontdata"]
+source_file="res://assets/Fonts/Creepster-Regular.ttf"
+dest_files=["res://.godot/imported/Creepster-Regular.ttf-38f37cd92fe1b7421c832cc2e3906adc.fontdata"]
 
 [params]
 

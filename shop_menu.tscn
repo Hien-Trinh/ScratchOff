@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://pt43fdks8vno"]
 
 [ext_resource type="PackedScene" uid="uid://d3fh7koe6c1bg" path="res://inventory.tscn" id="1_68nve"]
+[ext_resource type="Script" uid="uid://d1h342buq1rn0" path="res://scripts/shop_menu.gd" id="1_lyyeu"]
 [ext_resource type="Texture2D" uid="uid://deobaci2cicvx" path="res://assets/cards/lots-of-money.png" id="2_f8gav"]
 [ext_resource type="Texture2D" uid="uid://dt8ojhx3dmwmg" path="res://assets/cards/NuclearCapital180.png" id="2_qejid"]
 [ext_resource type="LabelSettings" uid="uid://buxtvmxr8t4no" path="res://themes/shop_header.tres" id="2_rh1mo"]
@@ -20,13 +21,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lyyeu")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1432075937]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0017362
 anchor_bottom = 1.0077161
-color = Color(0.19123745, 0.22737336, 0.3399259, 1)
+color = Color(0.17460012, 0.20044026, 0.45185256, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Inventory" parent="." unique_id=1142824984 instance=ExtResource("1_68nve")]
@@ -87,10 +89,10 @@ offset_bottom = 195.33336
 [node name="Upgrade2" type="TextureRect" parent="Upgrades" unique_id=139241062]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 7.158333
-anchor_top = 12.691664
-anchor_right = 11.583333
-anchor_bottom = 17.216663
+anchor_left = 6.308333
+anchor_top = 12.741664
+anchor_right = 11.308332
+anchor_bottom = 17.741663
 offset_bottom = 6.1035156e-05
 pivot_offset = Vector2(117, 117)
 texture = ExtResource("5_8fj20")

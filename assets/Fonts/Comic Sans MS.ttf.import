@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://0j2i3e0by0gm"
-path="res://.godot/imported/Super Wonder.ttf-32af6964c4627972f24ffb75c1e24ac8.fontdata"
+uid="uid://b8dftmter3eey"
+path="res://.godot/imported/Comic Sans MS.ttf-311dfbf8f999f600324d84000b09498c.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/Super Wonder.ttf"
-dest_files=["res://.godot/imported/Super Wonder.ttf-32af6964c4627972f24ffb75c1e24ac8.fontdata"]
+source_file="res://assets/Fonts/Comic Sans MS.ttf"
+dest_files=["res://.godot/imported/Comic Sans MS.ttf-311dfbf8f999f600324d84000b09498c.fontdata"]
 
 [params]
 

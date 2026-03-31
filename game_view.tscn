@@ -76,10 +76,10 @@ offset_bottom = 40.0
 
 [node name="RoundLabel" type="Label" parent="Table/TableUI" unique_id=354778059]
 layout_mode = 0
-offset_left = 1610.0
-offset_top = 15.0
-offset_right = 1894.0
-offset_bottom = 112.0
+offset_left = 46.0
+offset_top = 102.0
+offset_right = 330.0
+offset_bottom = 199.0
 theme = ExtResource("4_752fl")
 theme_override_fonts/font = ExtResource("5_ni2ws")
 theme_override_font_sizes/font_size = 80

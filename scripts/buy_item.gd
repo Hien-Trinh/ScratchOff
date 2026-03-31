@@ -4,17 +4,21 @@ extends Button
 @export var buy_name : String
 @export var is_upgrade : bool
 
-# Only used for ticket items
 var upgrade_already_owned : bool
 # Only used for upgrades
 
 @onready var rng = RandomNumberGenerator.new()
+@onready var buysfx_player = AudioStreamPlayer.new()
+@onready var buysfx = preload("res://assets/audio/sfx/cash-register.wav")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.text = "$" + str(buy_cost)
 	upgrade_already_owned = false
-
+	add_child(buysfx_player)
+	buysfx_player.stream = buysfx
+	buysfx_player.bus = "Distort"
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
@@ -32,17 +36,16 @@ func buy_upgrade():
 			GameManager.activate_upgrade(buy_name)
 			upgrade_already_owned = true
 			GameManager.set_balance(GameManager.get_balance() - buy_cost)
-			print("Upgrade bought!")
+			buysfx_player.play()
 			self.text = "OWNED"
 
 func _on_pressed():
 	var diff : float = GameManager.get_balance() - buy_cost
 	if(diff>=0):
 		if(!is_upgrade):
-			print("Buy ticket started...")
 			buy_ticket()
+			buysfx_player.play()
 			GameManager.set_balance(diff)
 		else: 
-			print("Buy upgrade started...")
 			buy_upgrade()
 	else: print("Player does not have enough money!")
