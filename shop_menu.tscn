@@ -54,7 +54,7 @@ pivot_offset = Vector2(83, 91)
 texture = SubResource("CanvasTexture_rh1mo")
 metadata/_edit_use_anchors_ = true
 
-[node name="Buy_LoM" type="Button" parent="Tickets/Ticket1" unique_id=1571991670]
+[node name="Buy_1" type="Button" parent="Tickets/Ticket1" unique_id=1571991670]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.0703125
@@ -64,8 +64,6 @@ anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
-buy_cost = 5.0
-buy_name = "LotsOfMoney"
 metadata/_edit_use_anchors_ = true
 
 [node name="TicketHeader" type="Label" parent="Tickets" unique_id=832677860]
@@ -77,6 +75,87 @@ anchor_right = 6.5833335
 anchor_bottom = 2.4916666
 text = "TICKETS"
 label_settings = ExtResource("2_rh1mo")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ticket2" type="TextureRect" parent="Tickets" unique_id=1133795772]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15416667
+anchor_top = 0.14814815
+anchor_right = 0.24791667
+anchor_bottom = 0.3148148
+offset_left = 289.83334
+offset_top = 154.07407
+offset_right = 466.08334
+offset_bottom = 327.4074
+pivot_offset = Vector2(83, 91)
+texture = ExtResource("2_qejid")
+metadata/_edit_use_anchors_ = true
+
+[node name="Buy_2" type="Button" parent="Tickets/Ticket2" unique_id=976072297]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0703125
+anchor_top = 1.0546875
+anchor_right = 1.0625
+anchor_bottom = 1.5625
+theme_override_font_sizes/font_size = 35
+text = "TEMP"
+script = ExtResource("5_f8gav")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ticket3" type="TextureRect" parent="Tickets" unique_id=1864636325]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.275
+anchor_top = 0.14814815
+anchor_right = 0.36875
+anchor_bottom = 0.3148148
+offset_left = 517.0
+offset_top = 154.07407
+offset_right = 693.25
+offset_bottom = 327.4074
+pivot_offset = Vector2(83, 91)
+texture = ExtResource("8_8fj20")
+metadata/_edit_use_anchors_ = true
+
+[node name="Buy_3" type="Button" parent="Tickets/Ticket3" unique_id=2102681545]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0703125
+anchor_top = 1.0546875
+anchor_right = 1.0625
+anchor_bottom = 1.5625
+theme_override_font_sizes/font_size = 35
+text = "TEMP"
+script = ExtResource("5_f8gav")
+metadata/_edit_use_anchors_ = true
+
+[node name="Ticket4" type="TextureRect" parent="Tickets" unique_id=1795563696]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39583334
+anchor_top = 0.14814815
+anchor_right = 0.48958334
+anchor_bottom = 0.3148148
+offset_left = 744.1667
+offset_top = 154.07407
+offset_right = 920.4167
+offset_bottom = 327.4074
+pivot_offset = Vector2(83, 91)
+texture = ExtResource("9_0atty")
+metadata/_edit_use_anchors_ = true
+
+[node name="Buy_4" type="Button" parent="Tickets/Ticket4" unique_id=159946367]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0703125
+anchor_top = 1.0546875
+anchor_right = 1.0625
+anchor_bottom = 1.5625
+theme_override_font_sizes/font_size = 35
+text = "TEMP"
+script = ExtResource("5_f8gav")
 metadata/_edit_use_anchors_ = true
 
 [node name="Upgrades" type="Control" parent="." unique_id=681107643]
@@ -108,8 +187,6 @@ anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
-buy_cost = 20.0
-buy_name = "Mult2"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
@@ -138,8 +215,6 @@ anchor_bottom = 1.5735497
 theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
-buy_cost = 10.0
-buy_name = "Mult1"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
@@ -158,84 +233,9 @@ text = "UPGRADES"
 label_settings = ExtResource("2_rh1mo")
 metadata/_edit_use_anchors_ = true
 
-[node name="Ticket2" type="TextureRect" parent="." unique_id=1133795772]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.15416667
-anchor_top = 0.14814815
-anchor_right = 0.24791667
-anchor_bottom = 0.3148148
-pivot_offset = Vector2(83, 91)
-texture = ExtResource("2_qejid")
-metadata/_edit_use_anchors_ = true
-
-[node name="Buy_NC" type="Button" parent="Ticket2" unique_id=976072297]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0703125
-anchor_top = 1.0546875
-anchor_right = 1.0625
-anchor_bottom = 1.5625
-theme_override_font_sizes/font_size = 35
-text = "TEMP"
-script = ExtResource("5_f8gav")
-buy_cost = 10.0
-buy_name = "NuclearCapital"
-metadata/_edit_use_anchors_ = true
-
-[node name="Ticket3" type="TextureRect" parent="." unique_id=1864636325]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.275
-anchor_top = 0.14814815
-anchor_right = 0.36875
-anchor_bottom = 0.3148148
-pivot_offset = Vector2(83, 91)
-texture = ExtResource("8_8fj20")
-metadata/_edit_use_anchors_ = true
-
-[node name="Buy_LW" type="Button" parent="Ticket3" unique_id=2102681545]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0703125
-anchor_top = 1.0546875
-anchor_right = 1.0625
-anchor_bottom = 1.5625
-theme_override_font_sizes/font_size = 35
-text = "TEMP"
-script = ExtResource("5_f8gav")
-buy_cost = 20.0
-buy_name = "LuckyWinner"
-metadata/_edit_use_anchors_ = true
-
-[node name="Ticket4" type="TextureRect" parent="." unique_id=1795563696]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.39583334
-anchor_top = 0.14814815
-anchor_right = 0.48958334
-anchor_bottom = 0.3148148
-pivot_offset = Vector2(83, 91)
-texture = ExtResource("9_0atty")
-metadata/_edit_use_anchors_ = true
-
-[node name="Buy_M4F" type="Button" parent="Ticket4" unique_id=159946367]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0703125
-anchor_top = 1.0546875
-anchor_right = 1.0625
-anchor_bottom = 1.5625
-theme_override_font_sizes/font_size = 35
-text = "TEMP"
-script = ExtResource("5_f8gav")
-buy_cost = 30.0
-buy_name = "Money4Free"
-metadata/_edit_use_anchors_ = true
-
-[connection signal="pressed" from="Tickets/Ticket1/Buy_LoM" to="Tickets/Ticket1/Buy_LoM" method="_on_pressed"]
+[connection signal="pressed" from="Tickets/Ticket1/Buy_1" to="Tickets/Ticket1/Buy_1" method="_on_pressed"]
+[connection signal="pressed" from="Tickets/Ticket2/Buy_2" to="Tickets/Ticket2/Buy_2" method="_on_pressed"]
+[connection signal="pressed" from="Tickets/Ticket3/Buy_3" to="Tickets/Ticket3/Buy_3" method="_on_pressed"]
+[connection signal="pressed" from="Tickets/Ticket4/Buy_4" to="Tickets/Ticket4/Buy_4" method="_on_pressed"]
 [connection signal="pressed" from="Upgrades/Upgrade2/Button" to="Upgrades/Upgrade2/Button" method="_on_pressed"]
 [connection signal="pressed" from="Upgrades/Upgrade1/Button" to="Upgrades/Upgrade1/Button" method="_on_pressed"]
-[connection signal="pressed" from="Ticket2/Buy_NC" to="Ticket2/Buy_NC" method="_on_pressed"]
-[connection signal="pressed" from="Ticket3/Buy_LW" to="Ticket3/Buy_LW" method="_on_pressed"]
-[connection signal="pressed" from="Ticket4/Buy_M4F" to="Ticket4/Buy_M4F" method="_on_pressed"]

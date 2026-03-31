@@ -1,7 +1,8 @@
 extends Button
 
-@export var buy_cost : float
-@export var buy_name : String
+var buy_cost : float = 0.0
+var buy_name : String = "empty"
+
 @export var is_upgrade : bool
 
 var upgrade_already_owned : bool

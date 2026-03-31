@@ -56,6 +56,7 @@ func round_start():
 func _on_timer_timeout():
 	if table.visible == true:
 		shop_menu.visible = true
+		shop_menu.refresh_shop()
 		anim.play("shop_enter")
 		hand.visible = false
 		await anim.animation_finished

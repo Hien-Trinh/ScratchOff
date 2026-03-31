@@ -74,7 +74,7 @@ func init_ticket_dict():
 
 	# Array Structure: 
 	# [0: ID, 1: Name, 2: Cost, 3: Foil Tex, 4: Min Index, 5: Max Index]
-	ticket_template_dict["LotsOfMoney"] = ["lom_01", "Lots of Money", 5.00, lom_foil, 0, 2]
+	ticket_template_dict["LotsOfMoney"] = ["lom_01", "Lots Of Money", 5.00, lom_foil, 0, 2]
 
 	# NUCLEAR CAPITAL
 	var nc_foil = preload("res://assets/cards/NuclearCapital180.png")
@@ -86,7 +86,15 @@ func init_ticket_dict():
 	
 	# MONEY 4 FREE
 	var m4f_foil = preload("res://assets/cards/money4fun180.png")
-	ticket_template_dict["Money4Free"] = ["m4f_foil", "Money 4 Free", 30.00, m4f_foil, 4, 5]
+	ticket_template_dict["Money4Free"] = ["m4f_01", "Money 4 Free", 30.00, m4f_foil, 4, 5]
+	
+	# TOP DOLLAR
+	var td_foil = preload("res://assets/cards/topdollar180.png")
+	ticket_template_dict["TopDollar"] = ["td_01", "Top Dollar", 50.00, td_foil, 4, 6]
+	
+	# MONEY MAKERZ
+	var mm_foil = preload("res://assets/cards/moneymakerz180.png")
+	ticket_template_dict["MoneyMakerz"] = ["mm_01", "Money Makerz", 75.00, mm_foil, 2, 7]
 	
 # Reward sprite preload
 func init_reward_dict():
