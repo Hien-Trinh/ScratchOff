@@ -25,10 +25,13 @@ func refresh_shop():
 	var shuffled_tickets = ticket_template_arr.duplicate()
 	shuffled_tickets.shuffle()
 	
-	var tick1 = shuffled_tickets[0]
-	var tick2 = shuffled_tickets[1]
-	var tick3 = shuffled_tickets[2]
-	var tick4 = shuffled_tickets[3]
+	var shop_tickets = shuffled_tickets.slice(0, 4)
+	shop_tickets.sort_custom(func(a, b): return a[2] < b[2])
+	
+	var tick1 = shop_tickets[0]
+	var tick2 = shop_tickets[1]
+	var tick3 = shop_tickets[2]
+	var tick4 = shop_tickets[3]
 	
 	$Tickets/Ticket1.texture = tick1[3]
 	$Tickets/Ticket2.texture = tick2[3]
