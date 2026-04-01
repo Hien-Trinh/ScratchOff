@@ -187,6 +187,8 @@ anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
+buy_cost = 200.0
+buy_name = "Mult2"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
@@ -215,6 +217,8 @@ anchor_bottom = 1.5735497
 theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
+buy_cost = 100.0
+buy_name = "Mult1"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
