@@ -5,6 +5,7 @@ extends Node2D
 @onready var anim = $AnimationPlayer
 @onready var pause_menu = $PauseMenu
 @onready var hand = $Hand
+@onready var cashArea = $Table/cashArea
 
 @onready var round_label = $Table/TableUI/RoundLabel
 
@@ -68,6 +69,7 @@ func _on_continue_button_pressed():
 			GameManager.calculate_mult()
 			print("Multiplier: " + str(GameManager.mult))
 			table.visible = true
+			cashArea.refresh_money()
 			anim.play("shop_exit")
 			await anim.animation_finished
 			hand.visible = true

@@ -68,6 +68,7 @@ script = ExtResource("1_lqkpn")
 [node name="Hand" parent="." unique_id=710456527 instance=ExtResource("3_cr1hu")]
 
 [node name="Table" parent="." unique_id=1736072314 instance=ExtResource("1_0lsib")]
+position = Vector2(-1, 27)
 
 [node name="TableUI" type="Control" parent="Table" unique_id=138578637]
 layout_mode = 3
