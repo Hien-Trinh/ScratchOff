@@ -65,16 +65,16 @@ func _on_timer_timeout():
 	
 func _on_continue_button_pressed():
 	if shop_menu.visible == true:
-			# Swap from shop to table
-			GameManager.calculate_mult()
-			print("Multiplier: " + str(GameManager.mult))
-			table.visible = true
-			cashArea.money = GameManager.balance
-			cashArea._ready()
-			anim.play("shop_exit")
-			await anim.animation_finished
-			hand.visible = true
-			shop_menu.visible = false
-			round_counter += 1
-			round_label.text = "Round: " + str(round_counter)
-			round_start()
+		# Swap from shop to table
+		GameManager.calculate_mult()
+		print("Multiplier: " + str(GameManager.mult))
+		table.visible = true
+		cashArea.money = GameManager.balance
+		cashArea._ready()
+		anim.play("shop_exit")
+		await anim.animation_finished
+		hand.visible = true
+		shop_menu.visible = false
+		round_counter += 1
+		round_label.text = "Round: " + str(round_counter)
+		round_start()
