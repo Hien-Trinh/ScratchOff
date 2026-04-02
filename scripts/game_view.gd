@@ -69,7 +69,8 @@ func _on_continue_button_pressed():
 			GameManager.calculate_mult()
 			print("Multiplier: " + str(GameManager.mult))
 			table.visible = true
-			cashArea.refresh_money()
+			cashArea.money = GameManager.balance
+			cashArea._ready()
 			anim.play("shop_exit")
 			await anim.animation_finished
 			hand.visible = true

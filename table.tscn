@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dljsgxkx6eivj" path="res://scripts/table.gd" id="1_v5i0k"]
 [ext_resource type="Texture2D" uid="uid://bm0is53gc61ph" path="res://assets/other/dirtyfloor.png" id="2_67vji"]
 [ext_resource type="Texture2D" uid="uid://ksw5uoc78hn4" path="res://assets/other/solidpink.jpg" id="2_kl0hw"]
-[ext_resource type="Script" uid="uid://cyjjyhbj6867x" path="res://cashArea.gd" id="3_vjl2i"]
-[ext_resource type="FontFile" uid="uid://btatnlvuujute" path="res://assets/Fonts/goudystout.TTF" id="5_67vji"]
+[ext_resource type="Script" uid="uid://cyjjyhbj6867x" path="res://scripts/cashArea.gd" id="3_vjl2i"]
+[ext_resource type="FontFile" uid="uid://btatnlvuujute" path="res://assets/fonts/goudystout.TTF" id="5_67vji"]
 [ext_resource type="AudioStream" uid="uid://cy2pkexmnvmx7" path="res://assets/audio/sfx/8-bit-explosion.wav" id="6_jry6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67vji"]
