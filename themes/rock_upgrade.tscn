@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d015wspnkus3x"]
 
-[ext_resource type="Script" uid="uid://bxp7t02o50qpm" path="res://rock.gd" id="1_oi58y"]
+[ext_resource type="Script" uid="uid://bxp7t02o50qpm" path="res://scripts/rock.gd" id="1_oi58y"]
 [ext_resource type="Texture2D" uid="uid://dd20k2w7ar65q" path="res://assets/other/pdstone.png" id="2_mdoh5"]
 [ext_resource type="Texture2D" uid="uid://chjj2aj237v7h" path="res://assets/other/bubble.svg" id="3_mdoh5"]
 [ext_resource type="Theme" uid="uid://bf17vhol243ti" path="res://themes/rock_speech.tres" id="4_ok6j5"]

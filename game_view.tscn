@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://7a5ktbrv4hkk" path="res://hand.tscn" id="3_cr1hu"]
 [ext_resource type="Theme" uid="uid://d1jq44qij8nlg" path="res://themes/continue_text.tres" id="4_752fl"]
 [ext_resource type="PackedScene" uid="uid://cu2xcogwm8pu3" path="res://pause_menu.tscn" id="4_mu740"]
-[ext_resource type="FontFile" uid="uid://iral2cauilc8" path="res://assets/Fonts/chiller.TTF" id="5_ni2ws"]
+[ext_resource type="FontFile" uid="uid://iral2cauilc8" path="res://assets/fonts/chiller.TTF" id="5_ni2ws"]
 [ext_resource type="AudioStream" uid="uid://4ep1awq36e2v" path="res://assets/audio/music/bc-song1.wav" id="8_5unvd"]
 
 [sub_resource type="Animation" id="Animation_lqkpn"]
@@ -68,6 +68,7 @@ script = ExtResource("1_lqkpn")
 [node name="Hand" parent="." unique_id=710456527 instance=ExtResource("3_cr1hu")]
 
 [node name="Table" parent="." unique_id=1736072314 instance=ExtResource("1_0lsib")]
+position = Vector2(-2, 5)
 
 [node name="TableUI" type="Control" parent="Table" unique_id=138578637]
 layout_mode = 3
@@ -112,7 +113,7 @@ libraries/ = SubResource("AnimationLibrary_cr1hu")
 [node name="PauseMenu" parent="." unique_id=1288302848 instance=ExtResource("4_mu740")]
 visible = false
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1972892780]
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1972892780]
 stream = ExtResource("8_5unvd")
 volume_db = -2.0
 autoplay = true

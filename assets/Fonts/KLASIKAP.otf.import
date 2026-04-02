@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://uy7a3yiv2ssb"
-path="res://.godot/imported/KLASIKAP.otf-2c2beb10c45055ae5a066fa0ccae994f.fontdata"
+path="res://.godot/imported/KLASIKAP.otf-c893045b19cad20602c1fada94e87f6d.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/KLASIKAP.otf"
-dest_files=["res://.godot/imported/KLASIKAP.otf-2c2beb10c45055ae5a066fa0ccae994f.fontdata"]
+source_file="res://assets/fonts/KLASIKAP.otf"
+dest_files=["res://.godot/imported/KLASIKAP.otf-c893045b19cad20602c1fada94e87f6d.fontdata"]
 
 [params]
 

@@ -43,6 +43,7 @@ func _on_pressed():
 	var diff : float = GameManager.get_balance() - buy_cost
 	if(diff>=0):
 		if(!is_upgrade):
+			print(buy_cost)
 			buy_ticket()
 			buysfx_player.play()
 			GameManager.set_balance(diff)
