@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://cyjjyhbj6867x" path="res://scripts/cashArea.gd" id="3_vjl2i"]
 [ext_resource type="FontFile" uid="uid://btatnlvuujute" path="res://assets/fonts/goudystout.TTF" id="5_67vji"]
 [ext_resource type="AudioStream" uid="uid://cy2pkexmnvmx7" path="res://assets/audio/sfx/8-bit-explosion.wav" id="6_jry6c"]
-[ext_resource type="AudioStream" uid="uid://ddg3e3n6por3o" path="res://assets/audio/sfx/ManYell2.mp3" id="7_ormek"]
 [ext_resource type="Theme" uid="uid://d1jq44qij8nlg" path="res://themes/continue_text.tres" id="7_64sdq"]
 [ext_resource type="FontFile" uid="uid://iral2cauilc8" path="res://assets/fonts/chiller.TTF" id="8_ormek"]
 
@@ -49,12 +48,6 @@ position = Vector2(0, -1100)
 [node name="Explosion" type="AudioStreamPlayer2D" parent="cashArea/Sound" unique_id=2137848250]
 stream = ExtResource("6_jry6c")
 volume_db = 5.0
-
-[node name="Yell1" type="AudioStreamPlayer2D" parent="cashArea/Sound" unique_id=1320085294]
-stream = ExtResource("6_64sdq")
-
-[node name="Yell2" type="AudioStreamPlayer2D" parent="cashArea/Sound" unique_id=88679073]
-stream = ExtResource("7_ormek")
 
 [node name="moneylabel" type="Label" parent="." unique_id=964445277]
 [node name="TableUI" type="Control" parent="." unique_id=1448599781]
