@@ -14,7 +14,8 @@ var speechDict: Dictionary[int, String] = {
 	6: "The moon landing never happened.",
 	7: "I'm really fun at parties.",
 	8: "I'm thinking of running for Congress.",
-	9: "Wanna see my Spotify Wrapped?"
+	9: "Wanna see my Spotify Wrapped?",
+	10: "Chat, why does this guy suck at playing?"
 }
 
 # Called when the node enters the scene tree for the first time.

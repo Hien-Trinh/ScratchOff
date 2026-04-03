@@ -11,6 +11,8 @@ extends Node2D
 
 var round_counter : int = 1
 
+var goal : float = 1000
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	remove_child(hand)
@@ -23,6 +25,7 @@ func _ready():
 	round_start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# Delete before building
 func _process(_delta):
 	# SwapScreenTest = the "V" key
 	if Input.is_action_just_released("SwapScreenTest"):
@@ -46,6 +49,8 @@ func round_start():
 		table._ready()
 	if round_counter == 1:
 		add_child(hand)
+	if round_counter % 8 == 0:
+		check_win_lose()
 	var game_timer = Timer.new()
 	add_child(game_timer)
 	game_timer.one_shot = true
@@ -78,3 +83,11 @@ func _on_continue_button_pressed():
 			round_counter += 1
 			round_label.text = "Round: " + str(round_counter)
 			round_start()
+			
+func check_win_lose():
+	if GameManager.balance < goal:
+		# LOSE
+		pass
+	else:
+		# WIN
+		goal *= 2
