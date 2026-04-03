@@ -1,4 +1,5 @@
 extends Upgrade # Subclass of the Upgrade class
+class_name LuckyLarryUpgrade
 
 #Adds 1 random bonus scratcher to table each round. seems early game.
 #The scratcher added isn't too good of a scratcher
