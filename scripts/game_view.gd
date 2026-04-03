@@ -21,6 +21,12 @@ func _ready():
 	pause_menu.visible = false
 	shop_menu.visible = false
 	round_label.text = "Round: " + str(round_counter)
+	
+	# Game timer init
+	add_child(game_timer)
+	game_timer.one_shot = true
+	game_timer.connect("timeout", Callable(self,"_on_timer_timeout"))
+	
 	round_start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -48,10 +54,8 @@ func round_start():
 		table._ready()
 	if round_counter == 1:
 		add_child(hand)
-	add_child(game_timer)
-	game_timer.one_shot = true
+
 	game_timer.set_wait_time(15.0) # Seconds
-	game_timer.connect("timeout", Callable(self,"_on_timer_timeout"))
 	# Create a countdown animation?
 	game_timer.start()
 
