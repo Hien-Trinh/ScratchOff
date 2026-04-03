@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bm0is53gc61ph" path="res://assets/other/dirtyfloor.png" id="2_67vji"]
 [ext_resource type="Texture2D" uid="uid://ksw5uoc78hn4" path="res://assets/other/solidpink.jpg" id="2_kl0hw"]
 [ext_resource type="Script" uid="uid://cyjjyhbj6867x" path="res://scripts/cashArea.gd" id="3_vjl2i"]
-[ext_resource type="FontFile" uid="uid://btatnlvuujute" path="res://assets/fonts/goudystout.TTF" id="5_67vji"]
+[ext_resource type="FontFile" uid="uid://btatnlvuujute" path="res://assets/Fonts/goudystout.TTF" id="5_67vji"]
 [ext_resource type="AudioStream" uid="uid://cy2pkexmnvmx7" path="res://assets/audio/sfx/8-bit-explosion.wav" id="6_jry6c"]
 [ext_resource type="Theme" uid="uid://d1jq44qij8nlg" path="res://themes/continue_text.tres" id="7_64sdq"]
-[ext_resource type="FontFile" uid="uid://iral2cauilc8" path="res://assets/fonts/chiller.TTF" id="8_ormek"]
+[ext_resource type="FontFile" uid="uid://iral2cauilc8" path="res://assets/Fonts/chiller.TTF" id="8_ormek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67vji"]
 size = Vector2(1920.0001, 1080)
@@ -50,6 +50,7 @@ stream = ExtResource("6_jry6c")
 volume_db = 5.0
 
 [node name="moneylabel" type="Label" parent="." unique_id=964445277]
+
 [node name="TableUI" type="Control" parent="." unique_id=1448599781]
 layout_mode = 3
 anchors_preset = 0
@@ -68,7 +69,7 @@ theme_override_font_sizes/font_size = 40
 text = "Cash In Here
 "
 
-[node name="moneyLabel" type="Label" parent="TableUI" unique_id=964445277]
+[node name="moneyLabel" type="Label" parent="TableUI" unique_id=1894639320]
 layout_mode = 0
 offset_right = 386.0
 offset_bottom = 138.0
@@ -86,3 +87,16 @@ theme = ExtResource("7_64sdq")
 theme_override_fonts/font = ExtResource("8_ormek")
 theme_override_font_sizes/font_size = 80
 text = "Round: #"
+
+[node name="TimerLabel" type="Label" parent="TableUI" unique_id=473179523]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.7620001
+anchor_top = 6.4750004
+anchor_right = 1.7620001
+anchor_bottom = 6.4750004
+offset_left = -71.48
+offset_top = -59.0
+offset_right = 470.52
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 50
