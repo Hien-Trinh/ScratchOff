@@ -9,6 +9,7 @@ extends Node2D
 
 @onready var round_label = $Table/TableUI/RoundLabel
 
+var game_timer = Timer.new()
 var round_counter : int = 1
 
 # Called when the node enters the scene tree for the first time.
@@ -24,6 +25,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	$Table/TableUI/TimerLabel.set_text("TIME LEFT: " + str(snappedf(game_timer.get_time_left(), 0.1)))
 	# SwapScreenTest = the "V" key
 	if Input.is_action_just_released("SwapScreenTest"):
 		if shop_menu.visible == true:
@@ -46,7 +48,6 @@ func round_start():
 		table._ready()
 	if round_counter == 1:
 		add_child(hand)
-	var game_timer = Timer.new()
 	add_child(game_timer)
 	game_timer.one_shot = true
 	game_timer.set_wait_time(15.0) # Seconds
