@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://hj8g0jsmv3sb"
-path="res://.godot/imported/Fake Receipt.otf-5f0ac69ef6828ce0f2c02b4ca7590645.fontdata"
+path="res://.godot/imported/Fake Receipt.otf-f04e24238e543c88f1094bb85dc6e548.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/Fake Receipt.otf"
-dest_files=["res://.godot/imported/Fake Receipt.otf-5f0ac69ef6828ce0f2c02b4ca7590645.fontdata"]
+source_file="res://assets/fonts/Fake Receipt.otf"
+dest_files=["res://.godot/imported/Fake Receipt.otf-f04e24238e543c88f1094bb85dc6e548.fontdata"]
 
 [params]
 

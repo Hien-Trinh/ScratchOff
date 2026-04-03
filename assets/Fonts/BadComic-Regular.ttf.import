@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://c7xr4ltkfu4w0"
-path="res://.godot/imported/BadComic-Regular.ttf-8e8eaba40f2083367839a6607301f4a2.fontdata"
+path="res://.godot/imported/BadComic-Regular.ttf-c343537df36ae7874f8570a0901fbdf3.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/BadComic-Regular.ttf"
-dest_files=["res://.godot/imported/BadComic-Regular.ttf-8e8eaba40f2083367839a6607301f4a2.fontdata"]
+source_file="res://assets/fonts/BadComic-Regular.ttf"
+dest_files=["res://.godot/imported/BadComic-Regular.ttf-c343537df36ae7874f8570a0901fbdf3.fontdata"]
 
 [params]
 
