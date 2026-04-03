@@ -13,7 +13,10 @@ func gamble():
 	pass #for now
 	
 	var my_random_number = rng.randf_range(0.0, 1.0)
-	#var currentVal = methodToGrabCardValue
+	
+#	"winning" here refers to the 'winning' variable in cashInArea which grabs the
+#	 card value. This upgrade is called after that variable is made.
+	#var currentVal = winning
 
 	var result = 0
 	if (my_random_number > 0.5):
@@ -21,6 +24,5 @@ func gamble():
 	else:
 		result = 2
 #	currentVal *= result
-#	update Game Manager to add currentVal balance now
 
 	

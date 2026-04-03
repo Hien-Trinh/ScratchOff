@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bm0is53gc61ph" path="res://assets/other/dirtyfloor.png" id="2_67vji"]
 [ext_resource type="Texture2D" uid="uid://ksw5uoc78hn4" path="res://assets/other/solidpink.jpg" id="2_kl0hw"]
 [ext_resource type="Script" uid="uid://cyjjyhbj6867x" path="res://scripts/cashArea.gd" id="3_vjl2i"]
-[ext_resource type="FontFile" uid="uid://btatnlvuujute" path="res://assets/fonts/goudystout.TTF" id="5_67vji"]
+[ext_resource type="FontFile" uid="uid://btatnlvuujute" path="res://assets/Fonts/goudystout.TTF" id="5_67vji"]
 [ext_resource type="AudioStream" uid="uid://cy2pkexmnvmx7" path="res://assets/audio/sfx/8-bit-explosion.wav" id="6_jry6c"]
+[ext_resource type="Theme" uid="uid://d1jq44qij8nlg" path="res://themes/continue_text.tres" id="7_64sdq"]
+[ext_resource type="FontFile" uid="uid://iral2cauilc8" path="res://assets/Fonts/chiller.TTF" id="8_ormek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67vji"]
 size = Vector2(1920.0001, 1080)
@@ -25,15 +27,6 @@ position = Vector2(962.56177, 541.80005)
 scale = Vector2(0.48930466, 0.37777779)
 texture = ExtResource("2_67vji")
 
-[node name="Label" type="Label" parent="." unique_id=1617370136]
-offset_left = 31.0
-offset_top = 609.0
-offset_right = 276.0
-offset_bottom = 722.0
-theme_override_font_sizes/font_size = 40
-text = "Cash In Here
-"
-
 [node name="cashArea" type="Sprite2D" parent="." unique_id=2062980907 node_paths=PackedStringArray("moneyLabel")]
 modulate = Color(0, 0.8967519, 0.887035, 1)
 z_index = -1
@@ -41,7 +34,7 @@ position = Vector2(175.50002, 840)
 scale = Vector2(0.18177083, 0.44444445)
 texture = ExtResource("2_kl0hw")
 script = ExtResource("3_vjl2i")
-moneyLabel = NodePath("../moneylabel")
+moneyLabel = NodePath("../TableUI/moneyLabel")
 
 [node name="Area2D" type="Area2D" parent="cashArea" unique_id=319385205]
 
@@ -57,10 +50,53 @@ stream = ExtResource("6_jry6c")
 volume_db = 5.0
 
 [node name="moneylabel" type="Label" parent="." unique_id=964445277]
+
+[node name="TableUI" type="Control" parent="." unique_id=1448599781]
+layout_mode = 3
+anchors_preset = 0
 offset_left = 44.0
 offset_top = 22.0
-offset_right = 430.0
-offset_bottom = 160.0
+offset_right = 84.0
+offset_bottom = 62.0
+
+[node name="cashInLabel" type="Label" parent="TableUI" unique_id=1617370136]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 587.0
+offset_right = 232.0
+offset_bottom = 700.0
+theme_override_font_sizes/font_size = 40
+text = "Cash In Here
+"
+
+[node name="moneyLabel" type="Label" parent="TableUI" unique_id=1894639320]
+layout_mode = 0
+offset_right = 386.0
+offset_bottom = 138.0
 theme_override_font_sizes/font_size = 70
 text = "Money: "
 label_settings = SubResource("LabelSettings_jry6c")
+
+[node name="RoundLabel" type="Label" parent="TableUI" unique_id=1032973269]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 102.0
+offset_right = 330.0
+offset_bottom = 199.0
+theme = ExtResource("7_64sdq")
+theme_override_fonts/font = ExtResource("8_ormek")
+theme_override_font_sizes/font_size = 80
+text = "Round: #"
+
+[node name="TimerLabel" type="Label" parent="TableUI" unique_id=473179523]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.7620001
+anchor_top = 6.4750004
+anchor_right = 1.7620001
+anchor_bottom = 6.4750004
+offset_left = -71.48
+offset_top = -59.0
+offset_right = 470.52
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 50

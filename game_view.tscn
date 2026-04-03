@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://7a5ktbrv4hkk" path="res://hand.tscn" id="3_cr1hu"]
 [ext_resource type="Theme" uid="uid://d1jq44qij8nlg" path="res://themes/continue_text.tres" id="4_752fl"]
 [ext_resource type="PackedScene" uid="uid://cu2xcogwm8pu3" path="res://pause_menu.tscn" id="4_mu740"]
-[ext_resource type="FontFile" uid="uid://iral2cauilc8" path="res://assets/fonts/chiller.TTF" id="5_ni2ws"]
 [ext_resource type="AudioStream" uid="uid://4ep1awq36e2v" path="res://assets/audio/music/bc-song1.wav" id="8_5unvd"]
 
 [sub_resource type="Animation" id="Animation_lqkpn"]
@@ -70,23 +69,6 @@ script = ExtResource("1_lqkpn")
 [node name="Table" parent="." unique_id=1736072314 instance=ExtResource("1_0lsib")]
 position = Vector2(-2, 5)
 
-[node name="TableUI" type="Control" parent="Table" unique_id=138578637]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="RoundLabel" type="Label" parent="Table/TableUI" unique_id=354778059]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 102.0
-offset_right = 330.0
-offset_bottom = 199.0
-theme = ExtResource("4_752fl")
-theme_override_fonts/font = ExtResource("5_ni2ws")
-theme_override_font_sizes/font_size = 80
-text = "Round: #"
-
 [node name="ShopMenu" parent="." unique_id=151485780 instance=ExtResource("1_6k14t")]
 anchors_preset = 0
 anchor_right = 0.0
@@ -97,7 +79,7 @@ offset_bottom = -22.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Button" type="Button" parent="ShopMenu" unique_id=1856277280]
+[node name="ContinueButton" type="Button" parent="ShopMenu" unique_id=1797669581]
 layout_mode = 0
 offset_left = 1411.0
 offset_top = 896.00006
@@ -118,4 +100,4 @@ stream = ExtResource("8_5unvd")
 volume_db = -2.0
 autoplay = true
 
-[connection signal="pressed" from="ShopMenu/Button" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="ShopMenu/ContinueButton" to="." method="_on_continue_button_pressed"]
