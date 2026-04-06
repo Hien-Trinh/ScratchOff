@@ -23,10 +23,6 @@ func _ready():
 	init_reward_dict()
 	init_upgrade_dict()
 	
-	#FOR TESTING PURPOSES AS SHOP BUTTON NOT SET UP !!!!! HOW IN THE WORLD DO YOU 
-	#ASSIGN AN UPGRADE TO A BUTTON, I AM PERPLEXED.
-	activate_upgrade("Gambling")
-	
 	for i in range(5):
 		var ticket = generate_ticket("LotsOfMoney")
 		add_ticket(ticket)

@@ -217,7 +217,7 @@ theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
 buy_cost = 200.0
-buy_name = "Mult2"
+buy_name = "Gambling"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 

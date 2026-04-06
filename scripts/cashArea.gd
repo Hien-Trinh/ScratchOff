@@ -18,13 +18,12 @@ func _process(delta: float) -> void:
 				winning = card.card_data.card_value
 				if GameManager.check_gamble() == true:
 					winning *= GameManager.gamble()
-					print("")
 				card.free()
 				GameManager.remove_ticket_at_index(GameManager.ticketList.find(card))
 				money += (winning * GameManager.mult)
 				GameManager.set_balance(money)
 				explosion.play()
 		moneyLabel.text = "Money: $" + str(money)
-		
+
 #line of tabs to see end of long line above, godot issue
 																																										
