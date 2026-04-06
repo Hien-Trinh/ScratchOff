@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bm0is53gc61ph" path="res://assets/other/dirtyfloor.png" id="2_67vji"]
 [ext_resource type="Texture2D" uid="uid://ksw5uoc78hn4" path="res://assets/other/solidpink.jpg" id="2_kl0hw"]
 [ext_resource type="Script" uid="uid://cyjjyhbj6867x" path="res://scripts/cashArea.gd" id="3_vjl2i"]
-[ext_resource type="FontFile" uid="uid://btatnlvuujute" path="res://assets/Fonts/goudystout.TTF" id="5_67vji"]
+[ext_resource type="FontFile" uid="uid://btatnlvuujute" path="res://assets/fonts/goudystout.TTF" id="5_67vji"]
 [ext_resource type="AudioStream" uid="uid://cy2pkexmnvmx7" path="res://assets/audio/sfx/8-bit-explosion.wav" id="6_jry6c"]
 [ext_resource type="Theme" uid="uid://d1jq44qij8nlg" path="res://themes/continue_text.tres" id="7_64sdq"]
-[ext_resource type="FontFile" uid="uid://iral2cauilc8" path="res://assets/Fonts/chiller.TTF" id="8_ormek"]
+[ext_resource type="FontFile" uid="uid://iral2cauilc8" path="res://assets/fonts/chiller.TTF" id="8_ormek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67vji"]
 size = Vector2(1920.0001, 1080)

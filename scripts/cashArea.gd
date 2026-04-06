@@ -6,10 +6,15 @@ extends Sprite2D
 @onready var explosion = $Sound/Explosion
 var money : float = GameManager.balance
 var winning = 0
+var local_goal = 0.0
 
 func _ready():
 	moneyLabel.text = "Money: $" + str(money)
-	
+
+func refresh_goal_count(new_value):
+	moneyLabel.text = "Money: $" + str(money) + " / " + str(new_value)
+	local_goal = new_value
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("Click") && get_global_mouse_position().x < 350 && get_global_mouse_position().y > 600 && cashSpace.has_overlapping_bodies():
 		var labelArray = cashSpace.get_overlapping_bodies()
@@ -21,7 +26,7 @@ func _process(delta: float) -> void:
 				money += (winning * GameManager.mult)
 				GameManager.set_balance(money)
 				explosion.play()
-		moneyLabel.text = "Money: $" + str(money)
+		moneyLabel.text = "Money: $" + str(money) + " / " + str(local_goal)
 		
 #line of tabs to see end of long line above, godot issue
 																																										
