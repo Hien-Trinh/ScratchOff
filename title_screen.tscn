@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://wvwi7aeyp8bn"]
+
+[ext_resource type="Texture2D" uid="uid://kii2elideid1" path="res://assets/other/gas_station_ext.png" id="1_ig5kc"]
+[ext_resource type="FontFile" uid="uid://hj8g0jsmv3sb" path="res://assets/fonts/Fake Receipt.otf" id="3_hafda"]
+
+[node name="TitleScreen" type="Control" unique_id=1190921927]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2027049527]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -171.0
+offset_right = 2205.0002
+offset_bottom = 1482.0
+texture = ExtResource("1_ig5kc")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=916035801]
+layout_mode = 0
+offset_left = 162.0
+offset_right = 610.0
+offset_bottom = 1083.0
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1923364192]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 47.0
+offset_right = 433.62665
+offset_bottom = 241.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hafda")
+theme_override_font_sizes/font_size = 40
+text = "GAS STATION
+SCRATCH LOTTERY
+SIMULATOR"
+
+[node name="Button" type="Button" parent="ColorRect" unique_id=614787188]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 298.0
+offset_right = 153.0
+offset_bottom = 355.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.19, 0.19, 0.19, 1)
+theme_override_fonts/font = ExtResource("3_hafda")
+theme_override_font_sizes/font_size = 40
+text = "START"
+flat = true
+alignment = 0
+
+[node name="Button2" type="Button" parent="ColorRect" unique_id=1851859842]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 421.0
+offset_right = 207.0
+offset_bottom = 478.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.19, 0.19, 0.19, 1)
+theme_override_fonts/font = ExtResource("3_hafda")
+theme_override_font_sizes/font_size = 40
+text = "CREDITS"
+flat = true
+alignment = 0

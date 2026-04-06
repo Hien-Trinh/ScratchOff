@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dppipli8rf1t8"
-path="res://.godot/imported/Creepster-Regular.ttf-38f37cd92fe1b7421c832cc2e3906adc.fontdata"
+path="res://.godot/imported/Creepster-Regular.ttf-7af55f207a18838b01fb7a587c25f706.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/Creepster-Regular.ttf"
-dest_files=["res://.godot/imported/Creepster-Regular.ttf-38f37cd92fe1b7421c832cc2e3906adc.fontdata"]
+source_file="res://assets/fonts/Creepster-Regular.ttf"
+dest_files=["res://.godot/imported/Creepster-Regular.ttf-7af55f207a18838b01fb7a587c25f706.fontdata"]
 
 [params]
 

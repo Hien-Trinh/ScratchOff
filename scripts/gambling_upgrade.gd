@@ -1,6 +1,7 @@
 extends Upgrade # Subclass of the Upgrade class
+class_name GamblingUpgrade
 
-#Double or nothing rewards on each card
+#Triple or nothing rewards on each card
 
 var rng = RandomNumberGenerator.new()
 
@@ -22,7 +23,7 @@ func gamble():
 	if (my_random_number > 0.5):
 		result = 0
 	else:
-		result = 2
+		result = 3
 #	currentVal *= result
 
 	

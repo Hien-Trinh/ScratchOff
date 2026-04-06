@@ -1,4 +1,5 @@
 extends Upgrade # Subclass of the Upgrade class
+class_name CheapskateUpgrade
 
 #shop prices are reduced 10% - 25% for each item
 

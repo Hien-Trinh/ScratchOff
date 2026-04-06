@@ -113,6 +113,11 @@ func init_upgrade_dict():
 	upgrade_dict["Mult1"] = MultiplierUpgrade.new("1.25x Multiplier", mult1_texture, 1.25)
 	var mult2_texture = preload("res://assets/upgrades/mult_1.5.png")
 	upgrade_dict["Mult2"] = MultiplierUpgrade.new("1.5x Multiplier", mult2_texture, 1.5)
+	# var cheapskate_texture = preload(ADDMEEEEEEE)
+	# upgrade_dict["Cheapskate"] = CheapskateUpgrade.new("Cheapskate", cheapskate_texture)
+	# var gambling_texture = preload(ADDMEEEEEEE)
+	# upgrade_dict["Gambling"] = GamblingUpgrade.new("Gambling", gambling_texture)
+	
 
 func calculate_mult():
 	for key in upgrade_dict:
