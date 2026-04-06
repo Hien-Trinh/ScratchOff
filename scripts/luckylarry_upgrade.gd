@@ -7,7 +7,3 @@ class_name LuckyLarryUpgrade
 func _init(new_name : String, new_texture : Texture2D):
 	upgrade_name = new_name
 	upgrade_texture = new_texture
-
-#Called on round start, but also connects to inventory? Not sure
-func bonusCard():
-	pass #for now

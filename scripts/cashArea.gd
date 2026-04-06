@@ -17,6 +17,7 @@ func _process(delta: float) -> void:
 			if card.card_data.is_scratched == true:
 				winning = card.card_data.card_value
 				if GameManager.check_gamble() == true:
+					print("gambling is true")
 					winning *= GameManager.gamble()
 				card.free()
 				GameManager.remove_ticket_at_index(GameManager.ticketList.find(card))

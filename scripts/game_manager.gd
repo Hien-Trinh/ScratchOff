@@ -145,6 +145,30 @@ func gamble():
 		result = 3
 	return result
 
+func check_larry():
+	print("checking larry...")
+	for key in upgrade_dict:
+		var upgrade = upgrade_dict[key]
+		if upgrade is LuckyLarryUpgrade && upgrade.is_active == true:
+			print("larry is here!")
+			return true
+	print("larry isn't here :(")
+	return false
+
+func do_lucky_larry():
+	var ticket_name
+	var my_random = rng.randf_range(0.0, 2.0)
+	print("random is: " + str(my_random))
+	if my_random <= 1.0:
+		ticket_name = "LotsOfMoney"
+	elif my_random > 1.0 and my_random <= 2.0:
+		ticket_name = "Nuclear Capital"
+	else:
+		ticket_name = "Lucky Winner"
+	var ticket = generate_ticket(ticket_name)
+	add_ticket(ticket)
+	spawn_list.append(ticket)
+
 func generate_ticket(ticket_key : String):
 	if(ticket_template_dict.has(ticket_key)):
 		var info = ticket_template_dict.get(ticket_key)

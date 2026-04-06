@@ -28,7 +28,6 @@ func _ready():
 	add_child(game_timer)
 	game_timer.one_shot = true
 	game_timer.connect("timeout", Callable(self,"_on_timer_timeout"))
-	
 	round_start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -85,6 +84,8 @@ func _on_continue_button_pressed():
 		shop_menu.visible = false
 		round_counter += 1
 		round_label.text = "Round: " + str(round_counter)
+		#if GameManager.check_larry() == true:
+			#GameManager.do_lucky_larry()
 		round_start()
 
 func check_win_lose():
