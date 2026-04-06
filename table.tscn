@@ -27,14 +27,14 @@ position = Vector2(962.56177, 541.80005)
 scale = Vector2(0.48930466, 0.37777779)
 texture = ExtResource("2_67vji")
 
-[node name="cashArea" type="Sprite2D" parent="." unique_id=2062980907 node_paths=PackedStringArray("moneyLabel")]
+[node name="cashArea" type="Sprite2D" parent="." unique_id=2062980907 node_paths=PackedStringArray("moneyAmount")]
 modulate = Color(0, 0.8967519, 0.887035, 1)
 z_index = -1
 position = Vector2(175.50002, 840)
 scale = Vector2(0.18177083, 0.44444445)
 texture = ExtResource("2_kl0hw")
 script = ExtResource("3_vjl2i")
-moneyLabel = NodePath("../TableUI/moneyLabel")
+moneyAmount = NodePath("../TableUI/moneyAmount")
 
 [node name="Area2D" type="Area2D" parent="cashArea" unique_id=319385205]
 
@@ -48,8 +48,6 @@ position = Vector2(0, -1100)
 [node name="Explosion" type="AudioStreamPlayer2D" parent="cashArea/Sound" unique_id=2137848250]
 stream = ExtResource("6_jry6c")
 volume_db = 5.0
-
-[node name="moneylabel" type="Label" parent="." unique_id=964445277]
 
 [node name="TableUI" type="Control" parent="." unique_id=1448599781]
 layout_mode = 3
@@ -72,9 +70,17 @@ text = "Cash In Here
 [node name="moneyLabel" type="Label" parent="TableUI" unique_id=1894639320]
 layout_mode = 0
 offset_right = 386.0
-offset_bottom = 138.0
+offset_bottom = 69.0
 theme_override_font_sizes/font_size = 70
-text = "Money: "
+text = "Money:"
+label_settings = SubResource("LabelSettings_jry6c")
+
+[node name="moneyAmount" type="Label" parent="TableUI" unique_id=1064009766]
+layout_mode = 0
+offset_left = 358.0
+offset_right = 744.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 70
 label_settings = SubResource("LabelSettings_jry6c")
 
 [node name="RoundLabel" type="Label" parent="TableUI" unique_id=1032973269]
