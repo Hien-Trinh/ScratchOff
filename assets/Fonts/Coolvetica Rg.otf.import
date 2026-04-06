@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bqxdvnqmuulum"
-path="res://.godot/imported/Coolvetica Rg.otf-51136d27f0985f152e0e0494621e0314.fontdata"
+path="res://.godot/imported/Coolvetica Rg.otf-894aa0c4bd224554a406865d09e91bdf.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/Coolvetica Rg.otf"
-dest_files=["res://.godot/imported/Coolvetica Rg.otf-51136d27f0985f152e0e0494621e0314.fontdata"]
+source_file="res://assets/Fonts/Coolvetica Rg.otf"
+dest_files=["res://.godot/imported/Coolvetica Rg.otf-894aa0c4bd224554a406865d09e91bdf.fontdata"]
 
 [params]
 
