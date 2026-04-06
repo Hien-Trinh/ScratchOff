@@ -8,6 +8,7 @@ extends Node2D
 @onready var cashArea = $Table/cashArea
 
 @onready var round_label = $Table/TableUI/RoundLabel
+@onready var money_label = $Table/TableUI/moneyLabel
 
 var game_timer = Timer.new()
 var round_counter : int = 1
@@ -24,6 +25,8 @@ func _ready():
 	shop_menu.visible = false
 	round_label.text = "Round: " + str(round_counter)
 	
+	cashArea.refresh_goal_count(goal)
+	
 	# Game timer init
 	add_child(game_timer)
 	game_timer.one_shot = true
@@ -33,6 +36,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	$Table/TableUI/TimerLabel.set_text("TIME LEFT: " + str(snappedf(game_timer.get_time_left(), 0.1)))
+	if Input.is_action_just_released("Pause"):
+		get_tree().paused = true
+		pause_menu.show()
+		pause_menu.set_process(true)
 	# SwapScreenTest = the "V" key
 	if Input.is_action_just_released("SwapScreenTest"):
 		if shop_menu.visible == true:
@@ -95,4 +102,5 @@ func check_win_lose():
 	else:
 		# WIN
 		goal *=2
+		cashArea.refresh_goal_count(goal)
 		
