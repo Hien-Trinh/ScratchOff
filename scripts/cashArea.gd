@@ -21,6 +21,8 @@ func _process(delta: float) -> void:
 		for card in labelArray:
 			if card.card_data.is_scratched == true:
 				winning = card.card_data.card_value
+				if GameManager.check_gamble() == true:
+					winning *= GameManager.gamble()
 				card.free()
 				GameManager.remove_ticket_at_index(GameManager.ticketList.find(card))
 				money += (winning * GameManager.mult)

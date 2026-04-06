@@ -11,4 +11,3 @@ func _init(new_name : String, new_texture : Texture2D):
 #Called on round start, but also connects to inventory? Not sure
 func bonusCard():
 	pass #for now
-	

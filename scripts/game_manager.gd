@@ -22,6 +22,7 @@ func _ready():
 	init_ticket_dict()
 	init_reward_dict()
 	init_upgrade_dict()
+	
 	for i in range(5):
 		var ticket = generate_ticket("LotsOfMoney")
 		add_ticket(ticket)
@@ -113,10 +114,12 @@ func init_upgrade_dict():
 	upgrade_dict["Mult1"] = MultiplierUpgrade.new("1.25x Multiplier", mult1_texture, 1.25)
 	var mult2_texture = preload("res://assets/upgrades/mult_1.5.png")
 	upgrade_dict["Mult2"] = MultiplierUpgrade.new("1.5x Multiplier", mult2_texture, 1.5)
-	# var cheapskate_texture = preload(ADDMEEEEEEE)
-	# upgrade_dict["Cheapskate"] = CheapskateUpgrade.new("Cheapskate", cheapskate_texture)
-	# var gambling_texture = preload(ADDMEEEEEEE)
-	# upgrade_dict["Gambling"] = GamblingUpgrade.new("Gambling", gambling_texture)
+	var cheapskate_texture = preload("res://assets/upgrades/temp_up.svg") #ADD TEXTURE !!!
+	upgrade_dict["Cheapskate"] = CheapskateUpgrade.new("CheapskateUpgrade", cheapskate_texture)
+	var gambling_texture = preload("res://assets/upgrades/temp_up.svg") #ADD TEXTURE !!!
+	upgrade_dict["Gambling"] = GamblingUpgrade.new("GamblingUpgrade", gambling_texture)
+	var luckylarry_texture = preload("res://assets/upgrades/temp_up.svg") #ADD TEXTURE !!!
+	upgrade_dict["LuckyLarry"] = GamblingUpgrade.new("LuckyLarryUpgrade", luckylarry_texture)
 	
 
 func calculate_mult():
@@ -125,6 +128,22 @@ func calculate_mult():
 		if upgrade is MultiplierUpgrade && upgrade.is_active == true:
 			if upgrade.multiplier > mult:
 				mult = upgrade.multiplier
+
+func check_gamble():
+	for key in upgrade_dict:
+		var upgrade = upgrade_dict[key]
+		if upgrade is GamblingUpgrade && upgrade.is_active == true:
+			return true
+	return false
+
+func gamble():
+	var my_random_number = rng.randf_range(0.0, 1.0)
+	var result = 0
+	if (my_random_number > 0.5):
+		result = 0
+	else:
+		result = 3
+	return result
 
 func generate_ticket(ticket_key : String):
 	if(ticket_template_dict.has(ticket_key)):

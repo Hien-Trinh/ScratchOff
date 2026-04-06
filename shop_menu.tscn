@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cotdew5qhai5t" path="res://assets/upgrades/mult__1.25.png" id="7_0atty"]
 [ext_resource type="Texture2D" uid="uid://cupvhw7iqp2ii" path="res://assets/cards/LuckyMoney180.png" id="8_8fj20"]
 [ext_resource type="Texture2D" uid="uid://be61errsqdolu" path="res://assets/cards/money4fun180.png" id="9_0atty"]
+[ext_resource type="Texture2D" uid="uid://de7emop815p5h" path="res://assets/upgrades/temp_up.svg" id="9_eopb6"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_rh1mo"]
 diffuse_texture = ExtResource("2_f8gav")
@@ -165,19 +166,87 @@ offset_top = 155.33336
 offset_right = 121.66667
 offset_bottom = 195.33336
 
-[node name="Upgrade2" type="TextureRect" parent="Upgrades" unique_id=139241062]
+[node name="Upgrade4" type="TextureRect" parent="Upgrades" unique_id=2142231357]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 19.083332
+anchor_top = 12.741666
+anchor_right = 24.083332
+anchor_bottom = 17.741665
+offset_left = 1.5258789e-05
+offset_bottom = 6.1035156e-05
+pivot_offset = Vector2(117, 117)
+texture = ExtResource("9_eopb6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Upgrades/Upgrade4" unique_id=357589488]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0703125
+anchor_top = 1.0546875
+anchor_right = 1.0625
+anchor_bottom = 1.5625
+theme_override_font_sizes/font_size = 35
+text = "TEMP"
+script = ExtResource("5_f8gav")
+buy_cost = 200.0
+buy_name = "Mult2"
+is_upgrade = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Upgrade3" type="TextureRect" parent="Upgrades" unique_id=139241062]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 12.833333
+anchor_top = 12.741666
+anchor_right = 17.833332
+anchor_bottom = 17.741665
+offset_bottom = 6.1035156e-05
+pivot_offset = Vector2(117, 117)
+texture = ExtResource("9_eopb6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Upgrades/Upgrade3" unique_id=1757481241]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0703125
+anchor_top = 1.0546875
+anchor_right = 1.0625
+anchor_bottom = 1.5625
+theme_override_font_sizes/font_size = 35
+text = "TEMP"
+script = ExtResource("5_f8gav")
+buy_cost = 200.0
+buy_name = "Gambling"
+is_upgrade = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Upgrades/Upgrade3" unique_id=1580864717]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.49
+offset_left = 32.97
+offset_top = 44.785
+offset_right = 130.97003
+offset_bottom = 146.785
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Gamble"
+
+[node name="Upgrade2" type="TextureRect" parent="Upgrades" unique_id=1798107465]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 6.308333
 anchor_top = 12.741664
 anchor_right = 11.308332
 anchor_bottom = 17.741663
+offset_left = 1.5258789e-05
 offset_bottom = 6.1035156e-05
 pivot_offset = Vector2(117, 117)
 texture = ExtResource("5_8fj20")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Upgrades/Upgrade2" unique_id=1757481241]
+[node name="Button" type="Button" parent="Upgrades/Upgrade2" unique_id=1261150651]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.0703125
@@ -241,5 +310,7 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Tickets/Ticket2/Buy_2" to="Tickets/Ticket2/Buy_2" method="_on_pressed"]
 [connection signal="pressed" from="Tickets/Ticket3/Buy_3" to="Tickets/Ticket3/Buy_3" method="_on_pressed"]
 [connection signal="pressed" from="Tickets/Ticket4/Buy_4" to="Tickets/Ticket4/Buy_4" method="_on_pressed"]
+[connection signal="pressed" from="Upgrades/Upgrade4/Button" to="Upgrades/Upgrade4/Button" method="_on_pressed"]
+[connection signal="pressed" from="Upgrades/Upgrade3/Button" to="Upgrades/Upgrade3/Button" method="_on_pressed"]
 [connection signal="pressed" from="Upgrades/Upgrade2/Button" to="Upgrades/Upgrade2/Button" method="_on_pressed"]
 [connection signal="pressed" from="Upgrades/Upgrade1/Button" to="Upgrades/Upgrade1/Button" method="_on_pressed"]

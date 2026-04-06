@@ -17,7 +17,6 @@ func _ready():
 	upgrade_already_owned = false
 	add_child(buysfx_player)
 	buysfx_player.stream = buysfx
-	buysfx_player.bus = "Distort"
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

@@ -77,7 +77,7 @@ func _on_timer_timeout():
 		hand.visible = false
 		await anim.animation_finished
 		table.visible = false
-	
+		
 func _on_continue_button_pressed():
 	if shop_menu.visible == true:
 		# Swap from shop to table
