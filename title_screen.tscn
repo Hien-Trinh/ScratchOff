@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://wvwi7aeyp8bn"]
 
+[ext_resource type="Script" uid="uid://bfrm03mglf827" path="res://title_screen.gd" id="1_05l2w"]
 [ext_resource type="Texture2D" uid="uid://kii2elideid1" path="res://assets/other/gas_station_ext.png" id="1_ig5kc"]
 [ext_resource type="Texture2D" uid="uid://bdq141q5ji84q" path="res://white-paper-texture.jpg" id="2_ig5kc"]
 [ext_resource type="FontFile" uid="uid://hj8g0jsmv3sb" path="res://assets/fonts/Fake Receipt.otf" id="3_hafda"]
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_05l2w")
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2027049527]
@@ -32,7 +34,7 @@ offset_bottom = 1105.0
 texture = ExtResource("2_ig5kc")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="TextureRect2" unique_id=1923364192]
+[node name="Title" type="Label" parent="TextureRect2" unique_id=1923364192]
 layout_mode = 0
 offset_left = 11.0
 offset_top = 53.0
@@ -45,7 +47,7 @@ text = "GAS STATION
 SCRATCH LOTTERY
 SIMULATOR"
 
-[node name="Button" type="Button" parent="TextureRect2" unique_id=614787188]
+[node name="StartButton" type="Button" parent="TextureRect2" unique_id=614787188]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 304.0
@@ -59,7 +61,7 @@ text = "START"
 flat = true
 alignment = 0
 
-[node name="Button2" type="Button" parent="TextureRect2" unique_id=1851859842]
+[node name="CreditsButton" type="Button" parent="TextureRect2" unique_id=1851859842]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 427.0
@@ -72,3 +74,86 @@ theme_override_font_sizes/font_size = 40
 text = "CREDITS"
 flat = true
 alignment = 0
+
+[node name="CreditsWindow" type="ColorRect" parent="." unique_id=1301093167]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 109.0
+offset_right = 1702.0
+offset_bottom = 961.0
+color = Color(0.1092, 0.12930664, 0.26, 0.9490196)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsWindow" unique_id=673996590]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 154.0
+offset_right = 998.0
+offset_bottom = 430.0
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "David Trinh
+Henry Petersen
+Sam Kennedy
+Gunnar Ray"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CreditsWindow" unique_id=5719915]
+layout_mode = 0
+offset_left = 628.0
+offset_top = 100.0
+offset_right = 856.0
+offset_bottom = 155.0
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Creators"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CreditsWindow" unique_id=1376286477]
+layout_mode = 0
+offset_left = 628.0
+offset_top = 442.0
+offset_right = 856.0
+offset_bottom = 497.0
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Special Thanks"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CreditsWindow" unique_id=188716422]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 433.0
+offset_right = 1057.0
+offset_bottom = 709.0
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Paul Cantrell
+The COMP225 Spring '26 Class"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitCreditWindow" type="Button" parent="CreditsWindow" unique_id=508431576]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.94301224
+anchor_top = 0.03521127
+anchor_right = 0.9796472
+anchor_bottom = 0.09859155
+theme_override_font_sizes/font_size = 25
+text = "X"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="TextureRect2/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="TextureRect2/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CreditsWindow/ExitCreditWindow" to="." method="_on_exit_credit_window_pressed"]
