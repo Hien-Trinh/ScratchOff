@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://btatnlvuujute"
-path="res://.godot/imported/goudystout.TTF-153414c964631e1e5535b6d82909a8f4.fontdata"
+path="res://.godot/imported/goudystout.TTF-9db0dd38a0b64865dd21d2c96212e318.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/goudystout.TTF"
-dest_files=["res://.godot/imported/goudystout.TTF-153414c964631e1e5535b6d82909a8f4.fontdata"]
+source_file="res://assets/Fonts/goudystout.TTF"
+dest_files=["res://.godot/imported/goudystout.TTF-9db0dd38a0b64865dd21d2c96212e318.fontdata"]
 
 [params]
 
