@@ -76,6 +76,7 @@ flat = true
 alignment = 0
 
 [node name="CreditsWindow" type="ColorRect" parent="." unique_id=1301093167]
+visible = false
 layout_mode = 0
 offset_left = 228.0
 offset_top = 109.0

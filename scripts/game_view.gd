@@ -10,6 +10,8 @@ extends Node2D
 @onready var round_label = $Table/TableUI/RoundLabel
 @onready var money_label = $Table/TableUI/moneyLabel
 
+@onready var game_over = $GameOver
+
 var game_timer = Timer.new()
 var round_counter : int = 1
 
@@ -23,6 +25,7 @@ func _ready():
 	pause_menu.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	pause_menu.visible = false
 	shop_menu.visible = false
+	game_over.visible = false
 	round_label.text = "Round: " + str(round_counter)
 	
 	cashArea.refresh_goal_count(goal)
@@ -62,7 +65,7 @@ func round_start():
 		table._ready()
 	if round_counter == 1:
 		add_child(hand)
-	if round_counter % 8 == 0:
+	if round_counter % 7 == 0:
 		check_win_lose()
 	game_timer.set_wait_time(15.0) # Seconds
 	# Create a countdown animation?
@@ -81,7 +84,6 @@ func _on_continue_button_pressed():
 	if shop_menu.visible == true:
 		# Swap from shop to table
 		GameManager.calculate_mult()
-		print("Multiplier: " + str(GameManager.mult))
 		table.visible = true
 		cashArea.money = GameManager.balance
 		cashArea._ready()
@@ -98,9 +100,16 @@ func _on_continue_button_pressed():
 func check_win_lose():
 	if GameManager.balance < goal:
 		# LOSE
-		pass
+		game_over.visible = true
+		$GameOver/RoundNum.text = round_counter
+		anim.play("game_over_anim")
+		await anim.animation_finished
+		table.visible = false
+		shop_menu.visible = false
 	else:
 		# WIN
 		goal *=2
 		cashArea.refresh_goal_count(goal)
-		
+
+func _on_return_title_pressed():
+	get_tree().change_scene_to_file("res://title_screen.tscn")

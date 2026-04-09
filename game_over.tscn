@@ -1,3 +1,54 @@
 [gd_scene format=3 uid="uid://diwffrd0ympyl"]
 
-[node name="GameOver\'" type="Node2D" unique_id=2009763144]
+[ext_resource type="FontFile" uid="uid://dppipli8rf1t8" path="res://assets/fonts/Creepster-Regular.ttf" id="1_y26ei"]
+
+[node name="GameOver" type="Node2D" unique_id=2009763144]
+metadata/_edit_horizontal_guides_ = [27489.0]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=418947360]
+offset_right = 1933.0
+offset_bottom = 1102.0
+color = Color(0.16525003, 0.153, 0.3, 1)
+
+[node name="GameOverLabel" type="Label" parent="." unique_id=857739707]
+offset_left = 585.0
+offset_top = 74.0
+offset_right = 1384.0
+offset_bottom = 309.0
+theme_override_fonts/font = ExtResource("1_y26ei")
+theme_override_font_sizes/font_size = 200
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoundNum" type="Label" parent="." unique_id=1107931897]
+offset_left = 741.0
+offset_top = 482.0
+offset_right = 1245.0
+offset_bottom = 628.0
+theme_override_font_sizes/font_size = 80
+text = "#"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="After" type="Label" parent="RoundNum" unique_id=2103874454]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -155.0
+offset_right = 509.0
+offset_bottom = -9.0
+theme_override_font_sizes/font_size = 70
+text = "after"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoundWord" type="Label" parent="RoundNum" unique_id=342235208]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 167.0
+offset_right = 498.0
+offset_bottom = 313.0
+theme_override_font_sizes/font_size = 80
+text = "rounds"
+horizontal_alignment = 1
+vertical_alignment = 1
