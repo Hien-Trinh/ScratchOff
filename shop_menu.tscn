@@ -217,21 +217,6 @@ buy_name = "Mult1"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Upgrades/Upgrade3" unique_id=1757481241]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0703125
-anchor_top = 1.0546875
-anchor_right = 1.0625
-anchor_bottom = 1.5625
-theme_override_font_sizes/font_size = 35
-text = "TEMP"
-script = ExtResource("5_f8gav")
-buy_cost = 25.0
-buy_name = "Gambling"
-is_upgrade = true
-metadata/_edit_use_anchors_ = true
-
 [node name="Upgrade2" type="TextureRect" parent="Upgrades" unique_id=1798107465]
 layout_mode = 1
 anchors_preset = -1
