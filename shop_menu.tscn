@@ -217,18 +217,6 @@ buy_name = "Mult1"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Upgrade3" type="TextureRect" parent="Upgrades" unique_id=139241062]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 12.833333
-anchor_top = 12.741666
-anchor_right = 17.833332
-anchor_bottom = 17.741665
-offset_bottom = 6.1035156e-05
-pivot_offset = Vector2(117, 117)
-texture = ExtResource("10_5ycv2")
-metadata/_edit_use_anchors_ = true
-
 [node name="Button" type="Button" parent="Upgrades/Upgrade3" unique_id=1757481241]
 layout_mode = 1
 anchors_preset = -1
