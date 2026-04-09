@@ -81,6 +81,8 @@ func _on_timer_timeout():
 		table.visible = false
 		
 func _on_continue_button_pressed():
+	if GameManager.check_on_the_house() == true:
+		GameManager.do_on_the_house()
 	if shop_menu.visible == true:
 		# Swap from shop to table
 		GameManager.calculate_mult()
@@ -93,15 +95,13 @@ func _on_continue_button_pressed():
 		shop_menu.visible = false
 		round_counter += 1
 		round_label.text = "Round: " + str(round_counter)
-		#if GameManager.check_larry() == true:
-			#GameManager.do_lucky_larry()
 		round_start()
 
 func check_win_lose():
 	if GameManager.balance < goal:
 		# LOSE
 		game_over.visible = true
-		$GameOver/RoundNum.text = round_counter
+		$GameOver/RoundNum.text = str(round_counter) #this wasn't str() before, caused an error
 		anim.play("game_over_anim")
 		await anim.animation_finished
 		table.visible = false

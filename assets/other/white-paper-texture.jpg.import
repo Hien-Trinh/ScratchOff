@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdq141q5ji84q"
-path="res://.godot/imported/white-paper-texture.jpg-2ed1c890a7c90e1fa0cf89c2bfad1872.ctex"
+path="res://.godot/imported/white-paper-texture.jpg-27e281d3f958d147215354b64f749d4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://white-paper-texture.jpg"
-dest_files=["res://.godot/imported/white-paper-texture.jpg-2ed1c890a7c90e1fa0cf89c2bfad1872.ctex"]
+source_file="res://assets/other/white-paper-texture.jpg"
+dest_files=["res://.godot/imported/white-paper-texture.jpg-27e281d3f958d147215354b64f749d4c.ctex"]
 
 [params]
 

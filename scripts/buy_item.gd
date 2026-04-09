@@ -7,6 +7,8 @@ extends Button
 var upgrade_already_owned : bool
 # Only used for upgrades
 
+var cheapskate_value_updated = false
+
 @onready var rng = RandomNumberGenerator.new()
 @onready var buysfx_player = AudioStreamPlayer.new()
 @onready var buysfx = preload("res://assets/audio/sfx/cash-register.wav")
@@ -18,9 +20,12 @@ func _ready():
 	add_child(buysfx_player)
 	buysfx_player.stream = buysfx
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+## For cheapskate, this is quite computer-memory-taking atm. Probably change later.
+#func _process(_delta):
+	#if (GameManager.check_cheapskate() == true && cheapskate_value_updated == false):
+		#buy_cost *= 0.85
+		#self.text = "$" + str(buy_cost)
+		#cheapskate_value_updated = true
 
 func buy_ticket(): 
 	var ticket = GameManager.generate_ticket(buy_name)

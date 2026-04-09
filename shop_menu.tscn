@@ -308,7 +308,7 @@ theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
 buy_cost = 20.0
-buy_name = "LuckyLarry"
+buy_name = "OnTheHouse"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
@@ -350,7 +350,7 @@ theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
 buy_cost = 20.0
-buy_name = "LuckyLarry"
+buy_name = "Cheapskate"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 

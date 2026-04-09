@@ -32,7 +32,6 @@ func _process(delta: float) -> void:
 
 				# Gambling Upgrade calculation
 				if GameManager.check_gamble() == true:
-					print("gambling is true")
 					winning *= GameManager.gamble()
 
 				# Remove card from existence

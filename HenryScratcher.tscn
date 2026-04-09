@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c26px2fv7fuvo"]
+[gd_scene format=3 uid="uid://nv43p4aqhocs"]
 
 [ext_resource type="Texture2D" uid="uid://ck2kjcjbj5mwa" path="res://assets/cards/ScratcherImage.jpg" id="1_2bib2"]
 [ext_resource type="Script" uid="uid://bl2gv8gwifwwc" path="res://scripts/HScratcherScript.gd" id="1_kod2i"]

@@ -114,12 +114,12 @@ func init_upgrade_dict():
 	upgrade_dict["Mult1"] = MultiplierUpgrade.new("1.25x Multiplier", mult1_texture, 1.25)
 	var mult2_texture = preload("res://assets/upgrades/mult_1.5.png")
 	upgrade_dict["Mult2"] = MultiplierUpgrade.new("1.5x Multiplier", mult2_texture, 1.5)
-	var cheapskate_texture = preload("res://assets/upgrades/temp_up.svg") #ADD TEXTURE !!!
+	var cheapskate_texture = preload("res://assets/upgrades/temp_up.svg")
 	upgrade_dict["Cheapskate"] = CheapskateUpgrade.new("CheapskateUpgrade", cheapskate_texture)
-	var gambling_texture = preload("res://assets/upgrades/temp_up.svg") #ADD TEXTURE !!!
+	var gambling_texture = preload("res://assets/upgrades/temp_up.svg")
 	upgrade_dict["Gambling"] = GamblingUpgrade.new("GamblingUpgrade", gambling_texture)
-	var luckylarry_texture = preload("res://assets/upgrades/temp_up.svg") #ADD TEXTURE !!!
-	upgrade_dict["LuckyLarry"] = GamblingUpgrade.new("LuckyLarryUpgrade", luckylarry_texture)
+	var on_the_house_texture = preload("res://assets/upgrades/temp_up.svg") 
+	upgrade_dict["OnTheHouse"] = OnTheHouseUpgrade.new("OnTheHouseUpgrade", on_the_house_texture)
 	
 
 func calculate_mult():
@@ -145,29 +145,34 @@ func gamble():
 		result = 3
 	return result
 
-func check_larry():
-	print("checking larry...")
+func check_on_the_house():
 	for key in upgrade_dict:
 		var upgrade = upgrade_dict[key]
-		if upgrade is LuckyLarryUpgrade && upgrade.is_active == true:
-			print("larry is here!")
+		if upgrade is OnTheHouseUpgrade && upgrade.is_active == true:
 			return true
-	print("larry isn't here :(")
 	return false
 
-func do_lucky_larry():
+func do_on_the_house():
 	var ticket_name
-	var my_random = rng.randf_range(0.0, 2.0)
-	print("random is: " + str(my_random))
+	var my_random = rng.randf_range(0.0, 3.0)
 	if my_random <= 1.0:
 		ticket_name = "LotsOfMoney"
 	elif my_random > 1.0 and my_random <= 2.0:
-		ticket_name = "Nuclear Capital"
+		ticket_name = "NuclearCapital"
 	else:
-		ticket_name = "Lucky Winner"
+		ticket_name = "LuckyWinner"
 	var ticket = generate_ticket(ticket_name)
 	add_ticket(ticket)
 	spawn_list.append(ticket)
+
+func check_cheapskate():
+	for key in upgrade_dict:
+		var upgrade = upgrade_dict[key]
+		if upgrade is CheapskateUpgrade && upgrade.is_active == true:
+			return true
+	return false
+
+#no do_cheapskate function here as it needs price variables in shop
 
 func generate_ticket(ticket_key : String):
 	if(ticket_template_dict.has(ticket_key)):
