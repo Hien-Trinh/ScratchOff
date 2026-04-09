@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bgp5q4gq4j4tl"
-path="res://.godot/imported/BadComic-Italic.ttf-0b9160c9c9793c1694aebfb471128d0f.fontdata"
+path="res://.godot/imported/BadComic-Italic.ttf-9836bc84a6ef2a91f88874486c2454cb.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/BadComic-Italic.ttf"
-dest_files=["res://.godot/imported/BadComic-Italic.ttf-0b9160c9c9793c1694aebfb471128d0f.fontdata"]
+source_file="res://assets/fonts/BadComic-Italic.ttf"
+dest_files=["res://.godot/imported/BadComic-Italic.ttf-9836bc84a6ef2a91f88874486c2454cb.fontdata"]
 
 [params]
 
