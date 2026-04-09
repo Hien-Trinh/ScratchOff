@@ -85,8 +85,7 @@ func _on_continue_button_pressed():
 		# Swap from shop to table
 		GameManager.calculate_mult()
 		table.visible = true
-		cashArea.money = GameManager.balance
-		cashArea._ready()
+		cashArea.round_reset()
 		anim.play("shop_exit")
 		await anim.animation_finished
 		hand.visible = true
