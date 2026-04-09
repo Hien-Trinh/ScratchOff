@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 177.47 180.66">
+  <g id="Layer_2" data-name="Layer 2">
+    <rect x="3" y="3" width="171.47" height="174.66" rx="18.7" ry="18.7" style="fill: #ffe7d4; stroke: #c7b299; stroke-miterlimit: 10; stroke-width: 6px;"/>
+  </g>
+  <g id="Layer_3" data-name="Layer 3">
+    <path d="M88.73,161.82c-39.48,0-71.49-32.01-71.49-71.49S49.25,18.84,88.73,18.84" style="fill: #1a1a1a;"/>
+    <path d="M88.73,18.84c39.48,0,71.49,32.01,71.49,71.49s-32.01,71.49-71.49,71.49" style="fill: #c1272d;"/>
+  </g>
+</svg>
