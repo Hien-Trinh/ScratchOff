@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dt8ojhx3dmwmg" path="res://assets/cards/NuclearCapital180.png" id="2_qejid"]
 [ext_resource type="LabelSettings" uid="uid://buxtvmxr8t4no" path="res://themes/shop_header.tres" id="2_rh1mo"]
 [ext_resource type="Texture2D" uid="uid://30kkqo3dkldn" path="res://assets/upgrades/mult_1.5.png" id="5_8fj20"]
+[ext_resource type="Theme" uid="uid://2xcpiflaqcmi" path="res://buy_button.tres" id="5_cpriw"]
 [ext_resource type="Script" uid="uid://7tcsu8ee704u" path="res://scripts/buy_item.gd" id="5_f8gav"]
 [ext_resource type="Texture2D" uid="uid://cotdew5qhai5t" path="res://assets/upgrades/mult__1.25.png" id="7_0atty"]
 [ext_resource type="Texture2D" uid="uid://cupvhw7iqp2ii" path="res://assets/cards/LuckyMoney180.png" id="8_8fj20"]
@@ -77,6 +78,7 @@ anchor_left = -0.0703125
 anchor_top = 1.0546875
 anchor_right = 1.0625
 anchor_bottom = 1.5625
+theme = ExtResource("5_cpriw")
 theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
@@ -212,6 +214,33 @@ text = "TEMP"
 script = ExtResource("5_f8gav")
 buy_cost = 100.0
 buy_name = "Mult1"
+is_upgrade = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Upgrade3" type="TextureRect" parent="Upgrades" unique_id=139241062]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 12.833333
+anchor_top = 12.741666
+anchor_right = 17.833332
+anchor_bottom = 17.741665
+offset_bottom = 6.1035156e-05
+pivot_offset = Vector2(117, 117)
+texture = ExtResource("10_5ycv2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Upgrades/Upgrade3" unique_id=1757481241]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0703125
+anchor_top = 1.0546875
+anchor_right = 1.0625
+anchor_bottom = 1.5625
+theme_override_font_sizes/font_size = 35
+text = "TEMP"
+script = ExtResource("5_f8gav")
+buy_cost = 25.0
+buy_name = "Gambling"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
