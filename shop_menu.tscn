@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cje3jn4fld0q" path="res://assets/upgrades/gamble.svg" id="11_cpriw"]
 [ext_resource type="Texture2D" uid="uid://d1oqb76dfu1h8" path="res://assets/upgrades/onthehouse.svg" id="12_5qui4"]
 [ext_resource type="Texture2D" uid="uid://du4r2bjqdnfrr" path="res://assets/upgrades/cheapskate.svg" id="13_663q0"]
+[ext_resource type="Texture2D" uid="uid://de7emop815p5h" path="res://assets/upgrades/temp_up.svg" id="15_663q0"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_rh1mo"]
 diffuse_texture = ExtResource("2_f8gav")
@@ -267,7 +268,7 @@ anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
-buy_cost = 25.0
+buy_cost = 50.0
 buy_name = "Gambling"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
@@ -307,7 +308,7 @@ anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
-buy_cost = 20.0
+buy_cost = 30.0
 buy_name = "OnTheHouse"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
@@ -349,7 +350,7 @@ anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
-buy_cost = 20.0
+buy_cost = 100.0
 buy_name = "Cheapskate"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
@@ -367,6 +368,49 @@ theme_override_font_sizes/font_size = 27
 text = "Cheapskate
 "
 
+[node name="Upgrade6" type="TextureRect" parent="Upgrades" unique_id=1416179775]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 19.083332
+anchor_top = 12.741666
+anchor_right = 24.083332
+anchor_bottom = 17.741665
+offset_left = 252.66974
+offset_top = -337.00964
+offset_right = 259.66968
+offset_bottom = -337.00983
+pivot_offset = Vector2(117, 117)
+texture = ExtResource("15_663q0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Upgrades/Upgrade6" unique_id=1961224117]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.09446709
+anchor_top = 1.0546875
+anchor_right = 1.0383452
+anchor_bottom = 1.5625
+theme_override_font_sizes/font_size = 35
+text = "TEMP"
+script = ExtResource("5_f8gav")
+buy_cost = 80.0
+buy_name = "ExtraTime"
+is_upgrade = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Upgrades/Upgrade6" unique_id=361055362]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.26700002
+offset_left = 42.330353
+offset_top = 46.00964
+offset_right = 219.93036
+offset_bottom = 148.00964
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "Extra Time
+"
+
 [connection signal="pressed" from="Tickets/Ticket1/Buy_1" to="Tickets/Ticket1/Buy_1" method="_on_pressed"]
 [connection signal="pressed" from="Tickets/Ticket2/Buy_2" to="Tickets/Ticket2/Buy_2" method="_on_pressed"]
 [connection signal="pressed" from="Tickets/Ticket3/Buy_3" to="Tickets/Ticket3/Buy_3" method="_on_pressed"]
@@ -376,3 +420,4 @@ text = "Cheapskate
 [connection signal="pressed" from="Upgrades/Upgrade3/Button" to="Upgrades/Upgrade3/Button" method="_on_pressed"]
 [connection signal="pressed" from="Upgrades/Upgrade4/Button" to="Upgrades/Upgrade4/Button" method="_on_pressed"]
 [connection signal="pressed" from="Upgrades/Upgrade5/Button" to="Upgrades/Upgrade5/Button" method="_on_pressed"]
+[connection signal="pressed" from="Upgrades/Upgrade6/Button" to="Upgrades/Upgrade6/Button" method="_on_pressed"]

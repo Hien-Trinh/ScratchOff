@@ -27,7 +27,6 @@ func _ready():
 		var ticket = generate_ticket("LotsOfMoney")
 		add_ticket(ticket)
 		spawn_list.append(ticket)
-	print(ticketList)
 
 func add_ticket(cardItem : CardItem):
 	# Add item to ticketList Array
@@ -120,7 +119,8 @@ func init_upgrade_dict():
 	upgrade_dict["Gambling"] = GamblingUpgrade.new("GamblingUpgrade", gambling_texture)
 	var on_the_house_texture = preload("res://assets/upgrades/temp_up.svg") 
 	upgrade_dict["OnTheHouse"] = OnTheHouseUpgrade.new("OnTheHouseUpgrade", on_the_house_texture)
-	
+	var extra_time_texture = preload("res://assets/upgrades/temp_up.svg") 
+	upgrade_dict["ExtraTime"] = ExtraTimeUpgrade.new("ExtraTimeUpgrade", extra_time_texture)
 
 func calculate_mult():
 	for key in upgrade_dict:
@@ -128,6 +128,10 @@ func calculate_mult():
 		if upgrade is MultiplierUpgrade && upgrade.is_active == true:
 			if upgrade.multiplier > mult:
 				mult = upgrade.multiplier
+
+
+#We have many "check for upgrade" methods, later we should make a method that
+#does it with an upgrade as parameter. Easier. Cleaner.
 
 func check_gamble():
 	for key in upgrade_dict:
@@ -172,7 +176,16 @@ func check_cheapskate():
 			return true
 	return false
 
-#no do_cheapskate function here as it needs price variables in shop
+#no do_cheapskate function here as it needs price variables in shop, in process delta
+
+func check_extra_time():
+	for key in upgrade_dict:
+		var upgrade = upgrade_dict[key]
+		if upgrade is ExtraTimeUpgrade && upgrade.is_active == true:
+			return true
+	return false
+
+#no do_extra_time function here as timer time is best accessed as it is made
 
 func generate_ticket(ticket_key : String):
 	if(ticket_template_dict.has(ticket_key)):

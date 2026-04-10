@@ -67,7 +67,10 @@ func round_start():
 		add_child(hand)
 	if round_counter % 7 == 0:
 		check_win_lose()
-	game_timer.set_wait_time(15.0) # Seconds
+	if (GameManager.check_extra_time() == true):
+		game_timer.set_wait_time(20) #Seconds
+	else:
+		game_timer.set_wait_time(15.0) # Seconds
 	# Create a countdown animation?
 	game_timer.start()
 

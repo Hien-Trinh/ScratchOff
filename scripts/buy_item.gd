@@ -20,12 +20,16 @@ func _ready():
 	add_child(buysfx_player)
 	buysfx_player.stream = buysfx
 	
-## For cheapskate, this is quite computer-memory-taking atm. Probably change later.
-#func _process(_delta):
-	#if (GameManager.check_cheapskate() == true && cheapskate_value_updated == false):
-		#buy_cost *= 0.85
-		#self.text = "$" + str(buy_cost)
-		#cheapskate_value_updated = true
+# For cheapskate, this is quite computer-memory-taking atm. Probably change later.
+func _process(_delta):
+	if (GameManager.check_cheapskate() == true && cheapskate_value_updated == false):
+		buy_cost *= 0.85
+		if(!is_upgrade):
+			self.text = "$" + str(buy_cost)
+		else:
+			if(upgrade_already_owned != true):
+				self.text = "$" + str(buy_cost)
+		cheapskate_value_updated = true
 
 func buy_ticket(): 
 	var ticket = GameManager.generate_ticket(buy_name)
@@ -47,7 +51,6 @@ func _on_pressed():
 	var diff : float = GameManager.get_balance() - buy_cost
 	if(diff>=0):
 		if(!is_upgrade):
-			print(buy_cost)
 			buy_ticket()
 			buysfx_player.play()
 			GameManager.set_balance(diff)
