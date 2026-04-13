@@ -7,6 +7,9 @@ extends Node
 @onready var reward_dict = {}
 @onready var value_array = [1, 5, 10, 25, 50, 100, 500, 1000]
 
+signal game_started_signal
+var game_started = false
+
 var spawn_list = Array()
 
 var rng = RandomNumberGenerator.new()
@@ -27,6 +30,11 @@ func _ready():
 		var ticket = generate_ticket("LotsOfMoney")
 		add_ticket(ticket)
 		spawn_list.append(ticket)
+		
+
+func start_game():
+	game_started = true
+	emit_signal("game_started_signal")
 
 func add_ticket(cardItem : CardItem):
 	# Add item to ticketList Array
@@ -136,8 +144,8 @@ func calculate_mult():
 func check_gamble():
 	for key in upgrade_dict:
 		var upgrade = upgrade_dict[key]
-		if upgrade is GamblingUpgrade && upgrade.is_active == true:
-			return true
+		#if upgrade is GamblingUpgrade && upgrade.is_active == true:
+			#return true
 	return false
 
 func gamble():
