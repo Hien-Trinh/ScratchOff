@@ -68,8 +68,8 @@ func round_start():
 		table._ready()
 	if round_counter == 1:
 		add_child(hand)
-	if round_counter % rounds_per_loop == 0:
-		check_win_lose()
+	#if round_counter % rounds_per_loop == 0:
+		#check_win_lose()
 	if (GameManager.check_extra_time() == true):
 		game_timer.set_wait_time(20) #Seconds
 	else:
@@ -85,6 +85,8 @@ func _on_timer_timeout():
 		hand.visible = false
 		await anim.animation_finished
 		table.visible = false
+	if round_counter % rounds_per_loop == 0:
+		check_win_lose()
 		
 func _on_continue_button_pressed():
 	if GameManager.check_on_the_house() == true:
@@ -120,3 +122,4 @@ func check_win_lose():
 
 func _on_return_title_pressed():
 	get_tree().change_scene_to_file("res://title_screen.tscn")
+	GameManager.restart_game()
