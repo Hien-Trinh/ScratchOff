@@ -18,11 +18,6 @@ func _ready():
 	
 func round_reset():
 	moneyAmount.text = "$" + str(snappedf(displayed_money, 0.01))
-
-func refresh_goal_count(new_value):
-	# moneyAmount.text = "Money: $" + str(money) + " / " + str(new_value)
-	local_goal = new_value
-
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("Click") && get_global_mouse_position().x < 350 && get_global_mouse_position().y > 600 && cashSpace.has_overlapping_bodies():

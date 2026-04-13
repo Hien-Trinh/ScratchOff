@@ -107,3 +107,13 @@ offset_top = -59.0
 offset_right = 470.52
 offset_bottom = 78.0
 theme_override_font_sizes/font_size = 50
+
+[node name="GoalLabel" type="Label" parent="TableUI" unique_id=59891126]
+layout_mode = 0
+offset_left = 1170.0
+offset_top = 6.0
+offset_right = 1837.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 50
+text = "Goal: 1000000 by round 220"
+horizontal_alignment = 2

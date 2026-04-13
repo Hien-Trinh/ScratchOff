@@ -148,6 +148,7 @@ volume_db = -2.0
 autoplay = true
 
 [node name="GameOver" parent="." unique_id=2009763144 instance=ExtResource("8_08hyy")]
+visible = false
 
 [node name="ReturnTitle" type="Button" parent="GameOver" unique_id=1119415607]
 offset_left = 623.0
