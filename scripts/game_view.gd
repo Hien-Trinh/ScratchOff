@@ -9,6 +9,7 @@ extends Node2D
 
 @onready var round_label = $Table/TableUI/RoundLabel
 @onready var money_label = $Table/TableUI/moneyLabel
+@onready var goal_label = $Table/TableUI/GoalLabel
 
 @onready var game_over = $GameOver
 
@@ -16,6 +17,9 @@ var game_timer = Timer.new()
 var round_counter : int = 1
 
 var goal : float = 1000
+
+var rounds_per_loop : int = 6
+var loop_count : int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,8 +31,7 @@ func _ready():
 	shop_menu.visible = false
 	game_over.visible = false
 	round_label.text = "Round: " + str(round_counter)
-	
-	cashArea.refresh_goal_count(goal)
+	goal_label.text = "Goal: " + str(goal) + " By Round " + str(rounds_per_loop * loop_count)
 	
 	# Game timer init
 	add_child(game_timer)
@@ -65,7 +68,7 @@ func round_start():
 		table._ready()
 	if round_counter == 1:
 		add_child(hand)
-	if round_counter % 7 == 0:
+	if round_counter % rounds_per_loop == 0:
 		check_win_lose()
 	if (GameManager.check_extra_time() == true):
 		game_timer.set_wait_time(20) #Seconds
@@ -112,6 +115,8 @@ func check_win_lose():
 		# WIN
 		goal *=2
 		cashArea.refresh_goal_count(goal)
+		loop_count+=1
+		goal_label.text = "Goal: " + str(goal) + " By Round " + str(rounds_per_loop * loop_count)
 
 func _on_return_title_pressed():
 	get_tree().change_scene_to_file("res://title_screen.tscn")

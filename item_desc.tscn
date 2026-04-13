@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ddutw8n2hv1gb"]
+
+[ext_resource type="FontFile" uid="uid://bgp5q4gq4j4tl" path="res://assets/fonts/BadComic-Italic.ttf" id="1_bo4sb"]
+
+[node name="ItemDesc" type="Control" unique_id=844291687]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=148554560]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 699.0
+offset_bottom = 87.0
+color = Color(0.5868916, 0.4023515, 0.23213744, 1)
+
+[node name="DescText" type="Label" parent="ColorRect" unique_id=1014636799]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 22.0
+offset_right = 676.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("1_bo4sb")
+theme_override_font_sizes/font_size = 25
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+horizontal_alignment = 1
+vertical_alignment = 1
