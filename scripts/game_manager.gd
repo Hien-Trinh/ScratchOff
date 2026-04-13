@@ -28,10 +28,7 @@ func _ready():
 	init_upgrade_dict()
 	ticketList.clear()
 	
-	for i in range(5):
-		var ticket = generate_ticket("LotsOfMoney")
-		add_ticket(ticket)
-		spawn_list.append(ticket)
+	initialize_tickets()
 		
 
 func start_game():
@@ -43,6 +40,13 @@ func add_ticket(cardItem : CardItem):
 	ticketList.append(cardItem)
 	# Broadcast updated Array to EventBus with corresponding signal
 	EventBus.ticket_inventory_updated.emit(ticketList)
+	
+
+func initialize_tickets():
+	for i in range(5):
+		var ticket = generate_ticket("LotsOfMoney")
+		add_ticket(ticket)
+		spawn_list.append(ticket)
 
 func remove_ticket_at_index(index : int):
 	ticketList.remove_at(index)
@@ -75,6 +79,13 @@ func activate_upgrade(upgrade_name):
 		upgrade_dict[upgrade_name].set_is_active(true)
 		print(upgrade_name + " is active: " + str(upgrade_dict[upgrade_name].get_is_active()))
 		EventBus.upgrade_inventory_updated.emit()
+		
+
+func restart_game():
+	game_started = false
+	set_balance(100)
+	set_mult(1)
+	initialize_tickets()
 
 # Runs at startup.
 # Adds one of every Item to the ticket_template_dict{} dictionary.
