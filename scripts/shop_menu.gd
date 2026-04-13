@@ -3,6 +3,7 @@ extends Control
 @onready var color_rect = $ColorRect
 @onready var tickets = $Tickets
 @onready var upgrades = $Upgrades
+@onready var balanceLabel = $MoneyLabel/Label
 
 var shop_dict = {}
 
@@ -11,6 +12,11 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	animate_background()
 	refresh_shop()
+	EventBus.connect("player_money_updated", on_balance_updated)
+	balanceLabel.text = "$" + str(GameManager.get_balance())
+	
+func on_balance_updated(new_value):
+	balanceLabel.text = "$" + str(new_value)
 	
 func animate_background():
 	var tween = get_tree().create_tween().set_loops()
