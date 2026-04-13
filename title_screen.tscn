@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bfrm03mglf827" path="res://title_screen.gd" id="1_05l2w"]
 [ext_resource type="Texture2D" uid="uid://kii2elideid1" path="res://assets/other/gas_station_ext.png" id="1_ig5kc"]
-[ext_resource type="Texture2D" uid="uid://bdq141q5ji84q" path="res://white-paper-texture.jpg" id="2_ig5kc"]
+[ext_resource type="Texture2D" uid="uid://bdq141q5ji84q" path="res://assets/other/white-paper-texture.jpg" id="2_ig5kc"]
 [ext_resource type="FontFile" uid="uid://hj8g0jsmv3sb" path="res://assets/fonts/Fake Receipt.otf" id="3_hafda"]
 
 [node name="TitleScreen" type="Control" unique_id=1190921927]

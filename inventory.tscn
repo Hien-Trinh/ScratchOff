@@ -25,7 +25,7 @@ anchors_preset = -1
 anchor_left = 0.7057292
 anchor_top = -0.0015432099
 anchor_right = 1.0043403
-anchor_bottom = 1.0030864
+anchor_bottom = 0.5138889
 color = Color(0.03137255, 0.12156863, 0.06666667, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -97,14 +97,4 @@ pivot_offset = Vector2(130, 39)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "BALANCE"
 label_settings = ExtResource("3_5tt2m")
-metadata/_edit_use_anchors_ = true
-
-[node name="CheckoutContinue" type="ColorRect" parent="." unique_id=329520420]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.73867595
-anchor_top = 0.8311729
-anchor_right = 0.9721254
-anchor_bottom = 0.912963
-color = Color(0.15294118, 1, 0.4745098, 1)
 metadata/_edit_use_anchors_ = true
