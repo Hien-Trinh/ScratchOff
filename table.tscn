@@ -17,6 +17,12 @@ font = ExtResource("5_67vji")
 font_size = 50
 font_color = Color(1, 1, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64sdq"]
+size = Vector2(2200, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ormek"]
+size = Vector2(50, 1200)
+
 [node name="Table" type="Node2D" unique_id=1736072314]
 script = ExtResource("1_v5i0k")
 
@@ -50,7 +56,6 @@ stream = ExtResource("6_jry6c")
 volume_db = 5.0
 
 [node name="TableUI" type="Control" parent="." unique_id=1448599781]
-z_index = 5
 layout_mode = 3
 anchors_preset = 0
 offset_left = 44.0
@@ -117,3 +122,24 @@ offset_bottom = 85.0
 theme_override_font_sizes/font_size = 50
 text = "Goal: 1000000 by round 220"
 horizontal_alignment = 2
+
+[node name="Bounds" type="RigidBody2D" parent="." unique_id=1096510504]
+position = Vector2(960, 540)
+gravity_scale = 0.0
+freeze = true
+
+[node name="TopBound" type="CollisionShape2D" parent="Bounds" unique_id=1810722296]
+position = Vector2(0, -600)
+shape = SubResource("RectangleShape2D_64sdq")
+
+[node name="BottomBound" type="CollisionShape2D" parent="Bounds" unique_id=192214638]
+position = Vector2(0, 600)
+shape = SubResource("RectangleShape2D_64sdq")
+
+[node name="RightBound" type="CollisionShape2D" parent="Bounds" unique_id=1493507195]
+position = Vector2(1040, 0)
+shape = SubResource("RectangleShape2D_ormek")
+
+[node name="LeftBound" type="CollisionShape2D" parent="Bounds" unique_id=1414990690]
+position = Vector2(-1040, 0)
+shape = SubResource("RectangleShape2D_ormek")
