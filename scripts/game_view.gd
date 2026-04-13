@@ -67,7 +67,10 @@ func round_start():
 		add_child(hand)
 	if round_counter % 7 == 0:
 		check_win_lose()
-	game_timer.set_wait_time(15.0) # Seconds
+	if (GameManager.check_extra_time() == true):
+		game_timer.set_wait_time(20) #Seconds
+	else:
+		game_timer.set_wait_time(15.0) # Seconds
 	# Create a countdown animation?
 	game_timer.start()
 
@@ -81,27 +84,26 @@ func _on_timer_timeout():
 		table.visible = false
 		
 func _on_continue_button_pressed():
+	if GameManager.check_on_the_house() == true:
+		GameManager.do_on_the_house()
 	if shop_menu.visible == true:
 		# Swap from shop to table
 		GameManager.calculate_mult()
 		table.visible = true
-		cashArea.money = GameManager.balance
-		cashArea._ready()
+		cashArea.round_reset()
 		anim.play("shop_exit")
 		await anim.animation_finished
 		hand.visible = true
 		shop_menu.visible = false
 		round_counter += 1
 		round_label.text = "Round: " + str(round_counter)
-		#if GameManager.check_larry() == true:
-			#GameManager.do_lucky_larry()
 		round_start()
 
 func check_win_lose():
 	if GameManager.balance < goal:
 		# LOSE
 		game_over.visible = true
-		$GameOver/RoundNum.text = round_counter
+		$GameOver/RoundNum.text = str(round_counter) #this wasn't str() before, caused an error
 		anim.play("game_over_anim")
 		await anim.animation_finished
 		table.visible = false

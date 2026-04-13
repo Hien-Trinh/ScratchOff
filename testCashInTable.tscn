@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://beaqnvm3kfjuu"]
+[gd_scene format=3 uid="uid://d3e2qnlo6skxw"]
 
 [ext_resource type="Texture2D" uid="uid://diemgvndv7rx" path="res://assets/other/wood.jpg" id="1_sbv7l"]
 [ext_resource type="Texture2D" uid="uid://ksw5uoc78hn4" path="res://assets/other/solidpink.jpg" id="2_6i44i"]
@@ -73,14 +73,13 @@ theme_override_font_sizes/font_size = 40
 text = "Cash In Here
 "
 
-[node name="cashArea" type="Sprite2D" parent="." unique_id=567148726 node_paths=PackedStringArray("moneyLabel")]
+[node name="cashArea" type="Sprite2D" parent="." unique_id=567148726]
 modulate = Color(0, 0.8967519, 0.887035, 1)
 z_index = -1
 position = Vector2(175.50002, 840)
 scale = Vector2(0.18177083, 0.44444445)
 texture = ExtResource("2_6i44i")
 script = ExtResource("2_767yt")
-moneyLabel = NodePath("../moneylabel")
 
 [node name="Area2D" type="Area2D" parent="cashArea" unique_id=1180738803]
 

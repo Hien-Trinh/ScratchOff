@@ -50,6 +50,7 @@ stream = ExtResource("6_jry6c")
 volume_db = 5.0
 
 [node name="TableUI" type="Control" parent="." unique_id=1448599781]
+z_index = 5
 layout_mode = 3
 anchors_preset = 0
 offset_left = 44.0
