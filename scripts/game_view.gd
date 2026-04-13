@@ -37,7 +37,7 @@ func _ready():
 	add_child(game_timer)
 	game_timer.one_shot = true
 	game_timer.connect("timeout", Callable(self,"_on_timer_timeout"))
-	round_start()
+	GameManager.connect("game_started_signal", Callable(self, "round_start"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

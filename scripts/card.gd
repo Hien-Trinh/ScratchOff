@@ -88,6 +88,10 @@ func _physics_process(_delta: float) -> void:
 	handle_shadow(_delta)
 
 func handle_shadow(_delta: float) -> void:
+	# If the game is not started, do not allow inputs
+	if not GameManager.game_started:
+		return
+	
 	# Y position is never changed.
 	# Only x changes depending on how far we are from the center of the screen
 	var center: Vector2 = get_viewport_rect().size / 2.0
@@ -97,6 +101,9 @@ func handle_shadow(_delta: float) -> void:
 
 # This built-in function fires when the mouse interacts with the Area2D's CollisionShape
 func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	# If the game is not started, do not allow inputs
+	if not GameManager.game_started:
+		return
 	# Handle Mouse Click (Start Dragging)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed():
@@ -144,6 +151,9 @@ func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 # We use global input to detect the drop. If the user moves the mouse wildly, 
 # it might leave the collision shape before they release the click.
 func _input(event: InputEvent) -> void:
+	# If the game is not started, do not allow inputs
+	if not GameManager.game_started:
+		return
 	# If a card is being dragged/scratched, and it's not this one, ignore the mouse completely
 	if active_card != null and active_card != self: return
 
@@ -169,6 +179,9 @@ func _input(event: InputEvent) -> void:
 
 # Connect this via the Godot Node Editor signals -> Area2D.mouse_entered
 func _on_mouse_entered() -> void:
+	# If the game is not started, do not allow inputs
+	if not GameManager.game_started:
+		return
 	# Don't hover if the player is currently dragging/scratching a card
 	if active_card != null: return
 
@@ -180,6 +193,9 @@ func _on_mouse_entered() -> void:
 
 # Connect this via the Godot Node Editor signals -> Area2D.mouse_exited
 func _on_mouse_exited() -> void:
+	# If the game is not started, do not allow inputs
+	if not GameManager.game_started:
+		return
 	# Reset rotation
 	if tween_rot and tween_rot.is_running():
 		tween_rot.kill()
