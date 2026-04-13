@@ -64,3 +64,21 @@ func refresh_shop():
 func remove_spaces(value : String):
 	value = value.replace(" ", "")
 	return value
+
+func _on_upgrade_1_mouse_entered():
+	$DescBox/DescLabel.text = "Multiply card value by 1.25"
+	
+func _on_upgrade_2_mouse_entered():
+	$DescBox/DescLabel.text = "Multiply card value by 1.5"
+	
+func _on_upgrade_3_mouse_entered():
+	$DescBox/DescLabel.text = "Triple or nothing"
+	
+func _on_upgrade_4_mouse_entered():
+	$DescBox/DescLabel.text = "Free card every round"
+	
+func _on_upgrade_5_mouse_entered():
+	$DescBox/DescLabel.text = "Lower shop prices"
+	
+func _on_upgrade_6_mouse_entered():
+	$DescBox/DescLabel.text = "More time per round"

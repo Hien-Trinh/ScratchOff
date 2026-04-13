@@ -69,9 +69,10 @@ anchor_left = 2.95
 anchor_top = 5.175
 anchor_right = 7.45
 anchor_bottom = 9.675
+offset_top = -41.0
+offset_bottom = -41.0
 pivot_offset = Vector2(83, 91)
 texture = SubResource("CanvasTexture_rh1mo")
-metadata/_edit_use_anchors_ = true
 
 [node name="Buy_1" type="Button" parent="Tickets/Ticket1" unique_id=1571991670]
 layout_mode = 1
@@ -105,9 +106,10 @@ anchor_left = 8.75
 anchor_top = 5.175
 anchor_right = 13.25
 anchor_bottom = 9.675
+offset_top = -41.0
+offset_bottom = -41.0
 pivot_offset = Vector2(83, 91)
 texture = ExtResource("2_qejid")
-metadata/_edit_use_anchors_ = true
 
 [node name="Buy_2" type="Button" parent="Tickets/Ticket2" unique_id=976072297]
 layout_mode = 1
@@ -140,6 +142,8 @@ anchor_left = 14.55
 anchor_top = 5.175
 anchor_right = 19.05
 anchor_bottom = 9.675
+offset_top = -41.0
+offset_bottom = -41.0
 pivot_offset = Vector2(83, 91)
 texture = ExtResource("8_8fj20")
 metadata/_edit_use_anchors_ = true
@@ -175,6 +179,8 @@ anchor_left = 20.35
 anchor_top = 5.175
 anchor_right = 24.85
 anchor_bottom = 9.675
+offset_top = -41.0
+offset_bottom = -41.0
 pivot_offset = Vector2(83, 91)
 texture = ExtResource("9_0atty")
 metadata/_edit_use_anchors_ = true
@@ -213,10 +219,10 @@ offset_bottom = 195.33336
 [node name="UpgradeHeader" type="Label" parent="Upgrades" unique_id=331839891]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.025157033
-anchor_top = 0.4866488
-anchor_right = 0.3107473
-anchor_bottom = 0.61782163
+anchor_left = 0.02515707
+anchor_top = -0.9633514
+anchor_right = 0.31074753
+anchor_bottom = -0.8321785
 offset_left = -34.371452
 offset_top = 350.78137
 offset_right = 274.20493
@@ -452,6 +458,7 @@ anchor_bottom = 0.098148145
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="MoneyLabel" unique_id=1191025467]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.014999845
@@ -468,13 +475,45 @@ text = "BALANCE"
 label_settings = ExtResource("16_7hw30")
 metadata/_edit_use_anchors_ = true
 
+[node name="DescBox" type="ColorRect" parent="." unique_id=328443874]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.027083334
+anchor_top = 0.5240741
+anchor_right = 0.640625
+anchor_bottom = 0.58518517
+color = Color(0.03611662, 0.032999996, 0.22, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="DescLabel" type="Label" parent="DescBox" unique_id=19987178]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 1170.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 40
+text = "Hover over upgrade to reveal description."
+vertical_alignment = 1
+
 [connection signal="pressed" from="Tickets/Ticket1/Buy_1" to="Tickets/Ticket1/Buy_1" method="_on_pressed"]
 [connection signal="pressed" from="Tickets/Ticket2/Buy_2" to="Tickets/Ticket2/Buy_2" method="_on_pressed"]
 [connection signal="pressed" from="Tickets/Ticket3/Buy_3" to="Tickets/Ticket3/Buy_3" method="_on_pressed"]
 [connection signal="pressed" from="Tickets/Ticket4/Buy_4" to="Tickets/Ticket4/Buy_4" method="_on_pressed"]
+[connection signal="mouse_entered" from="Upgrades/Upgrade1" to="." method="_on_upgrade_1_mouse_entered"]
+[connection signal="mouse_entered" from="Upgrades/Upgrade1/Button" to="." method="_on_upgrade_1_mouse_entered"]
 [connection signal="pressed" from="Upgrades/Upgrade1/Button" to="Upgrades/Upgrade1/Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Upgrades/Upgrade2" to="." method="_on_upgrade_2_mouse_entered"]
+[connection signal="mouse_entered" from="Upgrades/Upgrade2/Button" to="." method="_on_upgrade_2_mouse_entered"]
 [connection signal="pressed" from="Upgrades/Upgrade2/Button" to="Upgrades/Upgrade2/Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Upgrades/Upgrade3" to="." method="_on_upgrade_3_mouse_entered"]
+[connection signal="mouse_entered" from="Upgrades/Upgrade3/Button" to="." method="_on_upgrade_3_mouse_entered"]
 [connection signal="pressed" from="Upgrades/Upgrade3/Button" to="Upgrades/Upgrade3/Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Upgrades/Upgrade4" to="." method="_on_upgrade_4_mouse_entered"]
+[connection signal="mouse_entered" from="Upgrades/Upgrade4/Button" to="." method="_on_upgrade_4_mouse_entered"]
 [connection signal="pressed" from="Upgrades/Upgrade4/Button" to="Upgrades/Upgrade4/Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Upgrades/Upgrade5" to="." method="_on_upgrade_5_mouse_entered"]
+[connection signal="mouse_entered" from="Upgrades/Upgrade5/Button" to="." method="_on_upgrade_5_mouse_entered"]
 [connection signal="pressed" from="Upgrades/Upgrade5/Button" to="Upgrades/Upgrade5/Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Upgrades/Upgrade6" to="." method="_on_upgrade_6_mouse_entered"]
+[connection signal="mouse_entered" from="Upgrades/Upgrade6/Button" to="." method="_on_upgrade_6_mouse_entered"]
 [connection signal="pressed" from="Upgrades/Upgrade6/Button" to="Upgrades/Upgrade6/Button" method="_on_pressed"]
