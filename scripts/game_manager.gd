@@ -19,9 +19,11 @@ var mult : float :
 func _ready():
 	rng.randomize()
 	mult = 1.0
+	set_balance(100)
 	init_ticket_dict()
 	init_reward_dict()
 	init_upgrade_dict()
+	ticketList.clear()
 	
 	for i in range(5):
 		var ticket = generate_ticket("LotsOfMoney")
@@ -69,6 +71,7 @@ func activate_upgrade(upgrade_name):
 # Runs at startup.
 # Adds one of every Item to the ticket_template_dict{} dictionary.
 func init_ticket_dict():
+	ticket_template_dict.clear()
 	# LOTS OF MONEY
 	var lom_foil = preload("res://assets/cards/lots-of-money.png")
 
@@ -82,11 +85,11 @@ func init_ticket_dict():
 	
 	# LUCKY WINNER
 	var lw_foil = preload("res://assets/cards/LuckyMoney180.png")
-	ticket_template_dict["LuckyWinner"] = ["lw_01", "Lucky Winner", 20.00, lw_foil, 3, 4]
+	ticket_template_dict["LuckyWinner"] = ["lw_01", "Lucky Winner", 15.00, lw_foil, 3, 4]
 	
 	# MONEY 4 FREE
 	var m4f_foil = preload("res://assets/cards/money4fun180.png")
-	ticket_template_dict["Money4Free"] = ["m4f_01", "Money 4 Free", 30.00, m4f_foil, 4, 5]
+	ticket_template_dict["Money4Free"] = ["m4f_01", "Money 4 Free", 25.00, m4f_foil, 4, 5]
 	
 	# TOP DOLLAR
 	var td_foil = preload("res://assets/cards/topdollar180.png")
@@ -98,6 +101,7 @@ func init_ticket_dict():
 	
 # Reward sprite preload
 func init_reward_dict():
+	reward_dict.clear()
 	reward_dict[0] = preload("res://assets/scratch_reward/s1.png")
 	reward_dict[1] = preload("res://assets/scratch_reward/s5.png")
 	reward_dict[2] = preload("res://assets/scratch_reward/s10.png")
@@ -109,6 +113,7 @@ func init_reward_dict():
 	reward_dict[7] = preload("res://assets/scratch_reward/s1000.png")
 
 func init_upgrade_dict():
+	upgrade_dict.clear()
 	var mult1_texture = preload("res://assets/upgrades/temp_up.svg")
 	upgrade_dict["Mult1"] = MultiplierUpgrade.new("1.25x Multiplier", mult1_texture, 1.25)
 	var mult2_texture = preload("res://assets/upgrades/mult_1.5.png")

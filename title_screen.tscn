@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://wvwi7aeyp8bn"]
 
-[ext_resource type="Script" uid="uid://bfrm03mglf827" path="res://title_screen.gd" id="1_05l2w"]
+[ext_resource type="Script" uid="uid://bfrm03mglf827" path="res://scripts/title_screen.gd" id="1_05l2w"]
 [ext_resource type="Texture2D" uid="uid://kii2elideid1" path="res://assets/other/gas_station_ext.png" id="1_ig5kc"]
 [ext_resource type="Texture2D" uid="uid://bdq141q5ji84q" path="res://assets/other/white-paper-texture.jpg" id="2_ig5kc"]
 [ext_resource type="FontFile" uid="uid://hj8g0jsmv3sb" path="res://assets/fonts/Fake Receipt.otf" id="3_hafda"]
@@ -93,7 +93,7 @@ offset_bottom = 430.0
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 text = "David Trinh
-Henry Petersen
+Henry Pedersen
 Sam Kennedy
 Gunnar Ray"
 fit_content = true

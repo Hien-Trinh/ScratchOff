@@ -2,14 +2,11 @@ extends Control
 
 @onready var localList = Array() 
 
-@onready var balanceLabel = $MoneyLabel/Label
 @onready var ticketBody = $TicketBody
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	EventBus.connect("ticket_inventory_updated", on_ticket_inventory_updated)
-	EventBus.connect("player_money_updated", on_balance_updated)
-	balanceLabel.text = "$" + str(GameManager.get_balance())
 	ticketBody.clear()
 	on_ticket_inventory_updated(GameManager.get_ticket_list())
 
@@ -22,6 +19,3 @@ func on_ticket_inventory_updated(new_list):
 	localList = new_list
 	for item in localList:
 		ticketBody.text += item._to_string()
-
-func on_balance_updated(new_value):
-	balanceLabel.text = "$" + str(new_value)

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://b0ir4y21fkyuy" path="res://scripts/inventory.gd" id="1_psafj"]
 [ext_resource type="FontFile" uid="uid://0j2i3e0by0gm" path="res://assets/fonts/Super Wonder.ttf" id="2_mrqgh"]
-[ext_resource type="LabelSettings" uid="uid://ke1rn4aiuul1" path="res://themes/balance_header.tres" id="3_5tt2m"]
 [ext_resource type="Theme" uid="uid://br26gwrgbmvar" path="res://themes/inventory_body.tres" id="3_mrqgh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_psafj"]
@@ -49,29 +48,4 @@ anchor_right = 0.9965157
 anchor_bottom = 0.499074
 theme = ExtResource("3_mrqgh")
 bbcode_enabled = true
-metadata/_edit_use_anchors_ = true
-
-[node name="MoneyLabel" type="ColorRect" parent="." unique_id=1709975994]
-layout_mode = 0
-anchor_left = 0.71450937
-anchor_top = 0.027777778
-anchor_right = 0.9942589
-anchor_bottom = 0.098148145
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="MoneyLabel" unique_id=1343385852]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.014999845
-anchor_top = 0.12118264
-anchor_right = 0.9781123
-anchor_bottom = 0.96005267
-offset_left = -0.039978027
-offset_top = -5.209881
-offset_right = -1.26828
-offset_bottom = 0.035995483
-pivot_offset = Vector2(130, 39)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "BALANCE"
-label_settings = ExtResource("3_5tt2m")
 metadata/_edit_use_anchors_ = true

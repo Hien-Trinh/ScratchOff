@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://d1oqb76dfu1h8" path="res://assets/upgrades/onthehouse.svg" id="12_5qui4"]
 [ext_resource type="Texture2D" uid="uid://du4r2bjqdnfrr" path="res://assets/upgrades/cheapskate.svg" id="13_663q0"]
 [ext_resource type="Texture2D" uid="uid://de7emop815p5h" path="res://assets/upgrades/temp_up.svg" id="15_663q0"]
+[ext_resource type="LabelSettings" uid="uid://ke1rn4aiuul1" path="res://themes/balance_header.tres" id="16_7hw30"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_rh1mo"]
 diffuse_texture = ExtResource("2_f8gav")
@@ -64,10 +65,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Ticket1" type="TextureRect" parent="Tickets" unique_id=363851144]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.6
-anchor_top = 4.0
-anchor_right = 6.1
-anchor_bottom = 8.5
+anchor_left = 2.95
+anchor_top = 5.175
+anchor_right = 7.45
+anchor_bottom = 9.675
 pivot_offset = Vector2(83, 91)
 texture = SubResource("CanvasTexture_rh1mo")
 metadata/_edit_use_anchors_ = true
@@ -85,17 +86,25 @@ text = "TEMP"
 script = ExtResource("5_f8gav")
 metadata/_edit_use_anchors_ = true
 
+[node name="Tick1Num" type="Label" parent="Tickets/Ticket1" unique_id=1648256547]
+visible = false
+layout_mode = 0
+offset_left = 74.0
+offset_top = -71.0
+offset_right = 114.0
+offset_bottom = -8.0
+theme_override_font_sizes/font_size = 45
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Ticket2" type="TextureRect" parent="Tickets" unique_id=1133795772]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.15416667
-anchor_top = 0.14814815
-anchor_right = 0.24791667
-anchor_bottom = 0.3148148
-offset_left = 289.83334
-offset_top = 154.07407
-offset_right = 466.08334
-offset_bottom = 327.4074
+anchor_left = 8.75
+anchor_top = 5.175
+anchor_right = 13.25
+anchor_bottom = 9.675
 pivot_offset = Vector2(83, 91)
 texture = ExtResource("2_qejid")
 metadata/_edit_use_anchors_ = true
@@ -112,17 +121,25 @@ text = "TEMP"
 script = ExtResource("5_f8gav")
 metadata/_edit_use_anchors_ = true
 
+[node name="Tick2Num" type="Label" parent="Tickets/Ticket2" unique_id=1345615237]
+visible = false
+layout_mode = 0
+offset_left = 73.0
+offset_top = -71.0
+offset_right = 113.0
+offset_bottom = -8.0
+theme_override_font_sizes/font_size = 45
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Ticket3" type="TextureRect" parent="Tickets" unique_id=1864636325]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.275
-anchor_top = 0.14814815
-anchor_right = 0.36875
-anchor_bottom = 0.3148148
-offset_left = 517.0
-offset_top = 154.07407
-offset_right = 693.25
-offset_bottom = 327.4074
+anchor_left = 14.55
+anchor_top = 5.175
+anchor_right = 19.05
+anchor_bottom = 9.675
 pivot_offset = Vector2(83, 91)
 texture = ExtResource("8_8fj20")
 metadata/_edit_use_anchors_ = true
@@ -139,17 +156,25 @@ text = "TEMP"
 script = ExtResource("5_f8gav")
 metadata/_edit_use_anchors_ = true
 
+[node name="Tick3Num" type="Label" parent="Tickets/Ticket3" unique_id=348961637]
+visible = false
+layout_mode = 0
+offset_left = 73.0
+offset_top = -71.0
+offset_right = 113.0
+offset_bottom = -8.0
+theme_override_font_sizes/font_size = 45
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Ticket4" type="TextureRect" parent="Tickets" unique_id=1795563696]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.39583334
-anchor_top = 0.14814815
-anchor_right = 0.48958334
-anchor_bottom = 0.3148148
-offset_left = 744.1667
-offset_top = 154.07407
-offset_right = 920.4167
-offset_bottom = 327.4074
+anchor_left = 20.35
+anchor_top = 5.175
+anchor_right = 24.85
+anchor_bottom = 9.675
 pivot_offset = Vector2(83, 91)
 texture = ExtResource("9_0atty")
 metadata/_edit_use_anchors_ = true
@@ -165,6 +190,18 @@ theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
 metadata/_edit_use_anchors_ = true
+
+[node name="Tick4Num" type="Label" parent="Tickets/Ticket4" unique_id=298540491]
+visible = false
+layout_mode = 0
+offset_left = 74.0
+offset_top = -71.0
+offset_right = 114.0
+offset_bottom = -8.0
+theme_override_font_sizes/font_size = 45
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Upgrades" type="Control" parent="." unique_id=681107643]
 anchors_preset = 0
@@ -330,14 +367,10 @@ text = "On the House"
 [node name="Upgrade5" type="TextureRect" parent="Upgrades" unique_id=2106078354]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 19.05833
-anchor_top = 12.741666
-anchor_right = 24.05833
-anchor_bottom = 17.741665
-offset_left = 252.66974
-offset_top = 0.00036621094
-offset_right = 252.6687
-offset_bottom = 0.0004272461
+anchor_left = 25.375074
+anchor_top = 12.741674
+anchor_right = 30.37505
+anchor_bottom = 17.741676
 pivot_offset = Vector2(117, 117)
 texture = ExtResource("13_663q0")
 metadata/_edit_use_anchors_ = true
@@ -408,6 +441,32 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 27
 text = "Extra Time
 "
+
+[node name="MoneyLabel" type="ColorRect" parent="." unique_id=1649599298]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.71450937
+anchor_top = 0.027777778
+anchor_right = 0.9942589
+anchor_bottom = 0.098148145
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="MoneyLabel" unique_id=1191025467]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014999845
+anchor_top = 0.12118264
+anchor_right = 0.9781123
+anchor_bottom = 0.96005267
+offset_left = -0.039978027
+offset_top = -5.209881
+offset_right = -1.26828
+offset_bottom = 0.035995483
+pivot_offset = Vector2(130, 39)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "BALANCE"
+label_settings = ExtResource("16_7hw30")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Tickets/Ticket1/Buy_1" to="Tickets/Ticket1/Buy_1" method="_on_pressed"]
 [connection signal="pressed" from="Tickets/Ticket2/Buy_2" to="Tickets/Ticket2/Buy_2" method="_on_pressed"]
