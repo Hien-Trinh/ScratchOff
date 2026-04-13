@@ -115,10 +115,10 @@ grow_vertical = 1
 [node name="CheckoutContinue" type="ColorRect" parent="ShopMenu" unique_id=1660052]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.27485073
-anchor_top = -0.8311283
-anchor_right = -0.042400718
-anchor_bottom = -0.74671274
+anchor_left = -0.27694017
+anchor_top = -0.83298355
+anchor_right = -0.044490155
+anchor_bottom = -0.74856806
 offset_left = 1401.1715
 offset_top = 917.9563
 offset_right = 1401.1715
@@ -134,6 +134,7 @@ offset_right = 446.0
 offset_bottom = 92.0
 theme = ExtResource("4_752fl")
 text = "CONTINUE"
+metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1047255926]
 root_node = NodePath("../ShopMenu")

@@ -51,29 +51,6 @@ theme = ExtResource("3_mrqgh")
 bbcode_enabled = true
 metadata/_edit_use_anchors_ = true
 
-[node name="UpgradeHeader" type="Label" parent="." unique_id=823844346]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.7203833
-anchor_top = 0.52623504
-anchor_right = 0.99390244
-anchor_bottom = 0.60185266
-text = "Upgrades"
-label_settings = SubResource("LabelSettings_psafj")
-metadata/_edit_use_anchors_ = true
-
-[node name="UpgradeBody" type="RichTextLabel" parent="." unique_id=609535115]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.7247387
-anchor_top = 0.6098765
-anchor_right = 0.9947735
-anchor_bottom = 0.8490741
-offset_top = -3.0517578e-05
-theme = ExtResource("3_mrqgh")
-bbcode_enabled = true
-metadata/_edit_use_anchors_ = true
-
 [node name="MoneyLabel" type="ColorRect" parent="." unique_id=1709975994]
 layout_mode = 0
 anchor_left = 0.71450937
