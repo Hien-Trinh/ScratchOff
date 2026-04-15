@@ -116,7 +116,6 @@ func check_win_lose():
 	else:
 		# WIN
 		goal *=2
-		cashArea.refresh_goal_count(goal)
 		loop_count+=1
 		goal_label.text = "Goal: " + str(goal) + " By Round " + str(rounds_per_loop * loop_count)
 

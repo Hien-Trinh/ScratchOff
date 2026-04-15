@@ -7,7 +7,6 @@ extends Sprite2D
 
 var displayed_money : float = GameManager.balance
 var winning = 0
-var local_goal = 0.0
 
 var counter_tween : Tween
 
@@ -44,8 +43,6 @@ func _process(delta: float) -> void:
 			var new_balance = GameManager.balance + total_winnings
 			GameManager.set_balance(new_balance)
 
-		# moneyLabel.text = "Money: $" + str(money) + " / " + str(local_goal)
-
 func animate_counter(target_amount: float) -> void:
 	if counter_tween and counter_tween.is_running():
 		counter_tween.kill()
@@ -57,7 +54,6 @@ func animate_counter(target_amount: float) -> void:
 	
 func _on_money_updated(current_val: float):
 	moneyAmount.text = "$" + str(snappedf(current_val, 0.01))
-	# moneyAmount.text = "$" + str(snappedf(current_val, 0.01)) + " / $" + str(local_goal)
 
 #line of tabs to see end of long line above, godot issue
 																																										

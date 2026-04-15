@@ -46,16 +46,18 @@ offset_bottom = 1.0
 
 [node name="Tickets" type="Control" parent="." unique_id=110479356]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1.0
+offset_top = -18.0
+offset_right = 41.0
+offset_bottom = 22.0
 
 [node name="TicketHeader" type="Label" parent="Tickets" unique_id=832677860]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.2083334
-anchor_top = 0.6666666
+anchor_top = 1.475
 anchor_right = 6.5833335
-anchor_bottom = 2.4916666
+anchor_bottom = 3.3
 offset_right = 51.0
 offset_bottom = 12.0
 text = "TICKETS"
@@ -78,26 +80,14 @@ texture = SubResource("CanvasTexture_rh1mo")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.0703125
-anchor_top = 1.0546875
+anchor_top = 1.049132
 anchor_right = 1.0625
-anchor_bottom = 1.5625
+anchor_bottom = 1.5569445
 theme = ExtResource("5_cpriw")
 theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
 metadata/_edit_use_anchors_ = true
-
-[node name="Tick1Num" type="Label" parent="Tickets/Ticket1" unique_id=1648256547]
-visible = false
-layout_mode = 0
-offset_left = 74.0
-offset_top = -71.0
-offset_right = 114.0
-offset_bottom = -8.0
-theme_override_font_sizes/font_size = 45
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Ticket2" type="TextureRect" parent="Tickets" unique_id=1133795772]
 layout_mode = 1
@@ -122,18 +112,6 @@ theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
 metadata/_edit_use_anchors_ = true
-
-[node name="Tick2Num" type="Label" parent="Tickets/Ticket2" unique_id=1345615237]
-visible = false
-layout_mode = 0
-offset_left = 73.0
-offset_top = -71.0
-offset_right = 113.0
-offset_bottom = -8.0
-theme_override_font_sizes/font_size = 45
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Ticket3" type="TextureRect" parent="Tickets" unique_id=1864636325]
 layout_mode = 1
@@ -160,18 +138,6 @@ text = "TEMP"
 script = ExtResource("5_f8gav")
 metadata/_edit_use_anchors_ = true
 
-[node name="Tick3Num" type="Label" parent="Tickets/Ticket3" unique_id=348961637]
-visible = false
-layout_mode = 0
-offset_left = 73.0
-offset_top = -71.0
-offset_right = 113.0
-offset_bottom = -8.0
-theme_override_font_sizes/font_size = 45
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Ticket4" type="TextureRect" parent="Tickets" unique_id=1795563696]
 layout_mode = 1
 anchors_preset = -1
@@ -196,18 +162,6 @@ theme_override_font_sizes/font_size = 35
 text = "TEMP"
 script = ExtResource("5_f8gav")
 metadata/_edit_use_anchors_ = true
-
-[node name="Tick4Num" type="Label" parent="Tickets/Ticket4" unique_id=298540491]
-visible = false
-layout_mode = 0
-offset_left = 74.0
-offset_top = -71.0
-offset_right = 114.0
-offset_bottom = -8.0
-theme_override_font_sizes/font_size = 45
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Upgrades" type="Control" parent="." unique_id=681107643]
 anchors_preset = 0
@@ -458,7 +412,6 @@ anchor_bottom = 0.098148145
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="MoneyLabel" unique_id=1191025467]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.014999845
