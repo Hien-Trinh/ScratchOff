@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dkbfy7kl40o28"]
+
+[ext_resource type="SpriteFrames" uid="uid://crxew8nboajm3" path="res://assets/other/explosion.tres" id="1_oxoqp"]
+
+[node name="Explosion" type="Node2D" unique_id=1043198001]
+
+[node name="ExplosionSprite" type="AnimatedSprite2D" parent="." unique_id=1437151593]
+position = Vector2(215.5, 276)
+scale = Vector2(1.9772727, 1.7515924)
+sprite_frames = ExtResource("1_oxoqp")
+frame = 7
+frame_progress = 0.31630725

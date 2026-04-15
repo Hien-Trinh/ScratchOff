@@ -29,7 +29,6 @@ func _ready():
 	ticketList.clear()
 	
 	initialize_tickets()
-		
 
 func start_game():
 	game_started = true
@@ -39,8 +38,7 @@ func add_ticket(cardItem : CardItem):
 	# Add item to ticketList Array
 	ticketList.append(cardItem)
 	# Broadcast updated Array to EventBus with corresponding signal
-	EventBus.ticket_inventory_updated.emit(ticketList)
-	
+	EventBus.ticket_inventory_updated.emit(ticketList)	
 
 func initialize_tickets():
 	for i in range(5):

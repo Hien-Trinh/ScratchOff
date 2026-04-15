@@ -3,13 +3,14 @@ extends Sprite2D
 
 @export var moneyAmount : Label
 @onready var cashSpace = $Area2D
-@onready var explosion = $Sound/Explosion
+@onready var explosion_sound = $Sound/Explosion
 
 var displayed_money : float = GameManager.balance
 var winning = 0
 
 var counter_tween : Tween
 
+const EXPLO_SPRITE = preload("res://explosion.tscn")
 
 func _ready():
 	EventBus.player_money_updated.connect(animate_counter)
@@ -28,18 +29,33 @@ func _process(delta: float) -> void:
 		for card in labelArray:
 			if card.card_data.is_scratched == true:
 				winning = card.card_data.card_value
-
+				
 				if GameManager.check_gamble() == true:
 					winning *= GameManager.gamble()
 
 				total_winnings += (winning * GameManager.mult)
-
+				var spawned_explosion_sprite = EXPLO_SPRITE.instantiate()
+				add_child(spawned_explosion_sprite)
+				
+				explosion_sound.play()
+				# Get child of explosion sprite
+				var anim_explo = spawned_explosion_sprite.get_child(0)
+				anim_explo.position = card.position
+				anim_explo.position.y -= 800
+				anim_explo.scale *= 2
+				anim_explo.z_index = 10
+				print(anim_explo.position)
+				# Play animation
+				anim_explo.play("default")
+				# Await animation finish
+				await anim_explo.animation_finished
+				# Remove explosion sprite from tree
+				spawned_explosion_sprite.queue_free()
 				card.queue_free()
 				GameManager.remove_ticket_at_index(GameManager.ticketList.find(card))
 
 		# If we actually won money, apply it to the GameManager exactly ONCE.
 		if total_winnings > 0:
-			explosion.play()
 			var new_balance = GameManager.balance + total_winnings
 			GameManager.set_balance(new_balance)
 
