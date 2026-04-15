@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cu2xcogwm8pu3" path="res://pause_menu.tscn" id="4_mu740"]
 [ext_resource type="PackedScene" uid="uid://diwffrd0ympyl" path="res://game_over.tscn" id="8_08hyy"]
 [ext_resource type="Script" uid="uid://bf4jc7p2m7ejt" path="res://scripts/countdown_animation.gd" id="8_countdown"]
+[ext_resource type="FontFile" uid="uid://b8dftmter3eey" path="res://assets/fonts/Comic Sans MS.ttf" id="9_08hyy"]
 
 [sub_resource type="Animation" id="Animation_lqkpn"]
 length = 0.001
@@ -311,5 +312,15 @@ script = ExtResource("8_countdown")
 
 [node name="CountdownTimer" type="Timer" parent="Countdown" unique_id=89901459]
 
+[node name="EndRoundButton" type="Button" parent="." unique_id=2040996033]
+offset_left = 30.0
+offset_top = 336.0
+offset_right = 420.0
+offset_bottom = 422.0
+theme_override_fonts/font = ExtResource("9_08hyy")
+theme_override_font_sizes/font_size = 50
+text = "END ROUND"
+
 [connection signal="pressed" from="ShopMenu/CheckoutContinue/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="GameOver/ReturnTitle" to="." method="_on_return_title_pressed"]
+[connection signal="pressed" from="EndRoundButton" to="." method="_on_button_pressed"]

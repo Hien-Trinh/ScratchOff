@@ -6,6 +6,7 @@ extends Node2D
 @onready var pause_menu = $PauseMenu
 @onready var hand = $Hand
 @onready var cashArea = $Table/cashArea
+@onready var end_button = $EndRoundButton
 
 @onready var round_label = $Table/TableUI/RoundLabel
 @onready var money_label = $Table/TableUI/moneyLabel
@@ -83,6 +84,7 @@ func _on_timer_timeout():
 		shop_menu.refresh_shop()
 		anim.play("shop_enter")
 		hand.visible = false
+		end_button.visible = false
 		await anim.animation_finished
 		table.visible = false
 	if round_counter % rounds_per_loop == 0:
@@ -98,6 +100,7 @@ func _on_continue_button_pressed():
 		cashArea.round_reset()
 		anim.play("shop_exit")
 		await anim.animation_finished
+		end_button.visible = true
 		hand.visible = true
 		shop_menu.visible = false
 		round_counter += 1
@@ -122,3 +125,7 @@ func check_win_lose():
 func _on_return_title_pressed():
 	get_tree().change_scene_to_file("res://title_screen.tscn")
 	GameManager.restart_game()
+
+func _on_button_pressed() -> void:
+	game_timer.stop()
+	_on_timer_timeout()
