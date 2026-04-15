@@ -38,6 +38,7 @@ func _ready():
 	add_child(game_timer)
 	game_timer.one_shot = true
 	game_timer.connect("timeout", Callable(self,"_on_timer_timeout"))
+	add_child(hand)
 	GameManager.connect("game_started_signal", Callable(self, "round_start"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -67,8 +68,8 @@ func _process(_delta):
 func round_start():
 	if round_counter > 1:
 		table._ready()
-	if round_counter == 1:
-		add_child(hand)
+	#if round_counter == 1:
+		#add_child(hand)
 	#if round_counter % rounds_per_loop == 0:
 		#check_win_lose()
 	if (GameManager.check_extra_time() == true):
@@ -79,16 +80,16 @@ func round_start():
 	game_timer.start()
 
 func _on_timer_timeout():
+	if round_counter % rounds_per_loop == 0:
+		check_win_lose()
 	if table.visible == true:
 		shop_menu.visible = true
 		shop_menu.refresh_shop()
-		anim.play("shop_enter")
 		hand.visible = false
 		end_button.visible = false
+		anim.play("shop_enter")
 		await anim.animation_finished
 		table.visible = false
-	if round_counter % rounds_per_loop == 0:
-		check_win_lose()
 		
 func _on_continue_button_pressed():
 	if GameManager.check_on_the_house() == true:
