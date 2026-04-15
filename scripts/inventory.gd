@@ -16,6 +16,13 @@ func _process(_delta):
 	
 func on_ticket_inventory_updated(new_list):
 	ticketBody.text = ""
-	localList = new_list
-	for item in localList:
-		ticketBody.text += item._to_string()
+	localList = {}
+	for item in new_list:
+		var item_str = item.to_string()
+		if localList.has(item_str):
+			localList[item_str] += 1
+		else:
+			localList[item_str] = 1
+
+	for key in localList:
+		ticketBody.text += "%s x %s" % [key, localList[key]]
