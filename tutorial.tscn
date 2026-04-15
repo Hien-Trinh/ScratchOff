@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://bayeuh1jipd8e"]
 
-[ext_resource type="Script" uid="uid://ci4rmwqfvwthy" path="res://scripts/tutorial_button.gd" id="1_7n6eb"]
 [ext_resource type="FontFile" uid="uid://bqxdvnqmuulum" path="res://assets/fonts/Coolvetica Rg.otf" id="2_5mrt3"]
 [ext_resource type="Texture2D" uid="uid://dgdrsjgyvivld" path="res://assets/other/tutorialworker.png" id="2_yb1ct"]
 [ext_resource type="Texture2D" uid="uid://csr4jegr1wciw" path="res://assets/other/pixelstationinside.png" id="3_ehuit"]
+[ext_resource type="Script" uid="uid://ci4rmwqfvwthy" path="res://scripts/tutorial_button.gd" id="4_5mrt3"]
 
 [node name="Tutorial" type="Node2D" unique_id=1821609494]
-script = ExtResource("1_7n6eb")
 
 [node name="Node" type="Node" parent="." unique_id=1427061246]
 
@@ -48,5 +47,6 @@ offset_bottom = 867.0
 theme_override_fonts/font = ExtResource("2_5mrt3")
 theme_override_font_sizes/font_size = 90
 text = "BEGIN"
+script = ExtResource("4_5mrt3")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_button_pressed"]
