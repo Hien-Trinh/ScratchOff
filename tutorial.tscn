@@ -1,11 +1,52 @@
 [gd_scene format=3 uid="uid://bayeuh1jipd8e"]
 
-[ext_resource type="Script" uid="uid://ci4rmwqfvwthy" path="res://scripts/tutorial.gd" id="1_7n6eb"]
+[ext_resource type="Script" uid="uid://ci4rmwqfvwthy" path="res://scripts/tutorial_button.gd" id="1_7n6eb"]
+[ext_resource type="FontFile" uid="uid://bqxdvnqmuulum" path="res://assets/fonts/Coolvetica Rg.otf" id="2_5mrt3"]
+[ext_resource type="Texture2D" uid="uid://dgdrsjgyvivld" path="res://assets/other/tutorialworker.png" id="2_yb1ct"]
+[ext_resource type="Texture2D" uid="uid://csr4jegr1wciw" path="res://assets/other/pixelstationinside.png" id="3_ehuit"]
 
 [node name="Tutorial" type="Node2D" unique_id=1821609494]
 script = ExtResource("1_7n6eb")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=243011168]
-offset_right = 1932.0
-offset_bottom = 1081.0
-color = Color(0.56368876, 0.68294847, 1, 1)
+[node name="Node" type="Node" parent="." unique_id=1427061246]
+
+[node name="Label" type="Label" parent="Node" unique_id=1310128039]
+offset_left = 580.0
+offset_top = 311.0
+offset_right = 1941.0
+offset_bottom = 595.0
+theme_override_fonts/font = ExtResource("2_5mrt3")
+theme_override_font_sizes/font_size = 65
+text = "        Hey there! Buying Scratchers again?
+
+Don't forget to scratch them with Right Click!"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1807098193]
+offset_left = -204.0
+offset_top = -214.0
+offset_right = 2032.0
+offset_bottom = 1151.0
+color = Color(0.52156866, 0.41960785, 0.3254902, 0.5529412)
+
+[node name="Tutorialworker" type="Sprite2D" parent="." unique_id=1227232684]
+z_index = 1
+position = Vector2(544.5, 705.5)
+scale = Vector2(1.9131205, 1.9298643)
+texture = ExtResource("2_yb1ct")
+
+[node name="Pixelstationinside" type="Sprite2D" parent="." unique_id=1299279827]
+z_index = -1
+position = Vector2(956, 495)
+scale = Vector2(2.3488095, 2.192857)
+texture = ExtResource("3_ehuit")
+
+[node name="Button" type="Button" parent="." unique_id=2053257331]
+offset_left = 955.0
+offset_top = 675.0
+offset_right = 1306.0
+offset_bottom = 867.0
+theme_override_fonts/font = ExtResource("2_5mrt3")
+theme_override_font_sizes/font_size = 90
+text = "BEGIN"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
