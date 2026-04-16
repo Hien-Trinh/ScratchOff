@@ -32,7 +32,8 @@ window/size/viewport_height=1080
 [importer_defaults]
 
 wav={
-&"edit/loop_mode": 2
+&"edit/loop_end": 1,
+&"edit/loop_mode": 1
 }
 
 [input]

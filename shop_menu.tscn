@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://30kkqo3dkldn" path="res://assets/upgrades/mult_1.5.png" id="5_8fj20"]
 [ext_resource type="Theme" uid="uid://2xcpiflaqcmi" path="res://themes/buy_button.tres" id="5_cpriw"]
 [ext_resource type="Script" uid="uid://7tcsu8ee704u" path="res://scripts/buy_item.gd" id="5_f8gav"]
+[ext_resource type="StyleBox" uid="uid://c7thobb6d2ynf" path="res://themes/button_base.tres" id="6_2lj6v"]
 [ext_resource type="Texture2D" uid="uid://cotdew5qhai5t" path="res://assets/upgrades/mult__1.25.png" id="7_0atty"]
 [ext_resource type="Texture2D" uid="uid://cupvhw7iqp2ii" path="res://assets/cards/LuckyMoney180.png" id="8_8fj20"]
 [ext_resource type="Texture2D" uid="uid://be61errsqdolu" path="res://assets/cards/money4fun180.png" id="9_0atty"]
@@ -85,6 +86,7 @@ anchor_right = 1.0625
 anchor_bottom = 1.5569445
 theme = ExtResource("5_cpriw")
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("6_2lj6v")
 text = "TEMP"
 script = ExtResource("5_f8gav")
 metadata/_edit_use_anchors_ = true
@@ -109,6 +111,7 @@ anchor_top = 1.0546875
 anchor_right = 1.0625
 anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("6_2lj6v")
 text = "TEMP"
 script = ExtResource("5_f8gav")
 metadata/_edit_use_anchors_ = true
@@ -134,6 +137,7 @@ anchor_top = 1.0546875
 anchor_right = 1.0625
 anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("6_2lj6v")
 text = "TEMP"
 script = ExtResource("5_f8gav")
 metadata/_edit_use_anchors_ = true
@@ -159,6 +163,7 @@ anchor_top = 1.0546875
 anchor_right = 1.0625
 anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("6_2lj6v")
 text = "TEMP"
 script = ExtResource("5_f8gav")
 metadata/_edit_use_anchors_ = true
@@ -208,6 +213,7 @@ anchor_top = 1.0657372
 anchor_right = 1.0625
 anchor_bottom = 1.5735497
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("6_2lj6v")
 text = "TEMP"
 script = ExtResource("5_f8gav")
 buy_cost = 100.0
@@ -236,6 +242,7 @@ anchor_top = 1.0546875
 anchor_right = 1.0625
 anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("6_2lj6v")
 text = "TEMP"
 script = ExtResource("5_f8gav")
 buy_cost = 200.0
@@ -263,6 +270,7 @@ anchor_top = 1.0546875
 anchor_right = 1.0625
 anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("6_2lj6v")
 text = "TEMP"
 script = ExtResource("5_f8gav")
 buy_cost = 80.0
@@ -305,6 +313,7 @@ anchor_top = 1.0546875
 anchor_right = 1.0625
 anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("6_2lj6v")
 text = "TEMP"
 script = ExtResource("5_f8gav")
 buy_cost = 30.0
@@ -343,6 +352,7 @@ anchor_top = 1.0546875
 anchor_right = 1.0683452
 anchor_bottom = 1.5625
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("6_2lj6v")
 text = "TEMP"
 script = ExtResource("5_f8gav")
 buy_cost = 100.0
@@ -382,6 +392,7 @@ anchor_top = 1.0546875
 anchor_right = 1.0624998
 anchor_bottom = 1.5625002
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("6_2lj6v")
 text = "TEMP"
 script = ExtResource("5_f8gav")
 buy_cost = 40.0
