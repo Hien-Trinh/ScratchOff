@@ -13,10 +13,10 @@ func _ready():
 	animate_background()
 	refresh_shop()
 	EventBus.connect("player_money_updated", on_balance_updated)
-	balanceLabel.text = "$" + str(GameManager.get_balance())
+	balanceLabel.text = "$" + str(snappedf(GameManager.get_balance(), 0.01))
 	
 func on_balance_updated(new_value):
-	balanceLabel.text = "$" + str(new_value)
+	balanceLabel.text = "$" + str(snappedf(new_value, 0.01))
 	
 func animate_background():
 	var tween = get_tree().create_tween().set_loops()
