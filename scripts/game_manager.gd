@@ -83,6 +83,7 @@ func restart_game():
 	game_started = false
 	set_balance(100)
 	set_mult(1)
+	ticketList.clear()
 	initialize_tickets()
 
 # Runs at startup.

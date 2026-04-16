@@ -19,7 +19,7 @@ func on_balance_updated(new_value):
 	balanceLabel.text = "$" + str(snappedf(new_value, 0.01))
 	
 func animate_background():
-	var tween = get_tree().create_tween().set_loops()
+	var tween = get_tree().create_tween().set_loops(1000) # 1000 so Godot doesn't get angry
 	tween.tween_method(set_bg_hue, 0.0, 1.0, 10.0)
 
 func set_bg_hue(hue: float):
