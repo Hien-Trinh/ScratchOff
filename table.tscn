@@ -19,6 +19,11 @@ font = ExtResource("5_67vji")
 font_size = 50
 font_color = Color(1, 1, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_ormek"]
+font = ExtResource("5_67vji")
+font_size = 50
+font_color = Color(1, 1, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ormek"]
 bg_color = Color(1, 0, 0.8666668, 1)
 
@@ -411,8 +416,8 @@ layout_mode = 0
 offset_left = 358.0
 offset_right = 744.0
 offset_bottom = 69.0
-theme_override_font_sizes/font_size = 70
-label_settings = SubResource("LabelSettings_jry6c")
+pivot_offset = Vector2(193, 34.5)
+label_settings = SubResource("LabelSettings_ormek")
 
 [node name="RoundLabel" type="Label" parent="TableUI" unique_id=1032973269]
 layout_mode = 0
