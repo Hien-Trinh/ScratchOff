@@ -18,6 +18,9 @@ font = ExtResource("5_67vji")
 font_size = 50
 font_color = Color(1, 1, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ormek"]
+bg_color = Color(1, 0, 0.8666668, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64sdq"]
 size = Vector2(2200, 50)
 
@@ -122,11 +125,15 @@ theme_override_font_sizes/font_size = 50
 layout_mode = 0
 offset_left = 1170.0
 offset_top = 6.0
-offset_right = 1837.0
+offset_right = 1852.0
 offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.39999986, 1, 0, 1)
+theme_override_fonts/font = ExtResource("6_ibia0")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ormek")
 text = "Goal: 1000000 by round 220"
-horizontal_alignment = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Bounds" type="RigidBody2D" parent="." unique_id=1096510504]
 position = Vector2(960, 540)

@@ -17,7 +17,7 @@ extends Node2D
 var game_timer = Timer.new()
 var round_counter : int = 1
 
-var goal : float = 1000
+var goal : float = 500
 
 var rounds_per_loop : int = 6
 var loop_count : int = 1
