@@ -70,6 +70,3 @@ func animate_counter(target_amount: float) -> void:
 	
 func _on_money_updated(current_val: float):
 	moneyAmount.text = "$" + str(snappedf(current_val, 0.01))
-
-#line of tabs to see end of long line above, godot issue
-																																										

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dljsgxkx6eivj" path="res://scripts/table.gd" id="1_v5i0k"]
 [ext_resource type="Texture2D" uid="uid://bm0is53gc61ph" path="res://assets/other/dirtyfloor.png" id="2_67vji"]
+[ext_resource type="Texture2D" uid="uid://u83vofvfsr5r" path="res://assets/other/coffeestain.png" id="2_ibia0"]
 [ext_resource type="Texture2D" uid="uid://ksw5uoc78hn4" path="res://assets/other/solidpink.jpg" id="2_kl0hw"]
 [ext_resource type="Script" uid="uid://cyjjyhbj6867x" path="res://scripts/cashArea.gd" id="3_vjl2i"]
 [ext_resource type="FontFile" uid="uid://btatnlvuujute" path="res://assets/fonts/goudystout.TTF" id="5_67vji"]
@@ -29,6 +30,13 @@ size = Vector2(50, 1200)
 
 [node name="Table" type="Node2D" unique_id=1736072314]
 script = ExtResource("1_v5i0k")
+
+[node name="FloorStain" type="Sprite2D" parent="." unique_id=1306781397]
+modulate = Color(1, 1, 1, 0.15294118)
+position = Vector2(1879, 1125)
+rotation = 0.06283186
+scale = Vector2(1.07, 1.091354)
+texture = ExtResource("2_ibia0")
 
 [node name="Wood" type="Sprite2D" parent="." unique_id=1984232786]
 modulate = Color(1, 0.7131886, 0.6318537, 1)
