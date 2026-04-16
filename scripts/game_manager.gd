@@ -151,15 +151,11 @@ func calculate_mult():
 			if upgrade.multiplier > mult:
 				mult = upgrade.multiplier
 
-
-#We have many "check for upgrade" methods, later we should make a method that
-#does it with an upgrade as parameter. Easier. Cleaner.
-
 func check_gamble():
 	for key in upgrade_dict:
 		var upgrade = upgrade_dict[key]
-		#if upgrade is GamblingUpgrade && upgrade.is_active == true:
-			#return true
+		if upgrade is GamblingUpgrade && upgrade.is_active == true:
+			return true
 	return false
 
 func gamble():

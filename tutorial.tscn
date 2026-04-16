@@ -7,25 +7,12 @@
 
 [node name="Tutorial" type="Node2D" unique_id=1821609494]
 
-[node name="Node" type="Node" parent="." unique_id=1427061246]
-
-[node name="Label" type="Label" parent="Node" unique_id=1310128039]
-offset_left = 580.0
-offset_top = 311.0
-offset_right = 1941.0
-offset_bottom = 595.0
-theme_override_fonts/font = ExtResource("2_5mrt3")
-theme_override_font_sizes/font_size = 65
-text = "        Hey there! Buying Scratchers again?
-
-Don't forget to scratch them with Right Click!"
-
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1807098193]
 offset_left = -204.0
 offset_top = -214.0
 offset_right = 2032.0
 offset_bottom = 1151.0
-color = Color(0.52156866, 0.41960785, 0.3254902, 0.5529412)
+color = Color(0.52, 0.41790667, 0.3224, 0.7019608)
 
 [node name="Tutorialworker" type="Sprite2D" parent="." unique_id=1227232684]
 z_index = 1
@@ -48,5 +35,18 @@ theme_override_fonts/font = ExtResource("2_5mrt3")
 theme_override_font_sizes/font_size = 90
 text = "BEGIN"
 script = ExtResource("4_5mrt3")
+
+[node name="Label" type="Label" parent="." unique_id=1185692855]
+offset_left = 580.0
+offset_top = 311.0
+offset_right = 1941.0
+offset_bottom = 595.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_5mrt3")
+theme_override_font_sizes/font_size = 65
+text = "        Hey there! Buying Scratchers again?
+
+Don't forget to scratch them with Right Click!"
 
 [connection signal="pressed" from="Button" to="Button" method="_on_button_pressed"]
