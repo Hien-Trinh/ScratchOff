@@ -48,7 +48,7 @@ func _process(delta: float) -> void:
 				card.queue_free()
 				anim_explo.play("default")
 				# Await animation finish
-				await anim_explo.animation_finished
+				anim_explo.animation_finished.connect(spawned_explosion_sprite.queue_free)
 				# Remove explosion sprite from tree
 				spawned_explosion_sprite.queue_free()
 				# Can cause bug: attempt to call queue free on a previously freed null instance
@@ -62,9 +62,31 @@ func _process(delta: float) -> void:
 func animate_counter(target_amount: float) -> void:
 	if counter_tween and counter_tween.is_running():
 		counter_tween.kill()
-		
-	counter_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
-	counter_tween.tween_method(_on_money_updated, displayed_money, target_amount, 0.75)
+
+	# Reset scale
+	moneyAmount.scale = Vector2.ONE
+	moneyAmount.rotation_degrees = 0.0
+
+	counter_tween = create_tween()
+	counter_tween.set_parallel(true)
+	
+	# The Number Counting (Takes 0.75 seconds)
+	counter_tween.tween_method(_on_money_updated, displayed_money, target_amount, 0.75)\
+		.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
+	
+	
+	# The "Jump" UP (Scale to 1.5x and tilt slightly over 0.15 seconds)
+	counter_tween.tween_property(moneyAmount, "scale", Vector2(1.5, 1.5), 0.15)\
+		.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+	counter_tween.tween_property(moneyAmount, "rotation_degrees", 5.0, 0.15)\
+		.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	
+	
+	# The "Jump" DOWN (Scale back to normal over 0.60 seconds)
+	counter_tween.tween_property(moneyAmount, "scale", Vector2.ONE, 0.6)\
+		.set_delay(0.15).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+	counter_tween.tween_property(moneyAmount, "rotation_degrees", 0.0, 0.6)\
+		.set_delay(0.15).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 	
 	displayed_money = target_amount
 	
