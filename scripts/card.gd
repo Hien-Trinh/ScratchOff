@@ -255,7 +255,6 @@ func _update_scratch_grid(mask_local_pos: Vector2) -> void:
 	var percentage = float(scratched_cells) / float(total_cells)
 	if percentage >= scratch_success_threshold:
 		card_revealed = true
-		print("Card fully revealed!")
 		# TODO (done?): send signal that card is revealed
 		card_data.is_scratched = true
 		

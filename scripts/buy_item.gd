@@ -12,13 +12,17 @@ var cheapskate_value_updated = false
 @onready var rng = RandomNumberGenerator.new()
 @onready var buysfx_player = AudioStreamPlayer.new()
 @onready var buysfx = preload("res://assets/audio/sfx/cash-register.wav")
+@onready var fail_buysfx_player = AudioStreamPlayer.new()
+@onready var fail_buysfx = preload("res://assets/audio/sfx/no-money.wav")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.text = "$" + str(buy_cost)
 	upgrade_already_owned = false
 	add_child(buysfx_player)
+	add_child(fail_buysfx_player)
 	buysfx_player.stream = buysfx
+	fail_buysfx_player.stream = fail_buysfx
 	
 # For cheapskate, this is quite computer-memory-taking atm. Probably change later.
 func _process(_delta):
@@ -56,4 +60,4 @@ func _on_pressed():
 			GameManager.set_balance(diff)
 		else: 
 			buy_upgrade()
-	else: print("Player does not have enough money!")
+	else: fail_buysfx_player.play()
