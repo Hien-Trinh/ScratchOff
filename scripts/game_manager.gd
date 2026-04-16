@@ -83,6 +83,7 @@ func restart_game():
 	game_started = false
 	set_balance(100)
 	set_mult(1)
+	ticketList.clear()
 	initialize_tickets()
 
 # Runs at startup.
@@ -131,18 +132,12 @@ func init_reward_dict():
 
 func init_upgrade_dict():
 	upgrade_dict.clear()
-	var mult1_texture = preload("res://assets/upgrades/temp_up.svg")
-	upgrade_dict["Mult1"] = MultiplierUpgrade.new("1.25x Multiplier", mult1_texture, 1.25)
-	var mult2_texture = preload("res://assets/upgrades/mult_1.5.png")
-	upgrade_dict["Mult2"] = MultiplierUpgrade.new("1.5x Multiplier", mult2_texture, 1.5)
-	var cheapskate_texture = preload("res://assets/upgrades/temp_up.svg")
-	upgrade_dict["Cheapskate"] = CheapskateUpgrade.new("CheapskateUpgrade", cheapskate_texture)
-	var gambling_texture = preload("res://assets/upgrades/temp_up.svg")
-	upgrade_dict["Gambling"] = GamblingUpgrade.new("GamblingUpgrade", gambling_texture)
-	var on_the_house_texture = preload("res://assets/upgrades/temp_up.svg") 
-	upgrade_dict["OnTheHouse"] = OnTheHouseUpgrade.new("OnTheHouseUpgrade", on_the_house_texture)
-	var extra_time_texture = preload("res://assets/upgrades/temp_up.svg") 
-	upgrade_dict["ExtraTime"] = ExtraTimeUpgrade.new("ExtraTimeUpgrade", extra_time_texture)
+	upgrade_dict["Mult1"] = MultiplierUpgrade.new("1.25x Multiplier", 1.25)
+	upgrade_dict["Mult2"] = MultiplierUpgrade.new("1.5x Multiplier", 1.5)
+	upgrade_dict["Cheapskate"] = CheapskateUpgrade.new("CheapskateUpgrade")
+	upgrade_dict["Gambling"] = GamblingUpgrade.new("GamblingUpgrade")
+	upgrade_dict["OnTheHouse"] = OnTheHouseUpgrade.new("OnTheHouseUpgrade")
+	upgrade_dict["ExtraTime"] = ExtraTimeUpgrade.new("ExtraTimeUpgrade")
 
 func calculate_mult():
 	for key in upgrade_dict:

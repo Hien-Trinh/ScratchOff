@@ -8,14 +8,11 @@ var description : String
 var upgrade_name : String:
 	set = set_upgrade_name, get = get_upgrade_name
 
-var upgrade_texture : Texture
-
 var is_active : bool:
 	set = set_is_active, get = get_is_active
 
-func _init(new_name :  String, new_texture : Texture2D, desc : String):
+func _init(new_name :  String, desc : String):
 	upgrade_name = new_name
-	upgrade_texture = new_texture
 	is_active = false
 	description = desc
 

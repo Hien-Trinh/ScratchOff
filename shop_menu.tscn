@@ -325,12 +325,12 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.26700002
-offset_left = 48.00003
+offset_left = 46.00003
 offset_top = 98.00003
-offset_right = 172.60002
+offset_right = 170.60002
 offset_bottom = 171.00003
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 17
 text = "On the House"
 
 [node name="Upgrade5" type="TextureRect" parent="Upgrades" unique_id=2106078354]
