@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 				winning = card.card_data.card_value
 				
 				if GameManager.check_gamble() == true:
-					winning *= GameManager.gamble()
+					winning *= GameManager.do_gamble()
 
 				total_winnings += (winning * GameManager.mult)
 				var spawned_explosion_sprite = EXPLO_SPRITE.instantiate()

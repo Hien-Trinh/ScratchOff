@@ -158,13 +158,13 @@ func check_gamble():
 			return true
 	return false
 
-func gamble():
+func do_gamble():
 	var my_random_number = rng.randf_range(0.0, 1.0)
 	var result = 0
 	if (my_random_number > 0.5):
 		result = 0
 	else:
-		result = 3
+		result = 2.5
 	return result
 
 func check_on_the_house():

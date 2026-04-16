@@ -72,7 +72,7 @@ func _on_upgrade_2_mouse_entered():
 	$DescBox/DescLabel.text = "Multiply card value by 1.5"
 	
 func _on_upgrade_3_mouse_entered():
-	$DescBox/DescLabel.text = "Triple or nothing"
+	$DescBox/DescLabel.text = "2.5x or nothing"
 	
 func _on_upgrade_4_mouse_entered():
 	$DescBox/DescLabel.text = "Free card every round"
