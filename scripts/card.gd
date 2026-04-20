@@ -88,10 +88,6 @@ func _physics_process(_delta: float) -> void:
 	handle_shadow(_delta)
 
 func handle_shadow(_delta: float) -> void:
-	# If the game is not started, do not allow inputs
-	if not GameManager.game_started:
-		return
-	
 	# Y position is never changed.
 	# Only x changes depending on how far we are from the center of the screen
 	var center: Vector2 = get_viewport_rect().size / 2.0

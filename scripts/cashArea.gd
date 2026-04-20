@@ -47,10 +47,8 @@ func _process(delta: float) -> void:
 				# Play animation
 				card.queue_free()
 				anim_explo.play("default")
-				# Await animation finish
-				await anim_explo.animation_finished
-				# Remove explosion sprite from tree
-				spawned_explosion_sprite.queue_free()
+				# Await animation finish then remove sprite
+				anim_explo.animation_finished.connect(spawned_explosion_sprite.queue_free)
 				# Can cause bug: attempt to call queue free on a previously freed null instance
 				GameManager.remove_ticket_at_index(GameManager.ticketList.find(card))
 
