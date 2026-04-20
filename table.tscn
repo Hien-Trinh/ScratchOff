@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dljsgxkx6eivj" path="res://scripts/table.gd" id="1_v5i0k"]
 [ext_resource type="Texture2D" uid="uid://bm0is53gc61ph" path="res://assets/other/dirtyfloor.png" id="2_67vji"]
 [ext_resource type="Texture2D" uid="uid://u83vofvfsr5r" path="res://assets/other/coffeestain.png" id="2_ibia0"]
-[ext_resource type="Texture2D" uid="uid://ksw5uoc78hn4" path="res://assets/other/solidpink.jpg" id="2_kl0hw"]
 [ext_resource type="Script" uid="uid://cyjjyhbj6867x" path="res://scripts/cashArea.gd" id="3_vjl2i"]
+[ext_resource type="Texture2D" uid="uid://fujr4je312dm" path="res://assets/other/piggy-bank.png" id="4_xnpc2"]
 [ext_resource type="FontFile" uid="uid://btatnlvuujute" path="res://assets/fonts/goudystout.TTF" id="5_67vji"]
 [ext_resource type="FontFile" uid="uid://bgp5q4gq4j4tl" path="res://assets/fonts/BadComic-Italic.ttf" id="6_ibia0"]
 [ext_resource type="AudioStream" uid="uid://cy2pkexmnvmx7" path="res://assets/audio/sfx/8-bit-explosion.wav" id="6_jry6c"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ckey2a5kgm15h" path="res://assets/other/spinning_rat.png" id="10_ibia0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67vji"]
-size = Vector2(1920.0001, 1080)
+size = Vector2(2717.3154, 2718.503)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jry6c"]
 font = ExtResource("5_67vji")
@@ -365,9 +365,9 @@ texture = ExtResource("2_67vji")
 [node name="cashArea" type="Sprite2D" parent="." unique_id=2062980907 node_paths=PackedStringArray("moneyAmount")]
 modulate = Color(0.7974299, 0.8732331, 0.9937442, 1)
 z_index = -1
-position = Vector2(175.50002, 840)
-scale = Vector2(0.18177085, 0.44444445)
-texture = ExtResource("2_kl0hw")
+position = Vector2(239, 869)
+scale = Vector2(0.13174766, 0.14971472)
+texture = ExtResource("4_xnpc2")
 script = ExtResource("3_vjl2i")
 moneyAmount = NodePath("../TableUI/moneyAmount")
 
@@ -383,7 +383,7 @@ position = Vector2(6.1035156e-05, 0)
 scale = Vector2(1.0000001, 1.0000002)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cashArea/Area2D" unique_id=372474276]
-position = Vector2(-0.00012207031, 0)
+position = Vector2(-255.8866, -34.324707)
 shape = SubResource("RectangleShape2D_67vji")
 
 [node name="TableUI" type="Control" parent="." unique_id=1448599781]
@@ -396,10 +396,10 @@ offset_bottom = 62.0
 
 [node name="cashInLabel" type="Label" parent="TableUI" unique_id=1617370136]
 layout_mode = 0
-offset_left = -18.0
-offset_top = 596.0
-offset_right = 274.0
-offset_bottom = 721.0
+offset_left = 7.999998
+offset_top = 563.0
+offset_right = 300.0
+offset_bottom = 688.0
 rotation = 0.13962634
 theme_override_fonts/font = ExtResource("6_ibia0")
 theme_override_font_sizes/font_size = 50
