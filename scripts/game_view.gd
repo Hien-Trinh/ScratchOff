@@ -48,22 +48,6 @@ func _process(_delta):
 		get_tree().paused = true
 		pause_menu.show()
 		pause_menu.set_process(true)
-	# SwapScreenTest = the "V" key
-	if Input.is_action_just_released("SwapScreenTest"):
-		if shop_menu.visible == true:
-			# Swap from shop to table
-			table.visible = true
-			hand.visible = true
-			anim.play("shop_exit")
-			await anim.animation_finished
-			shop_menu.visible = false
-		elif table.visible == true:
-			# Swap from table to shop
-			shop_menu.visible = true
-			anim.play("shop_enter")
-			await anim.animation_finished
-			hand.visible = false
-			table.visible = false
 
 func round_start():
 	if round_counter > 1:

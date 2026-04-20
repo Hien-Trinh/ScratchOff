@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bweaupebolexp"]
+
+[ext_resource type="Texture2D" uid="uid://dgdrsjgyvivld" path="res://assets/other/tutorialworker.png" id="1_copv5"]
+[ext_resource type="Script" uid="uid://dm6dnr0i2u5dw" path="res://card_tutorial.gd" id="1_fro7f"]
+[ext_resource type="Texture2D" uid="uid://csr4jegr1wciw" path="res://assets/other/pixelstationinside.png" id="2_fro7f"]
+[ext_resource type="FontFile" uid="uid://bqxdvnqmuulum" path="res://assets/fonts/Coolvetica Rg.otf" id="3_7x77e"]
+[ext_resource type="Script" uid="uid://ci4rmwqfvwthy" path="res://scripts/tutorial_button.gd" id="4_coosh"]
+
+[node name="Tutorial" type="Node2D" unique_id=1821609494]
+script = ExtResource("1_fro7f")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1807098193]
+offset_left = -204.0
+offset_top = -214.0
+offset_right = 2032.0
+offset_bottom = 1151.0
+color = Color(0.52, 0.41790667, 0.3224, 0.7019608)
+
+[node name="Tutorialworker" type="Sprite2D" parent="." unique_id=1227232684]
+z_index = 1
+position = Vector2(544.5, 705.5)
+scale = Vector2(1.9131205, 1.9298643)
+texture = ExtResource("1_copv5")
+
+[node name="Pixelstationinside" type="Sprite2D" parent="." unique_id=1299279827]
+z_index = -1
+position = Vector2(956, 495)
+scale = Vector2(2.3488095, 2.192857)
+texture = ExtResource("2_fro7f")
+
+[node name="Button" type="Button" parent="." unique_id=2053257331]
+visible = false
+offset_left = 955.0
+offset_top = 675.0
+offset_right = 1306.0
+offset_bottom = 867.0
+theme_override_fonts/font = ExtResource("3_7x77e")
+theme_override_font_sizes/font_size = 90
+text = "BEGIN"
+script = ExtResource("4_coosh")
+
+[node name="Label" type="Label" parent="." unique_id=1185692855]
+offset_left = 557.0
+offset_top = 105.0
+offset_right = 1918.0
+offset_bottom = 389.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("3_7x77e")
+theme_override_font_sizes/font_size = 65
+text = "        Hey there! Buying Scratchers again?
+
+Don't forget to scratch them with Right Click!"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_button_pressed"]

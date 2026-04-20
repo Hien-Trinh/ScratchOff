@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 				var anim_explo = spawned_explosion_sprite.get_child(0)
 				anim_explo.position = card.position
 				anim_explo.position.y -= 800
-				anim_explo.scale *= 2
+				anim_explo.scale *= 3
 				anim_explo.z_index = 10
 				# Play animation
 				card.queue_free()
