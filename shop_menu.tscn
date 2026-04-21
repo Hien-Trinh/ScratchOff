@@ -461,6 +461,14 @@ theme_override_font_sizes/font_size = 40
 text = "Hover over upgrade to reveal description."
 vertical_alignment = 1
 
+[node name="OutsideUpgradeArea" type="Control" parent="." unique_id=404605628]
+z_index = -5
+anchors_preset = 0
+offset_left = -430.0
+offset_top = 439.0
+offset_right = 2301.0
+offset_bottom = 654.0
+
 [connection signal="pressed" from="Tickets/Ticket1/Buy_1" to="Tickets/Ticket1/Buy_1" method="_on_pressed"]
 [connection signal="pressed" from="Tickets/Ticket2/Buy_2" to="Tickets/Ticket2/Buy_2" method="_on_pressed"]
 [connection signal="pressed" from="Tickets/Ticket3/Buy_3" to="Tickets/Ticket3/Buy_3" method="_on_pressed"]
@@ -483,3 +491,4 @@ vertical_alignment = 1
 [connection signal="mouse_entered" from="Upgrades/Upgrade6" to="." method="_on_upgrade_6_mouse_entered"]
 [connection signal="mouse_entered" from="Upgrades/Upgrade6/Button" to="." method="_on_upgrade_6_mouse_entered"]
 [connection signal="pressed" from="Upgrades/Upgrade6/Button" to="Upgrades/Upgrade6/Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="OutsideUpgradeArea" to="." method="_on_outside_upgrade_area_mouse_entered"]

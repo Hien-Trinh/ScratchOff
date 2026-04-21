@@ -17,6 +17,9 @@ var cheapskate_value_updated = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if(GameManager.check_cheapskate()):
+		if (!is_upgrade):
+			buy_cost *= 0.7
 	self.text = "$" + str(buy_cost)
 	upgrade_already_owned = false
 	add_child(buysfx_player)
@@ -24,16 +27,17 @@ func _ready():
 	buysfx_player.stream = buysfx
 	fail_buysfx_player.stream = fail_buysfx
 	
-# For cheapskate, this is quite computer-memory-taking atm. Probably change later.
+# For cheapskate upgrade
 func _process(_delta):
 	if (GameManager.check_cheapskate() == true && cheapskate_value_updated == false):
-		buy_cost *= 0.85
-		if(!is_upgrade):
+		buy_cost *= 0.7
+		if(is_upgrade && upgrade_already_owned != true):
 			self.text = "$" + str(buy_cost)
-		else:
-			if(upgrade_already_owned != true):
-				self.text = "$" + str(buy_cost)
 		cheapskate_value_updated = true
+	if (GameManager.check_cheapskate() == true && !is_upgrade):
+		if (buy_cost == 100 or buy_cost == 75 or buy_cost == 30 or buy_cost == 15 or buy_cost == 10 or buy_cost == 5):
+			buy_cost *= 0.7
+			self.text = "$" + str(buy_cost)
 
 func buy_ticket(): 
 	var ticket = GameManager.generate_ticket(buy_name)
