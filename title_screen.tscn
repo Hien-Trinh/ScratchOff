@@ -158,6 +158,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="." unique_id=2129672310]
 stream = ExtResource("5_hafda")
+volume_db = 4.0
 autoplay = true
 
 [connection signal="pressed" from="TextureRect2/StartButton" to="." method="_on_start_button_pressed"]

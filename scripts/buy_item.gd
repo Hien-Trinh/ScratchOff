@@ -29,11 +29,6 @@ func _ready():
 	
 # For cheapskate upgrade
 func _process(_delta):
-	if (GameManager.check_cheapskate() == true && cheapskate_value_updated == false):
-		buy_cost *= 0.7
-		if(is_upgrade && upgrade_already_owned != true):
-			self.text = "$" + str(buy_cost)
-		cheapskate_value_updated = true
 	if (GameManager.check_cheapskate() == true && !is_upgrade):
 		if (buy_cost == 100 or buy_cost == 75 or buy_cost == 30 or buy_cost == 15 or buy_cost == 10 or buy_cost == 5):
 			buy_cost *= 0.7

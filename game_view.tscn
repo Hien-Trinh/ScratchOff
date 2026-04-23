@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://d1jq44qij8nlg" path="res://themes/continue_text.tres" id="4_752fl"]
 [ext_resource type="PackedScene" uid="uid://cu2xcogwm8pu3" path="res://pause_menu.tscn" id="4_mu740"]
 [ext_resource type="AudioStream" uid="uid://43vtb62j2jsu" path="res://assets/audio/music/bc-song1.wav" id="6_mpfd6"]
+[ext_resource type="AudioStream" uid="uid://dps06kt3su2wd" path="res://assets/audio/sfx/DissapointedYell.mp3" id="7_icur1"]
 [ext_resource type="PackedScene" uid="uid://diwffrd0ympyl" path="res://game_over.tscn" id="8_08hyy"]
 [ext_resource type="Script" uid="uid://bf4jc7p2m7ejt" path="res://scripts/countdown_animation.gd" id="8_countdown"]
 [ext_resource type="FontFile" uid="uid://44v45o70x3eq" path="res://assets/fonts/papyrus.ttf" id="9_08hyy"]
@@ -217,8 +218,9 @@ _data = {
 &"startCountdown": SubResource("Animation_odoka")
 }
 
-[node name="GameView" type="Node2D" unique_id=1842035021]
+[node name="GameView" type="Node2D" unique_id=1842035021 node_paths=PackedStringArray("yellSound")]
 script = ExtResource("1_lqkpn")
+yellSound = NodePath("Yell")
 
 [node name="Hand" parent="." unique_id=710456527 instance=ExtResource("3_cr1hu")]
 
@@ -267,6 +269,9 @@ libraries/ = SubResource("AnimationLibrary_cr1hu")
 stream = ExtResource("6_mpfd6")
 volume_db = -5.0
 autoplay = true
+
+[node name="Yell" type="AudioStreamPlayer2D" parent="." unique_id=132731667]
+stream = ExtResource("7_icur1")
 
 [node name="GameOver" parent="." unique_id=2009763144 instance=ExtResource("8_08hyy")]
 visible = false

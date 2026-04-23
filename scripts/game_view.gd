@@ -14,6 +14,8 @@ extends Node2D
 
 @onready var game_over = $GameOver
 
+@export var yellSound : AudioStreamPlayer2D
+
 var game_timer = Timer.new()
 var round_counter : int = 1
 
@@ -57,7 +59,7 @@ func round_start():
 	#if round_counter % rounds_per_loop == 0:
 		#check_win_lose()
 	if (GameManager.check_extra_time() == true):
-		game_timer.set_wait_time(20) #Seconds
+		game_timer.set_wait_time(25) #Seconds
 	else:
 		game_timer.set_wait_time(15.0) # Seconds
 	game_timer.start()
@@ -94,6 +96,7 @@ func _on_continue_button_pressed():
 func check_win_lose():
 	if GameManager.balance < goal:
 		# LOSE
+		yellSound.play()
 		game_over.visible = true
 		$GameOver/RoundNum.text = str(round_counter)
 		anim.play("game_over_anim")
