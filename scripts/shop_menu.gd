@@ -84,5 +84,4 @@ func _on_upgrade_6_mouse_entered():
 	$DescBox/DescLabel.text = "More time per round"
 	
 func _on_outside_upgrade_area_mouse_entered() -> void:
-	print("entered")
 	$DescBox/DescLabel.text = "Hover over upgrade to reveal description."
