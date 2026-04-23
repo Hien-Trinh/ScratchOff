@@ -1,5 +1,7 @@
 extends Sprite2D
 
+const CardClass = preload("res://scripts/card.gd")
+
 var hand_active = true
 var open_texture = load("res://assets/hand/pixel_open.png")
 var closed_texture = load("res://assets/hand/pixel_grab.png")
@@ -14,18 +16,24 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if hand_active == true:
-		position = get_global_mouse_position() + offset
+		var is_hovering = CardClass.hovered_cards > 0
 		
-func _input(event):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-			if event.is_pressed():
-				self.texture = closed_texture
-			if event.is_released():
-				self.texture = open_texture
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
-			if event.is_pressed():
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+			if is_hovering:
 				self.texture = scratch_texture
 				self.offset = scratch_offset
-			if event.is_released():
+			else:
 				self.texture = open_texture
 				self.offset = default_offset
+		elif Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			if is_hovering:
+				self.texture = closed_texture
+				self.offset = default_offset
+			else:
+				self.texture = open_texture
+				self.offset = default_offset
+		else:
+			self.texture = open_texture
+			self.offset = default_offset
+			
+		position = get_global_mouse_position() + offset

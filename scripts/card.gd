@@ -14,6 +14,7 @@ var card_data: CardItem
 
 # Only one active card at a time
 static var active_card: RigidBody2D = null
+static var hovered_cards: int = 0
 
 var tween_rot: Tween
 var tween_hover: Tween
@@ -175,6 +176,7 @@ func _input(event: InputEvent) -> void:
 
 # Connect this via the Godot Node Editor signals -> Area2D.mouse_entered
 func _on_mouse_entered() -> void:
+	hovered_cards += 1
 	# If the game is not started, do not allow inputs
 	if not GameManager.game_started:
 		return
@@ -189,6 +191,7 @@ func _on_mouse_entered() -> void:
 
 # Connect this via the Godot Node Editor signals -> Area2D.mouse_exited
 func _on_mouse_exited() -> void:
+	hovered_cards -= 1
 	# If the game is not started, do not allow inputs
 	if not GameManager.game_started:
 		return
