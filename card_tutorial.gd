@@ -7,6 +7,7 @@ const CARD_SCENE = preload("res://card.tscn")
 func _ready():
 	var card_data = GameManager.generate_ticket("LotsOfMoney")
 	tutorial_card.setup_ticket(card_data)
+	tutorial_card.position.y -=100
 	GameManager.game_started = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
