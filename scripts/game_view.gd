@@ -60,7 +60,6 @@ func round_start():
 		game_timer.set_wait_time(20) #Seconds
 	else:
 		game_timer.set_wait_time(15.0) # Seconds
-	# Create a countdown animation?
 	game_timer.start()
 
 func _on_timer_timeout():

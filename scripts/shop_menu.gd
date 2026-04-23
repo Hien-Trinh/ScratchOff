@@ -72,7 +72,7 @@ func _on_upgrade_2_mouse_entered():
 	$DescBox/DescLabel.text = "Multiply card value by 1.5"
 	
 func _on_upgrade_3_mouse_entered():
-	$DescBox/DescLabel.text = "2.5x or nothing"
+	$DescBox/DescLabel.text = "Ticket value is 2.5x or nothing"
 	
 func _on_upgrade_4_mouse_entered():
 	$DescBox/DescLabel.text = "Free card every round"
@@ -82,3 +82,7 @@ func _on_upgrade_5_mouse_entered():
 	
 func _on_upgrade_6_mouse_entered():
 	$DescBox/DescLabel.text = "More time per round"
+	
+func _on_outside_upgrade_area_mouse_entered() -> void:
+	print("entered")
+	$DescBox/DescLabel.text = "Hover over upgrade to reveal description."
