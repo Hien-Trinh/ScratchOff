@@ -265,6 +265,7 @@ libraries/ = SubResource("AnimationLibrary_cr1hu")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1702866037]
 stream = ExtResource("6_mpfd6")
+volume_db = -5.0
 autoplay = true
 
 [node name="GameOver" parent="." unique_id=2009763144 instance=ExtResource("8_08hyy")]
