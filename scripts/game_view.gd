@@ -42,11 +42,13 @@ func _ready():
 	game_timer.connect("timeout", Callable(self,"_on_timer_timeout"))
 	add_child(hand)
 	GameManager.connect("game_started_signal", Callable(self, "round_start"))
+	pause_menu.connect("game_resume", Callable(self, "on_game_resumed"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	$Table/TableUI/TimerLabel.set_text("TIME LEFT: " + str(snappedf(game_timer.get_time_left(), 0.1)))
 	if Input.is_action_just_released("Pause"):
+		hand.visible = false
 		get_tree().paused = true
 		pause_menu.show()
 		pause_menu.set_process(true)
@@ -75,6 +77,9 @@ func _on_timer_timeout():
 		anim.play("shop_enter")
 		await anim.animation_finished
 		table.visible = false
+		
+func on_game_resumed():
+	hand.visible = true
 		
 func _on_continue_button_pressed():
 	if GameManager.check_on_the_house() == true:

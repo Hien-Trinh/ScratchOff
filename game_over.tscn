@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://diwffrd0ympyl"]
 
 [ext_resource type="FontFile" uid="uid://dppipli8rf1t8" path="res://assets/fonts/Creepster-Regular.ttf" id="1_y26ei"]
+[ext_resource type="FontFile" uid="uid://b8dftmter3eey" path="res://assets/fonts/Comic Sans MS.ttf" id="2_yxx3c"]
 
 [node name="GameOver" type="Node2D" unique_id=2009763144]
 metadata/_edit_horizontal_guides_ = [27489.0]
@@ -26,6 +27,7 @@ offset_left = 741.0
 offset_top = 482.0
 offset_right = 1245.0
 offset_bottom = 628.0
+theme_override_fonts/font = ExtResource("2_yxx3c")
 theme_override_font_sizes/font_size = 80
 text = "#"
 horizontal_alignment = 1
@@ -37,6 +39,7 @@ offset_left = 5.0
 offset_top = -155.0
 offset_right = 509.0
 offset_bottom = -9.0
+theme_override_fonts/font = ExtResource("2_yxx3c")
 theme_override_font_sizes/font_size = 70
 text = "after"
 horizontal_alignment = 1
@@ -48,6 +51,7 @@ offset_left = -6.0
 offset_top = 167.0
 offset_right = 498.0
 offset_bottom = 313.0
+theme_override_fonts/font = ExtResource("2_yxx3c")
 theme_override_font_sizes/font_size = 80
 text = "rounds"
 horizontal_alignment = 1
