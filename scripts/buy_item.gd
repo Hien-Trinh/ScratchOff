@@ -7,8 +7,6 @@ extends Button
 var upgrade_already_owned : bool
 # Only used for upgrades
 
-var cheapskate_value_updated = false
-
 @onready var rng = RandomNumberGenerator.new()
 @onready var buysfx_player = AudioStreamPlayer.new()
 @onready var buysfx = preload("res://assets/audio/sfx/cash-register.wav")
@@ -17,6 +15,7 @@ var cheapskate_value_updated = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("new session")
 	if(GameManager.check_cheapskate()):
 		if (!is_upgrade):
 			buy_cost *= 0.7
@@ -27,8 +26,25 @@ func _ready():
 	buysfx_player.stream = buysfx
 	fail_buysfx_player.stream = fail_buysfx
 	
-# For cheapskate upgrade
 func _process(_delta):
+	if (is_upgrade && !upgrade_already_owned):
+		if GameManager.num_upgrades == 1:
+				buy_cost = 75
+				self.text = "$" + str(buy_cost)
+		elif GameManager.num_upgrades == 2:
+				buy_cost = 100
+				self.text = "$" + str(buy_cost)
+		elif GameManager.num_upgrades == 3:
+				buy_cost = 175
+				self.text = "$" + str(buy_cost)
+		elif GameManager.num_upgrades == 4:
+				buy_cost = 300
+				self.text = "$" + str(buy_cost)
+		elif GameManager.num_upgrades >= 5:
+				buy_cost = 400
+				self.text = "$" + str(buy_cost)
+		
+	#for cheapskate upgrade
 	if (GameManager.check_cheapskate() == true && !is_upgrade):
 		if (buy_cost == 100 or buy_cost == 75 or buy_cost == 30 or buy_cost == 15 or buy_cost == 10 or buy_cost == 5):
 			buy_cost *= 0.7
@@ -49,6 +65,7 @@ func buy_upgrade():
 			GameManager.set_balance(GameManager.get_balance() - buy_cost)
 			buysfx_player.play()
 			self.text = "OWNED"
+			GameManager.num_upgrades += 1
 
 func _on_pressed():
 	var diff : float = GameManager.get_balance() - buy_cost

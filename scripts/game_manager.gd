@@ -12,6 +12,8 @@ var game_started = false
 
 var spawn_list = Array()
 
+var num_upgrades : int = 0
+
 var rng = RandomNumberGenerator.new()
 var balance : float = 100 :
 	set = set_balance, get = get_balance
