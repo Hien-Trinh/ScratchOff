@@ -272,6 +272,7 @@ autoplay = true
 
 [node name="Yell" type="AudioStreamPlayer2D" parent="." unique_id=132731667]
 stream = ExtResource("7_icur1")
+volume_db = 1.0
 
 [node name="GameOver" parent="." unique_id=2009763144 instance=ExtResource("8_08hyy")]
 visible = false

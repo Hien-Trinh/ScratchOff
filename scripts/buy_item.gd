@@ -15,19 +15,25 @@ var upgrade_already_owned : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("new session")
-	if(GameManager.check_cheapskate()):
-		if (!is_upgrade):
-			buy_cost *= 0.7
+	if (buy_name == "Mult2" or buy_name == "Mult3"):
+		disabled = true
 	self.text = "$" + str(buy_cost)
 	upgrade_already_owned = false
 	add_child(buysfx_player)
 	add_child(fail_buysfx_player)
 	buysfx_player.stream = buysfx
+	buysfx_player.volume_db = -1.0
 	fail_buysfx_player.stream = fail_buysfx
+	fail_buysfx_player.volume_db = -1.0
 	
 func _process(_delta):
 	if (is_upgrade && !upgrade_already_owned):
+		if (GameManager.shop_mult2_active == true && GameManager.shop_mult2_updated == false):
+			disabled = false
+			GameManager.shop_mult2_updated = true
+		if (GameManager.shop_mult3_active == true && GameManager.shop_mult3_updated == false):
+			disabled = false
+			GameManager.shop_mult3_updated = true
 		if GameManager.num_upgrades == 1:
 				buy_cost = 75
 				self.text = "$" + str(buy_cost)
@@ -40,8 +46,11 @@ func _process(_delta):
 		elif GameManager.num_upgrades == 4:
 				buy_cost = 300
 				self.text = "$" + str(buy_cost)
-		elif GameManager.num_upgrades >= 5:
-				buy_cost = 400
+		elif GameManager.num_upgrades == 5:
+				buy_cost = 650
+				self.text = "$" + str(buy_cost)
+		elif GameManager.num_upgrades >= 6:
+				buy_cost = 1400
 				self.text = "$" + str(buy_cost)
 		
 	#for cheapskate upgrade
@@ -60,6 +69,10 @@ func buy_ticket():
 func buy_upgrade():
 	if (!upgrade_already_owned):
 		if(GameManager.get_upgrade_dict().has(buy_name)):
+			if (buy_name == "Mult1"):
+				GameManager.shop_mult2_active = true
+			if (buy_name == "Mult2"):
+				GameManager.shop_mult3_active = true
 			GameManager.activate_upgrade(buy_name)
 			upgrade_already_owned = true
 			GameManager.set_balance(GameManager.get_balance() - buy_cost)

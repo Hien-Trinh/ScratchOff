@@ -13,6 +13,10 @@ var game_started = false
 var spawn_list = Array()
 
 var num_upgrades : int = 0
+var shop_mult2_active = false
+var shop_mult3_active = false
+var shop_mult2_updated = false
+var shop_mult3_updated = false
 
 var rng = RandomNumberGenerator.new()
 var balance : float = 100 :
@@ -105,11 +109,11 @@ func init_ticket_dict():
 	
 	# LUCKY WINNER
 	var lw_foil = preload("res://assets/cards/LuckyMoney180.png")
-	ticket_template_dict["LuckyWinner"] = ["lw_01", "Lucky Winner", 15.00, lw_foil, 3, 4]
+	ticket_template_dict["LuckyWinner"] = ["lw_01", "Lucky Winner", 30.00, lw_foil, 3, 4]
 	
 	# MONEY 4 FREE
 	var m4f_foil = preload("res://assets/cards/money4fun180.png")
-	ticket_template_dict["Money4Free"] = ["m4f_01", "Money 4 Free", 30.00, m4f_foil, 4, 5]
+	ticket_template_dict["Money4Free"] = ["m4f_01", "Money 4 Free", 50.00, m4f_foil, 4, 5]
 	
 	# TOP DOLLAR
 	var td_foil = preload("res://assets/cards/topdollar180.png")
@@ -136,6 +140,7 @@ func init_upgrade_dict():
 	upgrade_dict.clear()
 	upgrade_dict["Mult1"] = MultiplierUpgrade.new("1.25x Multiplier", 1.25)
 	upgrade_dict["Mult2"] = MultiplierUpgrade.new("1.5x Multiplier", 1.5)
+	upgrade_dict["Mult3"] = MultiplierUpgrade.new("2x Multiplier", 2)
 	upgrade_dict["Cheapskate"] = CheapskateUpgrade.new("CheapskateUpgrade")
 	upgrade_dict["Gambling"] = GamblingUpgrade.new("GamblingUpgrade")
 	upgrade_dict["OnTheHouse"] = OnTheHouseUpgrade.new("OnTheHouseUpgrade")
@@ -175,11 +180,11 @@ func do_on_the_house():
 	var ticket_name
 	var my_random = rng.randf_range(0.0, 3.0)
 	if my_random <= 1.0:
-		ticket_name = "LotsOfMoney"
+		ticket_name = "Money4Free"
 	elif my_random > 1.0 and my_random <= 2.0:
-		ticket_name = "NuclearCapital"
+		ticket_name = "TopDollar"
 	else:
-		ticket_name = "LuckyWinner"
+		ticket_name = "MoneyMakerz"
 	var ticket = generate_ticket(ticket_name)
 	add_ticket(ticket)
 	spawn_list.append(ticket)

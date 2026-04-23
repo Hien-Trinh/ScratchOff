@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cje3jn4fld0q" path="res://assets/upgrades/gamble.svg" id="11_cpriw"]
 [ext_resource type="Texture2D" uid="uid://d1oqb76dfu1h8" path="res://assets/upgrades/onthehouse.svg" id="12_5qui4"]
 [ext_resource type="Texture2D" uid="uid://du4r2bjqdnfrr" path="res://assets/upgrades/cheapskate.svg" id="13_663q0"]
+[ext_resource type="Texture2D" uid="uid://camwm1tgp6eus" path="res://assets/upgrades/mult_2.0.png" id="13_ubk5a"]
 [ext_resource type="Texture2D" uid="uid://de7emop815p5h" path="res://assets/upgrades/temp_up.svg" id="15_663q0"]
 [ext_resource type="LabelSettings" uid="uid://ke1rn4aiuul1" path="res://themes/balance_header.tres" id="16_7hw30"]
 
@@ -197,10 +198,10 @@ anchor_left = 0.042187486
 anchor_top = 0.61388886
 anchor_right = 0.15312529
 anchor_bottom = 0.8111111
-offset_left = -2.3542018
-offset_top = 483.11102
-offset_right = 193.20828
-offset_bottom = 675.2221
+offset_left = -2.3544993
+offset_top = 475.44446
+offset_right = 193.20798
+offset_bottom = 667.55554
 pivot_offset = Vector2(117, 117)
 texture = ExtResource("7_0atty")
 metadata/_edit_use_anchors_ = true
@@ -228,8 +229,10 @@ anchor_left = 6.308333
 anchor_top = 12.741664
 anchor_right = 11.308332
 anchor_bottom = 17.741663
-offset_left = 1.5258789e-05
-offset_bottom = 6.1035156e-05
+offset_left = -4.1153107
+offset_top = -9.666565
+offset_right = -4.1151733
+offset_bottom = -9.666504
 pivot_offset = Vector2(117, 117)
 texture = ExtResource("5_8fj20")
 metadata/_edit_use_anchors_ = true
@@ -250,19 +253,53 @@ buy_name = "Mult2"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Upgrade3" type="TextureRect" parent="Upgrades" unique_id=139241062]
+[node name="Upgrade3" type="TextureRect" parent="Upgrades" unique_id=572666745]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 12.833333
+anchor_left = 12.283333
 anchor_top = 12.741666
-anchor_right = 17.833332
+anchor_right = 17.283333
 anchor_bottom = 17.741665
-offset_bottom = 6.1035156e-05
+offset_left = -0.00030517578
+offset_top = -9.666626
+offset_right = -0.00030517578
+offset_bottom = -9.666565
+pivot_offset = Vector2(117, 117)
+texture = ExtResource("13_ubk5a")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Upgrades/Upgrade3" unique_id=2035792723]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0703125
+anchor_top = 1.0546875
+anchor_right = 1.0625
+anchor_bottom = 1.5625
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("6_2lj6v")
+text = "TEMP"
+script = ExtResource("5_f8gav")
+buy_cost = 50.0
+buy_name = "Mult3"
+is_upgrade = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Upgrade4" type="TextureRect" parent="Upgrades" unique_id=139241062]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 18.333332
+anchor_top = 12.791666
+anchor_right = 23.333332
+anchor_bottom = 17.791666
+offset_left = 4.3847656
+offset_top = -11.666626
+offset_right = 4.3847656
+offset_bottom = -11.666565
 pivot_offset = Vector2(117, 117)
 texture = ExtResource("11_cpriw")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Upgrades/Upgrade3" unique_id=1757481241]
+[node name="Button" type="Button" parent="Upgrades/Upgrade4" unique_id=1757481241]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.0703125
@@ -278,7 +315,7 @@ buy_name = "Gambling"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Upgrades/Upgrade3" unique_id=1580864717]
+[node name="Label" type="Label" parent="Upgrades/Upgrade4" unique_id=1580864717]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.49
@@ -290,22 +327,22 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 35
 text = "Gamble"
 
-[node name="Upgrade4" type="TextureRect" parent="Upgrades" unique_id=2142231357]
+[node name="Upgrade5" type="TextureRect" parent="Upgrades" unique_id=2142231357]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 19.083332
-anchor_top = 12.742001
-anchor_right = 24.083002
-anchor_bottom = 17.741665
-offset_left = 1.5258789e-05
-offset_top = -0.013397217
-offset_right = 0.013183594
-offset_bottom = 6.1035156e-05
+anchor_left = 24.533333
+anchor_top = 12.842001
+anchor_right = 29.533
+anchor_bottom = 17.841665
+offset_left = 5.489685
+offset_top = -13.680054
+offset_right = 5.503174
+offset_bottom = -13.666565
 pivot_offset = Vector2(117, 117)
 texture = ExtResource("12_5qui4")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Upgrades/Upgrade4" unique_id=357589488]
+[node name="Button" type="Button" parent="Upgrades/Upgrade5" unique_id=357589488]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.0703125
@@ -321,7 +358,7 @@ buy_name = "OnTheHouse"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Upgrades/Upgrade4" unique_id=1982361074]
+[node name="Label" type="Label" parent="Upgrades/Upgrade5" unique_id=1982361074]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.26700002
@@ -333,18 +370,22 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 17
 text = "On the House"
 
-[node name="Upgrade5" type="TextureRect" parent="Upgrades" unique_id=2106078354]
+[node name="Upgrade6" type="TextureRect" parent="Upgrades" unique_id=2106078354]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 25.375074
-anchor_top = 12.741674
-anchor_right = 30.37505
-anchor_bottom = 17.741676
+anchor_left = 30.883335
+anchor_top = 12.891665
+anchor_right = 35.88331
+anchor_bottom = 17.891666
+offset_left = -0.00036621094
+offset_top = -15.666626
+offset_right = -0.00036621094
+offset_bottom = -15.666626
 pivot_offset = Vector2(117, 117)
 texture = ExtResource("13_663q0")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Upgrades/Upgrade5" unique_id=974600325]
+[node name="Button" type="Button" parent="Upgrades/Upgrade6" unique_id=974600325]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.06446692
@@ -360,7 +401,7 @@ buy_name = "Cheapskate"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Upgrades/Upgrade5" unique_id=378307750]
+[node name="Label" type="Label" parent="Upgrades/Upgrade6" unique_id=378307750]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.26700002
@@ -373,18 +414,22 @@ theme_override_font_sizes/font_size = 27
 text = "Cheapskate
 "
 
-[node name="Upgrade6" type="TextureRect" parent="Upgrades" unique_id=1416179775]
+[node name="Upgrade7" type="TextureRect" parent="Upgrades" unique_id=1416179775]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 31.758331
-anchor_top = 12.741666
-anchor_right = 36.93333
-anchor_bottom = 17.741661
+anchor_left = 37.408333
+anchor_top = 12.966665
+anchor_right = 42.583332
+anchor_bottom = 17.966661
+offset_left = -4.9802246
+offset_top = -18.666626
+offset_right = -4.9802246
+offset_bottom = -18.666626
 pivot_offset = Vector2(117, 117)
 texture = ExtResource("15_663q0")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Upgrades/Upgrade6" unique_id=1961224117]
+[node name="Button" type="Button" parent="Upgrades/Upgrade7" unique_id=1961224117]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.0703125
@@ -400,7 +445,7 @@ buy_name = "ExtraTime"
 is_upgrade = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Upgrades/Upgrade6" unique_id=361055362]
+[node name="Label" type="Label" parent="Upgrades/Upgrade7" unique_id=361055362]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.26700002
@@ -491,4 +536,7 @@ offset_bottom = 654.0
 [connection signal="mouse_entered" from="Upgrades/Upgrade6" to="." method="_on_upgrade_6_mouse_entered"]
 [connection signal="mouse_entered" from="Upgrades/Upgrade6/Button" to="." method="_on_upgrade_6_mouse_entered"]
 [connection signal="pressed" from="Upgrades/Upgrade6/Button" to="Upgrades/Upgrade6/Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Upgrades/Upgrade7" to="." method="_on_upgrade_7_mouse_entered"]
+[connection signal="mouse_entered" from="Upgrades/Upgrade7/Button" to="." method="_on_upgrade_7_mouse_entered"]
+[connection signal="pressed" from="Upgrades/Upgrade7/Button" to="Upgrades/Upgrade7/Button" method="_on_pressed"]
 [connection signal="mouse_entered" from="OutsideUpgradeArea" to="." method="_on_outside_upgrade_area_mouse_entered"]

@@ -19,7 +19,7 @@ extends Node2D
 var game_timer = Timer.new()
 var round_counter : int = 1
 
-var goal : float = 500
+var goal : float = 800
 
 var rounds_per_loop : int = 6
 var loop_count : int = 1
@@ -110,7 +110,7 @@ func check_win_lose():
 		shop_menu.visible = false
 	else:
 		# WIN
-		goal *= 4
+		goal *= 6
 		loop_count+=1
 		goal_label.text = "Goal: " + str(goal) + " By Round " + str(rounds_per_loop * loop_count)
 

@@ -66,22 +66,25 @@ func remove_spaces(value : String):
 	return value
 
 func _on_upgrade_1_mouse_entered():
-	$DescBox/DescLabel.text = "Multiply card value by 1.25"
+	$DescBox/DescLabel.text = "Multiply ticket value by 1.25"
 	
 func _on_upgrade_2_mouse_entered():
-	$DescBox/DescLabel.text = "Multiply card value by 1.5"
+	$DescBox/DescLabel.text = "Multiply ticket value by 1.5"
 	
 func _on_upgrade_3_mouse_entered():
-	$DescBox/DescLabel.text = "Ticket value is 2.5x or nothing"
+	$DescBox/DescLabel.text = "Multiply ticket value by 2"
 	
 func _on_upgrade_4_mouse_entered():
-	$DescBox/DescLabel.text = "Free card every round"
+	$DescBox/DescLabel.text = "Ticket value is 2.5x or nothing"
 	
 func _on_upgrade_5_mouse_entered():
-	$DescBox/DescLabel.text = "Lower shop prices"
+	$DescBox/DescLabel.text = "Free high-tier ticket every round"
 	
 func _on_upgrade_6_mouse_entered():
-	$DescBox/DescLabel.text = "More time per round"
+	$DescBox/DescLabel.text = "Lower ticket prices"
 	
-func _on_outside_upgrade_area_mouse_entered() -> void:
+func _on_upgrade_7_mouse_entered():
+	$DescBox/DescLabel.text = "+ 10 Seconds during round"
+	
+func _on_outside_upgrade_area_mouse_entered():
 	$DescBox/DescLabel.text = "Hover over upgrade to reveal description."
