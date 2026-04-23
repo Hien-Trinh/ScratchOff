@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cu2xcogwm8pu3"]
 
 [ext_resource type="Script" uid="uid://cbe2o567f57lf" path="res://scripts/pause_menu.gd" id="1_hdmo1"]
+[ext_resource type="FontFile" uid="uid://44v45o70x3eq" path="res://assets/fonts/papyrus.ttf" id="2_nwcfo"]
+[ext_resource type="FontFile" uid="uid://b8dftmter3eey" path="res://assets/fonts/Comic Sans MS.ttf" id="3_05uyy"]
 
 [node name="PauseMenu" type="Control" unique_id=1288302848]
 layout_mode = 3
@@ -15,4 +17,45 @@ script = ExtResource("1_hdmo1")
 layout_mode = 0
 offset_right = 1945.0
 offset_bottom = 1094.0
-color = Color(0.32, 0.32, 0.32, 0.5137255)
+color = Color(0.012920001, 0.19641912, 0.20285092, 0.70000005)
+
+[node name="PauseLabel" type="Label" parent="." unique_id=221968658]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 132.0
+offset_right = 1384.0
+offset_bottom = 369.0
+theme_override_colors/font_color = Color(0.8891655, 0.8820503, 7.70092e-07, 1)
+theme_override_colors/font_shadow_color = Color(0.7806454, 0.3910149, 0.44274628, 0)
+theme_override_fonts/font = ExtResource("2_nwcfo")
+theme_override_font_sizes/font_size = 150
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=1570951049]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 349.0
+offset_right = 1716.0
+offset_bottom = 586.0
+theme_override_colors/font_color = Color(1, 0, 0.98758966, 1)
+theme_override_colors/font_shadow_color = Color(0.7806454, 0.3910149, 0.44274628, 0)
+theme_override_fonts/font = ExtResource("3_05uyy")
+theme_override_font_sizes/font_size = 80
+text = "press escape to resume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=364208071]
+layout_mode = 0
+offset_left = 757.0
+offset_top = 595.0
+offset_right = 1181.0
+offset_bottom = 747.0
+theme_override_fonts/font = ExtResource("3_05uyy")
+theme_override_font_sizes/font_size = 40
+text = "return to title
+(cause u got pwned.....)"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
