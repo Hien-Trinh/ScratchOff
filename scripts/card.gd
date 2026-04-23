@@ -255,9 +255,20 @@ func _update_scratch_grid(mask_local_pos: Vector2) -> void:
 		card_data.is_scratched = true
 		
 		# Scratch complete exlposion
-		celebrate_dust.global_position = self.global_position
-		celebrate_dust.emitting = true
-		celebrate_dust.restart()
+		celebrate_dust.visible = false 
+
+		for i in range(5):
+			var new_dust = celebrate_dust.duplicate()
+			add_child(new_dust)
+			new_dust.visible = true
+			
+			var celebrate_explosion_offset = Vector2(randf_range(-90, 90), randf_range(-90, 90))
+			new_dust.global_position = self.global_position + celebrate_explosion_offset
+			
+			new_dust.emitting = true
+			new_dust.restart()
+			
+			new_dust.finished.connect(new_dust.queue_free)
 
 # Call this immediately after spawning the card!
 func setup_ticket(data: CardItem) -> void:

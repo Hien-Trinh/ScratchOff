@@ -13,7 +13,8 @@ func _process(delta):
 		game_resume.emit()
 		set_process(false)
 
-
 func _on_button_pressed():
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://title_screen.tscn")
 	GameManager.restart_game()
+	set_process(false)
