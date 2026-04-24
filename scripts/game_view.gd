@@ -56,10 +56,6 @@ func _process(_delta):
 func round_start():
 	if round_counter > 1:
 		table._ready()
-	#if round_counter == 1:
-		#add_child(hand)
-	#if round_counter % rounds_per_loop == 0:
-		#check_win_lose()
 	if (GameManager.check_extra_time() == true):
 		game_timer.set_wait_time(25) #Seconds
 	else:

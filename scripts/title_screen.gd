@@ -9,7 +9,7 @@ func _ready():
 	credits_window.visible = false
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://tutorial.tscn")
+	get_tree().change_scene_to_file("res://card_tutorial.tscn")
 
 func _on_exit_credit_window_pressed():
 	if(credits_window.visible == true):
