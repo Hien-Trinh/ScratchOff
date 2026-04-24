@@ -23,6 +23,7 @@ var tween_handle: Tween
 
 var following_mouse: bool = false
 var is_scratching: bool = false
+var is_hovered: bool = false
 var drag_offset: Vector2 = Vector2.ZERO
 
 # Make sure these paths match your 2D node structure
@@ -176,7 +177,9 @@ func _input(event: InputEvent) -> void:
 
 # Connect this via the Godot Node Editor signals -> Area2D.mouse_entered
 func _on_mouse_entered() -> void:
-	hovered_cards += 1
+	if not is_hovered:
+		is_hovered = true
+		hovered_cards += 1
 	# If the game is not started, do not allow inputs
 	if not GameManager.game_started:
 		return
@@ -191,7 +194,9 @@ func _on_mouse_entered() -> void:
 
 # Connect this via the Godot Node Editor signals -> Area2D.mouse_exited
 func _on_mouse_exited() -> void:
-	hovered_cards -= 1
+	if is_hovered:
+		is_hovered = false
+		hovered_cards -= 1
 	# If the game is not started, do not allow inputs
 	if not GameManager.game_started:
 		return
@@ -285,3 +290,8 @@ func setup_ticket(data: CardItem) -> void:
 		reward_sprite.texture = card_data.reward_texture
 
 	# TODO (not needed i think): card_data.item_value logic here maybe...
+
+func _exit_tree() -> void:
+	if is_hovered:
+		is_hovered = false
+		hovered_cards -= 1
