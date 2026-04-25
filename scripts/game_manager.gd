@@ -12,6 +12,7 @@ var game_started = false
 
 var spawn_list = Array()
 
+#for upgrade cost progression and unlocking mult upgrades
 var num_upgrades : int = 0
 var shop_mult2_active = false
 var shop_mult3_active = false

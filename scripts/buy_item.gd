@@ -41,16 +41,16 @@ func _process(_delta):
 				buy_cost = 100
 				self.text = "$" + str(buy_cost)
 		elif GameManager.num_upgrades == 3:
-				buy_cost = 175
+				buy_cost = 200
 				self.text = "$" + str(buy_cost)
 		elif GameManager.num_upgrades == 4:
-				buy_cost = 300
+				buy_cost = 450
 				self.text = "$" + str(buy_cost)
 		elif GameManager.num_upgrades == 5:
-				buy_cost = 650
+				buy_cost = 800
 				self.text = "$" + str(buy_cost)
 		elif GameManager.num_upgrades >= 6:
-				buy_cost = 1400
+				buy_cost = 2000
 				self.text = "$" + str(buy_cost)
 		
 	#for cheapskate upgrade

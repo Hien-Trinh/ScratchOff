@@ -7,6 +7,12 @@
 [ext_resource type="Script" uid="uid://ci4rmwqfvwthy" path="res://scripts/tutorial_button.gd" id="4_coosh"]
 [ext_resource type="PackedScene" uid="uid://dts74te66asgn" path="res://card.tscn" id="6_7x77e"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7x77e"]
+size = Vector2(2200, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_coosh"]
+size = Vector2(50, 1200)
+
 [node name="Tutorial" type="Node2D" unique_id=1821609494]
 script = ExtResource("1_fro7f")
 
@@ -55,6 +61,28 @@ text = "        Hey there! Buying Scratchers again?
 Don't forget to scratch them with Right Click!"
 
 [node name="Card" parent="." unique_id=1111863974 instance=ExtResource("6_7x77e")]
+z_index = 3
 position = Vector2(1167, 600)
+
+[node name="Bounds" type="RigidBody2D" parent="." unique_id=179049610]
+position = Vector2(960, 540)
+gravity_scale = 0.0
+freeze = true
+
+[node name="TopBound" type="CollisionShape2D" parent="Bounds" unique_id=363235004]
+position = Vector2(-3, -575)
+shape = SubResource("RectangleShape2D_7x77e")
+
+[node name="BottomBound" type="CollisionShape2D" parent="Bounds" unique_id=1541209680]
+position = Vector2(11, 583)
+shape = SubResource("RectangleShape2D_7x77e")
+
+[node name="RightBound" type="CollisionShape2D" parent="Bounds" unique_id=1325107842]
+position = Vector2(1001, 3)
+shape = SubResource("RectangleShape2D_coosh")
+
+[node name="LeftBound" type="CollisionShape2D" parent="Bounds" unique_id=1490811667]
+position = Vector2(-1007, 3)
+shape = SubResource("RectangleShape2D_coosh")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_button_pressed"]
