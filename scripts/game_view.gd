@@ -15,6 +15,7 @@ extends Node2D
 @onready var game_over = $GameOver
 
 @export var yellSound : AudioStreamPlayer2D
+@export var continueButton : Button
 
 var game_timer = Timer.new()
 var round_counter : int = 1
@@ -35,6 +36,7 @@ func _ready():
 	game_over.visible = false
 	round_label.text = "Round: " + str(round_counter)
 	goal_label.text = "Goal: " + str(goal) + " By Round " + str(rounds_per_loop * loop_count)
+	$EndRoundButton.disabled = true
 	
 	# Game timer init
 	add_child(game_timer)
@@ -54,8 +56,10 @@ func _process(_delta):
 		pause_menu.set_process(true)
 
 func round_start():
+	$EndRoundButton.disabled = false
 	if round_counter > 1:
 		table._ready()
+	continueButton.disabled = false
 	if (GameManager.check_extra_time() == true):
 		game_timer.set_wait_time(25) #Seconds
 	else:
@@ -78,6 +82,7 @@ func on_game_resumed():
 	hand.visible = true
 		
 func _on_continue_button_pressed():
+	continueButton.disabled = true
 	if GameManager.check_on_the_house() == true:
 		GameManager.do_on_the_house()
 	if shop_menu.visible == true:

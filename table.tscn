@@ -383,8 +383,7 @@ position = Vector2(6.1035156e-05, 0)
 scale = Vector2(1.0000001, 1.0000002)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cashArea/Area2D" unique_id=372474276]
-position = Vector2(22.993958, -14.368103)
-scale = Vector2(1, 0.99999976)
+scale = Vector2(1, 0.9999997)
 shape = SubResource("RectangleShape2D_67vji")
 
 [node name="TableUI" type="Control" parent="." unique_id=1448599781]

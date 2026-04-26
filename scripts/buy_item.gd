@@ -22,9 +22,9 @@ func _ready():
 	add_child(buysfx_player)
 	add_child(fail_buysfx_player)
 	buysfx_player.stream = buysfx
-	buysfx_player.volume_db = -1.0
+	buysfx_player.volume_db = -2.5
 	fail_buysfx_player.stream = fail_buysfx
-	fail_buysfx_player.volume_db = -1.0
+	fail_buysfx_player.volume_db = -14.0
 	
 func _process(_delta):
 	if (is_upgrade && !upgrade_already_owned):

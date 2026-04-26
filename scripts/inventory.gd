@@ -10,9 +10,6 @@ func _ready():
 	ticketBody.clear()
 	on_ticket_inventory_updated(GameManager.get_ticket_list())
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
 	
 func on_ticket_inventory_updated(new_list):
 	ticketBody.text = ""

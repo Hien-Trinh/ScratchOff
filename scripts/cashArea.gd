@@ -20,7 +20,7 @@ func round_reset():
 	moneyAmount.text = "$" + str(snappedf(displayed_money, 0.01))
 	
 func _process(delta: float) -> void:
-	if Input.is_action_just_released("Click") && get_global_mouse_position().x < 350 && get_global_mouse_position().y > 600 && cashSpace.has_overlapping_bodies():
+	if Input.is_action_just_released("Click") && get_global_mouse_position().x < 450 && get_global_mouse_position().y > 600 && cashSpace.has_overlapping_bodies():
 		var labelArray = cashSpace.get_overlapping_bodies()
 
 		# Accumulate total winnings first (prevents animation glitching if stacking 3 cards)

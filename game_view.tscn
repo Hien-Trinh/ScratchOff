@@ -218,9 +218,10 @@ _data = {
 &"startCountdown": SubResource("Animation_odoka")
 }
 
-[node name="GameView" type="Node2D" unique_id=1842035021 node_paths=PackedStringArray("yellSound")]
+[node name="GameView" type="Node2D" unique_id=1842035021 node_paths=PackedStringArray("yellSound", "continueButton")]
 script = ExtResource("1_lqkpn")
 yellSound = NodePath("Yell")
+continueButton = NodePath("ShopMenu/CheckoutContinue/ContinueButton")
 
 [node name="Hand" parent="." unique_id=710456527 instance=ExtResource("3_cr1hu")]
 
