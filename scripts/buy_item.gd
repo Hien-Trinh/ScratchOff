@@ -34,7 +34,10 @@ func _process(_delta):
 		if (GameManager.shop_mult3_active == true && GameManager.shop_mult3_updated == false):
 			disabled = false
 			GameManager.shop_mult3_updated = true
-		if GameManager.num_upgrades == 1:
+		if GameManager.num_upgrades == 0:
+				buy_cost = 50
+				self.text = "$" + str(buy_cost)
+		elif GameManager.num_upgrades == 1:
 				buy_cost = 75
 				self.text = "$" + str(buy_cost)
 		elif GameManager.num_upgrades == 2:

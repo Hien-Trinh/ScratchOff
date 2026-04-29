@@ -22,6 +22,7 @@ var shop_mult3_updated = false
 var rng = RandomNumberGenerator.new()
 var balance : float = 100 :
 	set = set_balance, get = get_balance
+# Total card score multiplier, computed from active multiplier upgrades
 var mult : float : 
 	set = set_mult, get = get_mult
 
@@ -33,6 +34,7 @@ func _ready():
 	init_ticket_dict()
 	init_reward_dict()
 	init_upgrade_dict()
+	num_upgrades = 0
 	ticketList.clear()
 	
 	initialize_tickets()
@@ -90,6 +92,10 @@ func restart_game():
 	game_started = false
 	set_balance(100)
 	set_mult(1)
+	init_ticket_dict()
+	init_reward_dict()
+	init_upgrade_dict()
+	num_upgrades = 0
 	ticketList.clear()
 	initialize_tickets()
 
