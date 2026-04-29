@@ -7,7 +7,7 @@ Scratch. Buy. Repeat. Will you win big or go broke?
 ### I want to play the game on Windows or MacOS
 1. Download the zip file from the Releases tab on GitHub. Make sure you choose the version that corresponds to your operating system!
 2. Extract the zip in your chosen location.
-3. 
+3. Run 'gsslsim.exe'
 
 ### I want to edit the game in Godot
 1. Download and install Godot v.4.6.1. (add hyperlink) We cannot guarantee that the project will be compatible with other versions of Godot 4.

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bweaupebolexp"]
 
 [ext_resource type="Texture2D" uid="uid://dgdrsjgyvivld" path="res://assets/other/tutorialworker.png" id="1_copv5"]
-[ext_resource type="Script" uid="uid://dm6dnr0i2u5dw" path="res://card_tutorial.gd" id="1_fro7f"]
+[ext_resource type="Script" uid="uid://dm6dnr0i2u5dw" path="res://scripts/card_tutorial.gd" id="1_fro7f"]
 [ext_resource type="Texture2D" uid="uid://csr4jegr1wciw" path="res://assets/other/pixelstationinside.png" id="2_fro7f"]
 [ext_resource type="FontFile" uid="uid://bqxdvnqmuulum" path="res://assets/fonts/Coolvetica Rg.otf" id="3_7x77e"]
 [ext_resource type="Script" uid="uid://ci4rmwqfvwthy" path="res://scripts/tutorial_button.gd" id="4_coosh"]

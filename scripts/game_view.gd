@@ -66,6 +66,7 @@ func round_start():
 		game_timer.set_wait_time(15.0) # Seconds
 	game_timer.start()
 
+# Timer referenced is specifically the game round timer
 func _on_timer_timeout():
 	if round_counter % rounds_per_loop == 0:
 		check_win_lose()
