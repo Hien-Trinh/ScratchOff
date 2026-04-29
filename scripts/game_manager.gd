@@ -34,6 +34,7 @@ func _ready():
 	init_ticket_dict()
 	init_reward_dict()
 	init_upgrade_dict()
+	num_upgrades = 0
 	ticketList.clear()
 	
 	initialize_tickets()
@@ -94,6 +95,7 @@ func restart_game():
 	init_ticket_dict()
 	init_reward_dict()
 	init_upgrade_dict()
+	num_upgrades = 0
 	ticketList.clear()
 	initialize_tickets()
 
