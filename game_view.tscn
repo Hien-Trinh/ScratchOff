@@ -223,6 +223,11 @@ script = ExtResource("1_lqkpn")
 yellSound = NodePath("Yell")
 continueButton = NodePath("ShopMenu/CheckoutContinue/ContinueButton")
 
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1702866037]
+stream = ExtResource("6_mpfd6")
+volume_db = -5.0
+autoplay = true
+
 [node name="Hand" parent="." unique_id=710456527 instance=ExtResource("3_cr1hu")]
 
 [node name="Table" parent="." unique_id=1736072314 instance=ExtResource("1_0lsib")]
@@ -265,11 +270,6 @@ metadata/_edit_lock_ = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1047255926]
 root_node = NodePath("../ShopMenu")
 libraries/ = SubResource("AnimationLibrary_cr1hu")
-
-[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1702866037]
-stream = ExtResource("6_mpfd6")
-volume_db = -5.0
-autoplay = true
 
 [node name="Yell" type="AudioStreamPlayer2D" parent="." unique_id=132731667]
 stream = ExtResource("7_icur1")

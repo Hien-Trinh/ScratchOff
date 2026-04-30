@@ -27,7 +27,6 @@ var loop_count : int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	remove_child(hand)
 	shop_menu.process_mode = Node.PROCESS_MODE_PAUSABLE
 	table.process_mode = Node.PROCESS_MODE_PAUSABLE
 	pause_menu.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
@@ -42,7 +41,6 @@ func _ready():
 	add_child(game_timer)
 	game_timer.one_shot = true
 	game_timer.connect("timeout", Callable(self,"_on_timer_timeout"))
-	add_child(hand)
 	GameManager.connect("game_started_signal", Callable(self, "round_start"))
 	pause_menu.connect("game_resume", Callable(self, "on_game_resumed"))
 
