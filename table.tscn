@@ -345,6 +345,43 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="Animation" id="Animation_2us7a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1462, 555)]
+}
+
+[sub_resource type="Animation" id="Animation_ojgvt"]
+resource_name = "movement"
+length = 3.3333368
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.166667),
+"transitions": PackedFloat32Array(4.2870965, 55.715187),
+"update": 0,
+"values": [Vector2(1462, 555), Vector2(-390, -49)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xl8i4"]
+_data = {
+&"RESET": SubResource("Animation_2us7a"),
+&"movement": SubResource("Animation_ojgvt")
+}
+
 [node name="Table" type="Node2D" unique_id=1736072314]
 script = ExtResource("1_v5i0k")
 
@@ -482,7 +519,10 @@ position = Vector2(-1040, 0)
 shape = SubResource("RectangleShape2D_ormek")
 
 [node name="SpinningRat" type="AnimatedSprite2D" parent="." unique_id=248878460]
-visible = false
 position = Vector2(1462, 555)
 sprite_frames = SubResource("SpriteFrames_kqgtk")
 frame_progress = 0.36615187
+
+[node name="SpinningRatAnimation" type="AnimationPlayer" parent="SpinningRat" unique_id=696284574]
+libraries/ = SubResource("AnimationLibrary_xl8i4")
+script = ExtResource("12_urxxv")

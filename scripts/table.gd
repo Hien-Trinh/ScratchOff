@@ -14,6 +14,7 @@ func _ready() -> void:
 	GameManager.spawn_list.clear()
 	if (rng.randi_range(0, 3) == 1):
 		spinning_rat.visible = true
+		$SpinningRat/SpinningRatAnimation.move()
 		spinning_rat.play("default")
 
 func spawn_card_on_table(ticket_item: CardItem) -> void:
