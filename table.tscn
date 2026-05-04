@@ -525,4 +525,3 @@ frame_progress = 0.36615187
 
 [node name="SpinningRatAnimation" type="AnimationPlayer" parent="SpinningRat" unique_id=696284574]
 libraries/ = SubResource("AnimationLibrary_xl8i4")
-script = ExtResource("12_urxxv")
