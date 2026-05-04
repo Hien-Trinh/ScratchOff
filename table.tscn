@@ -11,6 +11,7 @@
 [ext_resource type="Theme" uid="uid://d1jq44qij8nlg" path="res://themes/continue_text.tres" id="7_64sdq"]
 [ext_resource type="FontFile" uid="uid://iral2cauilc8" path="res://assets/fonts/chiller.TTF" id="8_ormek"]
 [ext_resource type="Texture2D" uid="uid://ckey2a5kgm15h" path="res://assets/other/spinning_rat.png" id="10_ibia0"]
+[ext_resource type="Script" uid="uid://b8c02brxdv6qj" path="res://scripts/spinning_rat_animation.gd" id="12_urxxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67vji"]
 size = Vector2(1066.9199, 993.44196)
@@ -461,10 +462,10 @@ label_settings = SubResource("LabelSettings_jry6c")
 
 [node name="RoundLabel" type="Label" parent="TableUI" unique_id=1032973269]
 layout_mode = 0
-offset_left = 46.0
-offset_top = 102.0
-offset_right = 330.0
-offset_bottom = 199.0
+offset_left = 1562.0
+offset_top = 105.0
+offset_right = 1846.0
+offset_bottom = 202.0
 theme = ExtResource("7_64sdq")
 theme_override_fonts/font = ExtResource("8_ormek")
 theme_override_font_sizes/font_size = 80
@@ -478,9 +479,9 @@ anchor_top = 6.4750004
 anchor_right = 1.7620001
 anchor_bottom = 6.4750004
 offset_left = -71.48
-offset_top = -59.0
+offset_top = -184.0
 offset_right = 470.52
-offset_bottom = 78.0
+offset_bottom = -47.0
 theme_override_font_sizes/font_size = 50
 
 [node name="GoalLabel" type="Label" parent="TableUI" unique_id=59891126]
@@ -525,3 +526,4 @@ frame_progress = 0.36615187
 
 [node name="SpinningRatAnimation" type="AnimationPlayer" parent="SpinningRat" unique_id=696284574]
 libraries/ = SubResource("AnimationLibrary_xl8i4")
+script = ExtResource("12_urxxv")
