@@ -9,8 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://43vtb62j2jsu" path="res://assets/audio/music/bc-song1.wav" id="6_mpfd6"]
 [ext_resource type="AudioStream" uid="uid://dps06kt3su2wd" path="res://assets/audio/sfx/DissapointedYell.mp3" id="7_icur1"]
 [ext_resource type="PackedScene" uid="uid://diwffrd0ympyl" path="res://game_over.tscn" id="8_08hyy"]
-[ext_resource type="Script" uid="uid://bf4jc7p2m7ejt" path="res://scripts/countdown_animation.gd" id="8_countdown"]
 [ext_resource type="FontFile" uid="uid://44v45o70x3eq" path="res://assets/fonts/papyrus.ttf" id="9_08hyy"]
+[ext_resource type="Script" uid="uid://oeptx5yih4fr" path="res://countdown_animation.gd" id="9_icur1"]
 
 [sub_resource type="Animation" id="Animation_lqkpn"]
 length = 0.001
@@ -311,7 +311,7 @@ vertical_alignment = 1
 
 [node name="CountdownAnimation" type="AnimationPlayer" parent="Countdown" unique_id=552709437]
 libraries/ = SubResource("AnimationLibrary_qhjbg")
-script = ExtResource("8_countdown")
+script = ExtResource("9_icur1")
 
 [node name="CountdownTimer" type="Timer" parent="Countdown" unique_id=89901459]
 
@@ -326,7 +326,7 @@ text = "END ROUND"
 
 [node name="PauseMenu" parent="." unique_id=1288302848 instance=ExtResource("4_mu740")]
 visible = false
-z_index = 2
+z_index = 10
 
 [connection signal="pressed" from="ShopMenu/CheckoutContinue/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="GameOver/ReturnTitle" to="." method="_on_return_title_pressed"]

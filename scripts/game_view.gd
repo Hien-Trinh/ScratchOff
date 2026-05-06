@@ -47,7 +47,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	$Table/TableUI/TimerLabel.set_text("TIME LEFT: " + str(snappedf(game_timer.get_time_left(), 0.1)))
-	if Input.is_action_just_released("Pause"):
+	if Input.is_action_just_released("Pause") && !game_timer.is_stopped():
 		hand.visible = false
 		get_tree().paused = true
 		pause_menu.show()

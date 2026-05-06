@@ -98,6 +98,10 @@ func restart_game():
 	num_upgrades = 0
 	ticketList.clear()
 	initialize_tickets()
+	shop_mult2_active = false
+	shop_mult3_active = false
+	shop_mult2_updated = false
+	shop_mult3_updated = false
 
 # Runs at startup.
 # Adds one of every Item to the ticket_template_dict{} dictionary.

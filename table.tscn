@@ -494,7 +494,7 @@ theme_override_colors/font_color = Color(0.39999986, 1, 0, 1)
 theme_override_fonts/font = ExtResource("6_ibia0")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_ormek")
-text = "Goal: 1000000 by round 220"
+text = "Goal:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
